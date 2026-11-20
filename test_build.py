@@ -116,6 +116,12 @@ class BuildSmokeTest(unittest.TestCase):
         self.assertIn("Amazon の商品情報より", h)
         self.assertNotIn("kodansha.co.jp", h)
 
+    def test_pochi_latest_file_compact(self):
+        import json
+        h = (self.docs / "api" / "pochi-latest.json").read_text(encoding="utf-8")
+        self.assertNotIn("\n", h)
+        self.assertEqual(json.loads(h)["generated"], "2026-11-20")
+
     def test_work_page(self):
         w = next(iter(self.works.values()))
         h = (self.docs / "work" / w["slug"] / "index.html").read_text(encoding="utf-8")
@@ -295,3 +301,30 @@ class PochiVerifyTest(unittest.TestCase):
               {"catalogId": "9", "site": "マガポケ", "authors": ["山田太郎"]}]
         self.assertEqual(pv.pick_candidate("山田太郎", "講談社", cs)[0]["catalogId"], "9")
         self.assertEqual(pv.pick_candidate("誰か", "講談社", cs[:2])[0]["catalogId"], "7")
+
+
+class PochiLatestTest(unittest.TestCase):
+    def work(self, pochi, books):
+        return {"slug": "abc", "title": "作品", "publisher": "小学館", "author": "著者", "pochi": pochi, "books": books}
+
+    def bk(self, vol, date):
+        return {"volume": vol, "release_date": date, "title": f"作品 {vol}" if vol else "作品"}
+
+    def test_split_around_today(self):
+        w = self.work("42", [self.bk(1, "2026-10-01"), self.bk(2, "2026-11-20"), self.bk(3, "2026-12-01"), self.bk(4, "2027-01-01")])
+        r = build.pochi_latest({"abc": w}, datetime.date(2026, 11, 20))
+        e = r["works"]["42"]
+        self.assertEqual(r["generated"], "2026-11-20")
+        self.assertEqual(e["latest"]["volume"], 2)          # 今日発売は latest 側
+        self.assertEqual(e["next"]["volume"], 3)
+        self.assertEqual(e["work_url"], "https://shinkan.netaful.jp/work/abc/")
+
+    def test_only_linked_works_and_null_cases(self):
+        w1 = self.work(None, [self.bk(1, "2026-10-01")])
+        w2 = self.work("7", [self.bk(None, "2026-12-01")])
+        w3 = dict(self.work("8", [self.bk(5, "2026-10-01")]), slug="zzz")
+        r = build.pochi_latest({"a": w1, "b": w2, "c": w3}, datetime.date(2026, 11, 20))
+        self.assertEqual(set(r["works"]), {"7", "8"})
+        self.assertIsNone(r["works"]["7"]["latest"])
+        self.assertIsNone(r["works"]["7"]["next"]["volume"])   # 巻数なしは null のまま
+        self.assertIsNone(r["works"]["8"]["next"])

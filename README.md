@@ -65,6 +65,14 @@ python3 scripts/update.py
 - GitHub Pages: `docs/` を配信、カスタムドメイン `shinkan.netaful.jp`（`docs/CNAME`）
 - Cloud Scheduler: ジョブ `shinkan-pochi-update`（`workflow_dispatch` を呼ぶ）
 
+## 漫画ポチ向けAPI（`docs/api/pochi-latest.json`）
+`build.py` が毎回書く（毎日の更新で `update.py` → `build.build` が走るので、毎日作り直される）。検証済みの漫画ポチリンク（confirmed / publisher_consistent）がある作品だけを、漫画ポチの catalogId をキーに載せる。
+
+```
+{"generated":"YYYY-MM-DD","site":"https://shinkan.netaful.jp/","works":{"<catalogId>":{"title":"…","work_url":"https://shinkan.netaful.jp/work/<slug>/","latest":{"volume":4,"release_date":"2026-11-12","title":"…"},"next":null}}}
+```
+`latest` は発売日が今日以前で最新の巻、`next` は今日より後で最も早い巻（どちらも無ければ null。巻数のない本は `volume` が null）。「今日」は `build.today()`（日本時間）。GitHub Pages では CORS ヘッダを付けられないため、利用側（漫画ポチ）はブラウザからではなくサーバー側で取得すること。
+
 ## ルール（要点。詳細は AGENTS.md）
 - kodansha.co.jp には一切アクセスしない（規約で自動収集禁止）。講談社の作品は「Amazon の商品情報より」と表示。
 - 出版社ページは1日1回・各URL1回、小学館は10秒、その他は3秒以上の間隔、UA `MangaShinkanPochi/1.0 (+https://shinkan.netaful.jp/)`。

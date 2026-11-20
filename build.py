@@ -345,6 +345,31 @@ def write_search_index(works):
     (DOCS / "static" / "search.json").write_text(json.dumps(idx, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
 
+def pochi_latest(works, t):
+    """漫画ポチ（検証済みリンクのある作品）の最新刊・次の巻。docs/api/pochi-latest.json の中身。"""
+    iso = t.isoformat()
+
+    def brief(b):
+        return {"volume": b.get("volume"), "release_date": b["release_date"], "title": b["title"]}
+    out = {}
+    for w in works.values():
+        if not w["pochi"]:
+            continue
+        bs = sorted(w["books"], key=lambda b: (b["release_date"], b["volume"] or 0))
+        past = [b for b in bs if b["release_date"] <= iso]
+        nxt = [b for b in bs if b["release_date"] > iso]
+        out[str(w["pochi"])] = {"title": w["title"], "work_url": f'{SITE_URL}/work/{w["slug"]}/',
+                                "latest": brief(past[-1]) if past else None,
+                                "next": brief(nxt[0]) if nxt else None}
+    return {"generated": iso, "site": SITE_URL + "/", "works": out}
+
+
+def write_pochi_latest(works, t):
+    p = DOCS / "api" / "pochi-latest.json"
+    p.parent.mkdir(parents=True, exist_ok=True)
+    p.write_text(json.dumps(pochi_latest(works, t), ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+
+
 def write_sitemap_and_robots(lastmod_path, t):
     """sitemap.xml の lastmod は「そのページのHTMLが前回から変わった日」。ハッシュを data/page_lastmod.json に持つ。"""
     try:
@@ -491,6 +516,7 @@ def build(today=None, data=None, docs=None, write_lastmod=True):
 
     build_work_index(works, page)
     write_search_index(works)
+    write_pochi_latest(works, t)
     write("404.html", fill(head("ページが見つかりません｜" + NAME, "お探しのページは見つかりませんでした。"))
           + '<h1>ページが見つかりません</h1><p><a href="/">トップへ</a></p>' + foot())
     n_sitemap = write_sitemap_and_robots(data / "page_lastmod.json" if write_lastmod else None, t)
