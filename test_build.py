@@ -111,6 +111,45 @@ class BuildSmokeTest(unittest.TestCase):
         h = (self.docs / "work" / w["slug"] / "index.html").read_text(encoding="utf-8")
         self.assertIn("<h1>", h)
 
+    def test_nav_groups_and_h1(self):
+        h = (self.docs / "index.html").read_text(encoding="utf-8")
+        self.assertIn("発売日で探す", h)
+        self.assertIn("出版社で探す", h)
+        for a in ['href="/#today"', 'href="/#week"', 'href="/#nextweek"', 'href="/work/"']:
+            self.assertIn(a, h)
+        for i in ['id="today"', 'id="week"', 'id="nextweek"']:
+            self.assertIn(i, h)
+        self.assertNotIn("今日・今週", h)
+        self.assertEqual(h.count("<h1"), 1)
+        self.assertIn("<h1>マンガ新刊の発売日一覧</h1>", h)
+
+    def test_work_index_counts(self):
+        h = (self.docs / "work/index.html").read_text(encoding="utf-8")
+        self.assertEqual(h.count('<li><a href="/work/'), len(self.works))
+        self.assertIn("作品一覧（%d作品）" % len(self.works), h)
+        w = next(iter(self.works.values()))
+        wp = (self.docs / "work" / w["slug"] / "index.html").read_text(encoding="utf-8")
+        self.assertIn('href="/work/">作品一覧', wp)
+
+    def test_kana_row(self):
+        self.assertEqual(build.kana_row("ブルーロック"), "は")
+        self.assertEqual(build.kana_row("ゴッドマザー"), "か")
+        self.assertEqual(build.kana_row("ぁ"), "あ")
+        self.assertEqual(build.kana_row("100年の恋"), "その他")
+        self.assertEqual(build.kana_row("薬屋"), "その他")
+
+    def test_search_index(self):
+        import json
+        idx = json.loads((self.docs / "static/search.json").read_text(encoding="utf-8"))
+        self.assertEqual(len(idx), len(self.works))
+        self.assertEqual({x["s"] for x in idx}, set(self.works))
+        for k in ("t", "a", "p", "s", "v", "d"):
+            self.assertIn(k, idx[0])
+        self.assertTrue((self.docs / "static/search.js").exists())
+        h = (self.docs / "index.html").read_text(encoding="utf-8")
+        self.assertIn('/static/search.js', h)
+        self.assertIn('action="/work/"', h)
+
     def test_no_credentials_in_docs(self):
         for var in ("CREATORSAPI_CREDENTIAL_SECRET", "CREATORSAPI_CREDENTIAL_ID"):
             v = os.environ.get(var)

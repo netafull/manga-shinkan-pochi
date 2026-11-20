@@ -90,12 +90,18 @@ def head(title, desc, path, root_prefix="/"):
 <meta name="description" content="{escape(desc)}">
 <link rel="icon" type="image/svg+xml" href="/static/logo.svg">
 <link rel="stylesheet" href="/static/style.css">
+<script src="/static/search.js" defer></script>
 </head>
 <body>
 <header class="site-header">
 <p class="site-title"><a href="/"><img src="/static/logo.svg" width="44" height="44" alt="">{NAME}</a></p>
 <p class="tagline">{TAGLINE}</p>
-<nav class="nav" aria-label="サイト内"><a href="/">今日・今週</a><a href="/month/{{MONTH}}/">月別</a>{{PUBNAV}}</nav>
+<nav class="nav" aria-label="サイト内">
+<div class="nav-group"><span class="nav-label">発売日で探す</span><a href="/#today">今日</a><a href="/#week">今週</a><a href="/#nextweek">来週</a><a href="/month/{{MONTH}}/">月別</a></div>
+<div class="nav-group"><span class="nav-label">出版社で探す</span>{{PUBNAV}}</div>
+<div class="nav-group"><a href="/work/">作品一覧</a></div>
+<form class="search" role="search" action="/work/" method="get"><label class="sr" for="q">作品を検索</label><input id="q" name="q" type="search" placeholder="作品名・作者で検索" autocomplete="off"><button type="submit">検索</button><ul id="sr" class="sr-list" hidden></ul></form>
+</nav>
 </header>
 <main>
 """
@@ -168,6 +174,67 @@ def write(path, html):
     p.write_text(html, encoding="utf-8")
 
 
+ROWS = [("あ", "あいうえお"), ("か", "かきくけこ"), ("さ", "さしすせそ"), ("た", "たちつてと"), ("な", "なにぬねの"),
+        ("は", "はひふへほ"), ("ま", "まみむめも"), ("や", "やゆよ"), ("ら", "らりるれろ"), ("わ", "わをん")]
+SMALL = dict(zip("ぁぃぅぇぉっゃゅょゎ", "あいうえおつやゆよわ"))
+
+
+def kana_row(title):
+    """題名の先頭文字から五十音の行を返す。読みがないので先頭が仮名のものだけ分類し、他は「その他」。"""
+    t = unicodedata.normalize("NFKC", title).strip()
+    t = t.lstrip("「『【（([〈<~〜-・!?！？ ")
+    if not t:
+        return "その他"
+    c = t[0]
+    if "ァ" <= c <= "ヶ":
+        c = chr(ord(c) - 0x60)
+    c = SMALL.get(c, c)
+    base = unicodedata.normalize("NFD", c)[0]  # 濁点・半濁点を外す
+    for label, chars in ROWS:
+        if base in chars:
+            return label
+    return "その他"
+
+
+def latest_of(w):
+    b = sorted(w["books"], key=lambda b: (b["release_date"], b["volume"] or 0))[-1]
+    v = f'{b["volume"]}巻' if b.get("volume") else "最新刊"
+    return v, b["release_date"]
+
+
+def build_work_index(works, iso, page):
+    groups = {}
+    for w in works.values():
+        groups.setdefault(kana_row(w["title"]), []).append(w)
+    order = [l for l, _c in ROWS] + ["その他"]
+    chips = '<ul class="chips">' + "".join(
+        f'<li><a href="#row-{i}">{l}行</a></li>' if l != "その他" else f'<li><a href="#row-{i}">その他</a></li>'
+        for i, l in enumerate(order) if l in groups) + "</ul>"
+    body = (f'<p class="crumbs"><a href="/">トップ</a> › 作品一覧</p><h1>作品一覧（{len(works)}作品）</h1>'
+            '<p class="intro">当サイトが把握している発売予定のある作品です。五十音順（先頭文字による簡易分類）。</p>' + chips)
+    for i, l in enumerate(order):
+        if l not in groups:
+            continue
+        ws = sorted(groups[l], key=lambda w: unicodedata.normalize("NFKC", w["title"]))
+        head_l = f"{l}行" if l != "その他" else "その他"
+        body += f'<section><h2 id="row-{i}">{head_l}<small>{len(ws)}作品</small></h2><ul class="works">'
+        for w in ws:
+            v, d = latest_of(w)
+            body += (f'<li><a href="/work/{w["slug"]}/">{escape(w["title"])}</a> '
+                     f'<span class="meta">{escape(w["author"] or "")}　{escape(w["publisher"])}　最新: {v}（{d[:4]}年{fmt_date(d)}）</span></li>')
+        body += "</ul></section>"
+    page(f"作品一覧｜{NAME}", f"マンガ新刊ポチの作品一覧（{len(works)}作品）。", "work/index.html", body)
+
+
+def write_search_index(works):
+    idx = []
+    for w in works.values():
+        v, d = latest_of(w)
+        idx.append({"t": w["title"], "a": w["author"] or "", "p": w["publisher"], "s": w["slug"], "v": v, "d": d})
+    idx.sort(key=lambda x: x["d"])
+    (DOCS / "static" / "search.json").write_text(json.dumps(idx, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+
+
 def build():
     t = today()
     books, pochi = load_all()
@@ -196,12 +263,12 @@ def build():
     this_week = span(t + datetime.timedelta(days=1), week_end)
     next_week = span(week_end + datetime.timedelta(days=1), next_end)
 
-    body = f'<div class="hero"><h1>{NAME}</h1><p class="intro">マンガ新刊の発売日一覧（{fmt_date(iso)} 時点）。小学館・秋田書店・白泉社・講談社の紙のコミックスを掲載しています。</p></div>'
-    body += '<h2 class="band">今日発売</h2>'
+    body = f'<div class="hero"><h1>マンガ新刊の発売日一覧</h1><p class="intro">{fmt_date(iso)} 時点。小学館・秋田書店・白泉社・講談社の紙のコミックスを掲載しています。</p></div>'
+    body += '<h2 class="band" id="today">今日発売</h2>'
     body += (day_section(iso, today_books, True) if today_books else '<p class="empty">今日発売の新刊は登録がありません。</p>')
-    body += '<h2 class="band">今週</h2>' + ("".join(day_section(d, bs) for d, bs in this_week) or '<p class="empty">今週の残りは登録がありません。</p>')
-    body += '<h2 class="band">来週</h2>' + ("".join(day_section(d, bs) for d, bs in next_week) or '<p class="empty">来週は登録がありません。</p>')
-    body += '<h2 class="band">月別</h2><ul class="chips">' + "".join(
+    body += '<h2 class="band" id="week">今週</h2>' + ("".join(day_section(d, bs) for d, bs in this_week) or '<p class="empty">今週の残りは登録がありません。</p>')
+    body += '<h2 class="band" id="nextweek">来週</h2>' + ("".join(day_section(d, bs) for d, bs in next_week) or '<p class="empty">来週は登録がありません。</p>')
+    body += '<h2 class="band" id="months">月別</h2><ul class="chips">' + "".join(
         f'<li><a href="/month/{m}/">{m[:4]}年{int(m[5:])}月</a></li>' for m in months) + "</ul>"
     page(f"{NAME}｜マンガ新刊の発売日一覧", f"マンガの新刊を発売日順に一覧。{fmt_date(iso)}時点。", "index.html", body)
 
@@ -246,13 +313,16 @@ def build():
         pochi_link = ""
         if w["pochi"]:
             pochi_link = f'<p class="pochi"><a class="btn" href="{MANGA_POCHI}manga/{w["pochi"]}" rel="noopener" target="_blank">漫画ポチで読む・フォローする</a></p>'
-        body = (f'<p class="crumbs"><a href="/">トップ</a> › <a href="/publisher/{PUB_SLUG[w["publisher"]]}/">{escape(w["publisher"])}</a></p>'
+        body = (f'<p class="crumbs"><a href="/">トップ</a> › <a href="/work/">作品一覧</a> › <a href="/publisher/{PUB_SLUG[w["publisher"]]}/">{escape(w["publisher"])}</a></p>'
                 f'<h1>{escape(w["title"])}</h1><p class="meta">{escape(w["author"] or "")}　{escape(w["publisher"])}</p>'
                 f'<p class="intro">{"　".join(parts)}</p>{pochi_link}'
                 '<p class="note">掲載は当サイトが把握している発売予定の範囲です（それ以前の巻は含みません）。</p>'
                 '<ul class="cards">' + "".join(card(b, True) for b in bs) + "</ul>")
         page(f"{w['title']} の新刊・発売日｜{NAME}", f"{w['title']}の既刊・新刊の発売日一覧。", f"work/{w['slug']}/index.html", body)
 
+    build_work_index(works, iso, page)
+    write_search_index(works)
+    shutil.copy(ROOT / "static" / "search.js", DOCS / "static" / "search.js")
     write("404.html", head("ページが見つかりません", "", "404.html").replace("{MONTH}", cur_month).replace("{PUBNAV}", pubnav)
           + '<h1>ページが見つかりません</h1><p><a href="/">トップへ</a></p>' + foot())
     print(f"books={len(books)} works={len(works)} dates={len(dd)} months={len(months)} pochi_matched={sum(1 for w in works.values() if w['pochi'])}")
