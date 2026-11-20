@@ -557,7 +557,7 @@ def build(today=None, data=None, docs=None, write_lastmod=True):
             parts.append(f'次の発売: {n["volume"] and str(n["volume"]) + "巻" or escape(n["title"])}（{n["release_date"][:4]}年{fmt_date(n["release_date"])}）')
         pochi_link = ""
         if w["pochi"]:
-            pochi_link = f'<p class="pochi"><a class="btn" href="{MANGA_POCHI}manga/{w["pochi"]}" rel="noopener" target="_blank">漫画ポチで読む・フォローする</a></p>'
+            pochi_link = f'<p class="pochi"><a class="btn" href="{MANGA_POCHI}manga/{w["pochi"]}" rel="noopener" target="_blank">漫画ポチでフォローする</a></p>'
         wt = work_title(w)
         pub_path = f'/publisher/{PUB_SLUG[w["publisher"]]}/'
         crumb_html, _ = crumbs([("トップ", "/"), ("作品一覧", "/work/"), (w["publisher"], pub_path)])
