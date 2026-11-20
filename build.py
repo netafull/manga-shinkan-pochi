@@ -385,6 +385,47 @@ def write_pochi_latest(works, t):
     p.write_text(json.dumps(pochi_latest(works, t), ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
 
+FEED_MAX = 20
+
+
+def feed_items(books, t):
+    """ポチフル用。明日〜今日発売＋3日前までに発売された本を新しい順に最大20件。Amazon の画像・リンクは既存データのみ。"""
+    lo = (t - datetime.timedelta(days=3)).isoformat()
+    hi = (t + datetime.timedelta(days=1)).isoformat()
+    iso = t.isoformat()
+    tomorrow = hi
+    picked = sorted((b for b in books if lo <= b["release_date"] <= hi),
+                    key=lambda b: (b["release_date"], b["publisher"], b["series_title"], b["volume"] or 0),
+                    reverse=True)
+    items = []
+    for b in picked[:FEED_MAX]:
+        d = b["release_date"]
+        if d == iso:
+            note = "今日発売"
+        elif d == tomorrow:
+            note = "明日発売"
+        else:
+            dd = datetime.date.fromisoformat(d)
+            note = f"{dd.month}月{dd.day}日発売"
+        title = f'{b["series_title"]} {b["volume"]}巻' if b.get("volume") else b["title"]
+        a = b.get("amazon") or {}
+        it = {"id": "shinkan:" + (b.get("isbn13") or b["id"]), "title": title,
+              "url": f'{SITE_URL}/work/{b["work_slug"]}/', "date": d, "note": note}
+        if a.get("image") and a.get("url"):
+            it["image"] = a["image"]
+            it["image_link"] = a["url"]
+        it.update({"source": "shinkan", "source_name": NAME, "icon": None})
+        items.append(it)
+    return items
+
+
+def write_feed(books, t):
+    now = datetime.datetime.now(common.JST).replace(microsecond=0).isoformat()
+    feed = {"version": 1, "site": "shinkan", "site_name": NAME, "site_url": SITE_URL + "/",
+            "generated": now, "items": feed_items(books, t)}
+    (DOCS / "feed.json").write_text(json.dumps(feed, ensure_ascii=False, indent=1), encoding="utf-8")
+
+
 def write_sitemap_and_robots(lastmod_path, t):
     """sitemap.xml の lastmod は「そのページのHTMLが前回から変わった日」。ハッシュを data/page_lastmod.json に持つ。"""
     try:
@@ -539,6 +580,7 @@ def build(today=None, data=None, docs=None, write_lastmod=True):
     build_work_index(works, page)
     write_search_index(works)
     write_pochi_latest(works, t)
+    write_feed(books, t)
     write("404.html", fill(head("ページが見つかりません｜" + NAME, "お探しのページは見つかりませんでした。"))
           + '<h1>ページが見つかりません</h1><p><a href="/">トップへ</a></p>' + foot())
     n_sitemap = write_sitemap_and_robots(data / "page_lastmod.json" if write_lastmod else None, t)

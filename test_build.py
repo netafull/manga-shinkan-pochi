@@ -127,6 +127,13 @@ class BuildSmokeTest(unittest.TestCase):
         self.assertIn("Amazon の商品情報より", h)
         self.assertNotIn("kodansha.co.jp", h)
 
+    def test_feed_file_built(self):
+        import json
+        f = json.loads((self.docs / "feed.json").read_text(encoding="utf-8"))
+        self.assertEqual(f["version"], 1)
+        self.assertEqual(f["site"], "shinkan")
+        self.assertLessEqual(len(f["items"]), 20)
+
     def test_pochi_latest_file_compact(self):
         import json
         h = (self.docs / "api" / "pochi-latest.json").read_text(encoding="utf-8")
@@ -344,6 +351,30 @@ class PochiVerifyTest(unittest.TestCase):
               {"catalogId": "9", "site": "マガポケ", "authors": ["山田太郎"]}]
         self.assertEqual(pv.pick_candidate("山田太郎", "講談社", cs)[0]["catalogId"], "9")
         self.assertEqual(pv.pick_candidate("誰か", "講談社", cs[:2])[0]["catalogId"], "7")
+
+
+class FeedTest(unittest.TestCase):
+    def test_feed_file_and_window(self):
+        t = datetime.date(2026, 11, 20)
+        bk = lambda d, v=1, **k: dict({"release_date": d, "series_title": "作品", "title": "作品", "volume": v,
+                                       "publisher": "小学館", "work_slug": "abc", "isbn13": "978" + d.replace("-", "") + str(v),
+                                       "amazon": None}, **k)
+        books = [bk("2026-11-16"), bk("2026-11-17"), bk("2026-11-20"), bk("2026-11-21"), bk("2026-11-22")]
+        books[2]["amazon"] = {"image": "https://m.media-amazon.com/images/I/x.jpg", "url": "https://www.amazon.co.jp/dp/x?tag=t"}
+        items = build.feed_items(books, t)
+        self.assertEqual([i["date"] for i in items], ["2026-11-21", "2026-11-20", "2026-11-17"])
+        self.assertEqual([i["note"] for i in items], ["明日発売", "今日発売", "11月17日発売"])
+        self.assertEqual(items[0]["title"], "作品 1巻")
+        self.assertEqual(items[0]["url"], "https://shinkan.netaful.jp/work/abc/")
+        self.assertNotIn("image", items[0])
+        self.assertEqual(items[1]["image_link"], "https://www.amazon.co.jp/dp/x?tag=t")
+        self.assertEqual(items[0]["source"], "shinkan")
+
+    def test_max_20(self):
+        t = datetime.date(2026, 11, 20)
+        books = [dict({"release_date": "2026-11-20", "series_title": f"s{i}", "title": "t", "volume": 1,
+                       "publisher": "小学館", "work_slug": "w", "isbn13": str(i), "amazon": None}) for i in range(30)]
+        self.assertEqual(len(build.feed_items(books, t)), 20)
 
 
 class PochiLatestTest(unittest.TestCase):
