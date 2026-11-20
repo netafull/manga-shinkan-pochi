@@ -124,6 +124,20 @@ def jsonld(obj):
     return '<script type="application/ld+json">%s</script>\n' % body
 
 
+def crumbs(items):
+    """items=[(名前, パス or None), ...]。見えるパンくずHTMLと BreadcrumbList の dict を返す。
+    JSON-LD側は絶対URL、最後（現在ページ）は item なし。"""
+    html = " › ".join(f'<a href="{p}">{escape(n)}</a>' if p else escape(n) for n, p in items)
+    lst = []
+    for i, (n, p) in enumerate(items, 1):
+        e = {"@type": "ListItem", "position": i, "name": n}
+        if p and i < len(items):
+            e["item"] = SITE_URL + p
+        lst.append(e)
+    return (f'<p class="crumbs">{html}</p>',
+            {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": lst})
+
+
 def canonical_of(path):
     """書き出しパス(例 date/2026-11-20/index.html)から正規URLを作る。"""
     if path.endswith("index.html"):
@@ -318,7 +332,8 @@ def build_work_index(works, page):
 
     chips = '<ul class="chips">' + "".join(
         f'<li><a href="#row-{i}">{label_of(l)}</a></li>' for i, l in enumerate(order) if l in groups) + "</ul>"
-    body = (f'<p class="crumbs"><a href="/">トップ</a> › 作品一覧</p><h1>マンガ・コミック作品一覧（{len(works)}作品）</h1>'
+    crumb_html, crumb_ld = crumbs([("トップ", "/"), ("作品一覧", None)])
+    body = (crumb_html + f'<h1>マンガ・コミック作品一覧（{len(works)}作品）</h1>'
             '<p class="intro">当サイトが把握している発売予定のある作品です。先頭の文字による簡易的な五十音順で、'
             '漢字ではじまる作品は読みが分からないため、別にまとめて題名の文字コード順に並べています。</p>' + chips)
     for i, l in enumerate(order):
@@ -333,7 +348,7 @@ def build_work_index(works, page):
         body += "</ul></section>"
     page(f"マンガ・コミック作品一覧（五十音順）｜{NAME}",
          f"{NAME}が発売予定を把握しているマンガ・コミック{len(works)}作品の一覧です。作品名から最新刊の発売日を確認できます。",
-         "work/index.html", body)
+         "work/index.html", body, jsonld(crumb_ld))
 
 
 def write_search_index(works):
@@ -449,11 +464,12 @@ def build(today=None, data=None, docs=None, write_lastmod=True):
     for d, bs in dd.items():
         lab = date_label(d, t)
         wd = WEEKDAYS[datetime.date.fromisoformat(d).weekday()]
-        crumbs = f'<p class="crumbs"><a href="/">トップ</a> › {fmt_date(d)}</p>'
+        crumb_html, crumb_ld = crumbs([("トップ", "/"), (f"{d[:4]}年{int(d[5:7])}月", f"/month/{d[:7]}/"), (fmt_date(d), None)])
         page(f"{lab}発売のマンガ・コミック新刊｜{NAME}",
              f"{lab}（{wd}）発売のマンガ・コミック新刊{len(bs)}冊の一覧です。作品名・巻数・出版社を確認できます。",
              f"date/{d}/index.html",
-             crumbs + f"<h1>{lab}発売のマンガ・コミック新刊</h1><ul class=\"cards\">" + "".join(card(b) for b in bs) + "</ul>")
+             crumb_html + f"<h1>{lab}発売のマンガ・コミック新刊</h1><ul class=\"cards\">" + "".join(card(b) for b in bs) + "</ul>",
+             jsonld(crumb_ld))
 
     for m in months:
         mb = [b for b in books if b["release_date"].startswith(m)]
@@ -462,11 +478,12 @@ def build(today=None, data=None, docs=None, write_lastmod=True):
         nav = '<ul class="chips">' + "".join(
             '<li><a href="/month/%s/"%s>%s年%d月</a></li>' % (x, cur if x == m else "", x[:4], int(x[5:])) for x in months) + "</ul>"
         ml = f"{m[:4]}年{int(m[5:])}月"
-        body = (f'<p class="crumbs"><a href="/">トップ</a> › {ml}</p><h1>{ml}発売のコミック新刊（マンガ）一覧</h1>'
+        crumb_html, crumb_ld = crumbs([("トップ", "/"), (ml, None)])
+        body = (crumb_html + f'<h1>{ml}発売のコミック新刊（マンガ）一覧</h1>'
                 f'<p class="intro">{len(mb)}冊</p>{nav}')
         body += "".join(day_section(d, bs) for d, bs in sorted(md.items()))
         page(f"{ml}発売のコミック新刊（マンガ）一覧｜{NAME}",
-             f"{ml}に発売されるコミック新刊（マンガ）{len(mb)}冊を発売日順にまとめた一覧です。", f"month/{m}/index.html", body)
+             f"{ml}に発売されるコミック新刊（マンガ）{len(mb)}冊を発売日順にまとめた一覧です。", f"month/{m}/index.html", body, jsonld(crumb_ld))
 
     for slug, (name, url) in PUBLISHERS.items():
         pb = [b for b in books if b["publisher"] == name]
@@ -476,11 +493,12 @@ def build(today=None, data=None, docs=None, write_lastmod=True):
         else:
             src = "講談社の作品はAmazonの商品情報（Amazon の商品情報より）から拾っています。網羅はしていません。"
         upcoming = [(d, bs) for d, bs in sorted(pd.items()) if d >= iso]
-        body = (f'<p class="crumbs"><a href="/">トップ</a> › {escape(name)}</p><h1>{escape(name)}のコミック新刊 発売日一覧</h1>'
+        crumb_html, crumb_ld = crumbs([("トップ", "/"), (name, None)])
+        body = (crumb_html + f'<h1>{escape(name)}のコミック新刊 発売日一覧</h1>'
                 f'<p class="intro">{src}</p>')
         body += "".join(day_section(d, bs) for d, bs in upcoming) or '<p class="empty">登録がありません。</p>'
         page(f"{name}のコミック新刊 発売日一覧｜{NAME}",
-             f"{name}のコミック新刊（紙のコミックス）を発売日順にまとめた一覧です。", f"publisher/{slug}/index.html", body)
+             f"{name}のコミック新刊（紙のコミックス）を発売日順にまとめた一覧です。", f"publisher/{slug}/index.html", body, jsonld(crumb_ld))
 
     for w in works.values():
         bs = sorted(w["books"], key=lambda b: (b["release_date"], b["volume"] or 0))
@@ -497,7 +515,10 @@ def build(today=None, data=None, docs=None, write_lastmod=True):
         if w["pochi"]:
             pochi_link = f'<p class="pochi"><a class="btn" href="{MANGA_POCHI}manga/{w["pochi"]}" rel="noopener" target="_blank">漫画ポチで読む・フォローする</a></p>'
         wt = work_title(w)
-        body = (f'<p class="crumbs"><a href="/">トップ</a> › <a href="/work/">作品一覧</a> › <a href="/publisher/{PUB_SLUG[w["publisher"]]}/">{escape(w["publisher"])}</a></p>'
+        pub_path = f'/publisher/{PUB_SLUG[w["publisher"]]}/'
+        crumb_html, _ = crumbs([("トップ", "/"), ("作品一覧", "/work/"), (w["publisher"], pub_path)])
+        _, crumb_ld = crumbs([("トップ", "/"), ("作品一覧", "/work/"), (w["publisher"], pub_path), (wt, None)])
+        body = (crumb_html +
                 f'<h1>{escape(wt)}</h1><p class="meta">{escape(w["author"] or "")}　{escape(w["publisher"])}</p>'
                 f'<p class="intro">{"　".join(parts)}</p>{pochi_link}'
                 '<p class="note">掲載は当サイトが把握している発売予定の範囲です（それ以前の巻は含みません）。</p>'
@@ -512,7 +533,8 @@ def build(today=None, data=None, docs=None, write_lastmod=True):
                 book["isbn"] = b["isbn13"]
             items.append({"@type": "ListItem", "position": i, "item": book})
         page(f"{wt}｜{NAME}", desc, f"work/{w['slug']}/index.html", body,
-             jsonld({"@context": "https://schema.org", "@type": "ItemList", "name": wt, "itemListElement": items}))
+             jsonld({"@context": "https://schema.org", "@type": "ItemList", "name": wt, "itemListElement": items})
+             + jsonld(crumb_ld))
 
     build_work_index(works, page)
     write_search_index(works)

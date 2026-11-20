@@ -83,6 +83,17 @@ class CacheParseTest(unittest.TestCase):
         self.assertNotIn("電子版のみ", {b["label"] for b in r})
 
 
+class CrumbsHelperTest(unittest.TestCase):
+    def test_crumbs(self):
+        html, ld = build.crumbs([("トップ", "/"), ("A&B", "/x/"), ("現在", None)])
+        self.assertEqual(html, '<p class="crumbs"><a href="/">トップ</a> › <a href="/x/">A&amp;B</a> › 現在</p>')
+        els = ld["itemListElement"]
+        self.assertEqual(ld["@type"], "BreadcrumbList")
+        self.assertEqual(els[0]["item"], build.SITE_URL + "/")
+        self.assertEqual(els[1]["item"], build.SITE_URL + "/x/")
+        self.assertEqual(els[2], {"@type": "ListItem", "position": 3, "name": "現在"})
+
+
 class BuildSmokeTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -245,6 +256,38 @@ class BuildSmokeTest(unittest.TestCase):
             os.environ.pop("GA4_ID", None)
         self.assertIn("googletagmanager.com/gtag/js?id=G-TEST123456", h2)
         self.assertIn("gtag('config', 'G-TEST123456')", h2)
+
+    def _breadcrumb_ld(self, rel):
+        import json
+        import re
+        h = (self.docs / rel).read_text(encoding="utf-8")
+        for m in re.finditer(r'<script type="application/ld\+json">(.*?)</script>', h):
+            o = json.loads(m.group(1))
+            if o.get("@type") == "BreadcrumbList":
+                return h, o
+        self.fail("BreadcrumbList がない: " + rel)
+
+    def test_date_page_breadcrumb_has_month(self):
+        d = self.books[0]["release_date"]
+        h, o = self._breadcrumb_ld(f"date/{d}/index.html")
+        self.assertIn(f'<a href="/month/{d[:7]}/">', h)
+        self.assertIn('<p class="crumbs"><a href="/">トップ</a> › <a href="/month/', h)
+        els = o["itemListElement"]
+        self.assertEqual([e["position"] for e in els], [1, 2, 3])
+        self.assertEqual(els[1]["item"], f"{build.SITE_URL}/month/{d[:7]}/")
+        self.assertNotIn("item", els[2])
+
+    def test_work_page_keeps_itemlist_and_breadcrumb(self):
+        w = next(iter(self.works.values()))
+        h, o = self._breadcrumb_ld(f"work/{w['slug']}/index.html")
+        self.assertIn('"@type":"ItemList"', h)
+        self.assertEqual([e["name"] for e in o["itemListElement"]][:3], ["トップ", "作品一覧", w["publisher"]])
+        self.assertEqual(len(o["itemListElement"]), 4)
+
+    def test_other_pages_have_breadcrumb_and_top_does_not(self):
+        for rel in ("work/index.html", "publisher/shogakukan/index.html", "month/2026-12/index.html"):
+            self._breadcrumb_ld(rel)
+        self.assertNotIn("BreadcrumbList", (self.docs / "index.html").read_text(encoding="utf-8"))
 
     def test_no_credentials_in_docs(self):
         for var in ("CREATORSAPI_CREDENTIAL_SECRET", "CREATORSAPI_CREDENTIAL_ID"):
