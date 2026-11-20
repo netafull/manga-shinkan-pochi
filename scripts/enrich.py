@@ -20,6 +20,7 @@ import parse_pub as pp  # noqa: E402
 
 STORE = ROOT / "data" / "amazon_items.json"
 KODANSHA = ROOT / "data" / "books_kodansha.json"
+SHUEISHA = ROOT / "data" / "books_shueisha.json"
 WINDOW_BEFORE, WINDOW_AFTER = 7, 30
 
 
@@ -48,8 +49,9 @@ def ingest(store, resp, today_iso):
     return out
 
 
-def kodansha_book(s):
-    """slim の1件 → books_kodansha.json のレコード。ISBNが取れないものは None。"""
+def kodansha_book(s, publisher="講談社"):
+    """slim の1件 → books_kodansha.json / books_shueisha.json のレコード。ISBNが取れないものは None。
+    ISBN（ean）が無い電子書籍だけの版はここで落ちる。"""
     if not s["ean"] or not isbnlib.valid_isbn13(s["ean"]) or not s["published"]:
         return None
     key, vol, display, flags = pp.parse_title(s["title"] or "")
@@ -68,18 +70,18 @@ def kodansha_book(s):
         "id": s["ean"], "isbn13": s["ean"],
         "isbn10": s["asin"] if len(s["asin"]) == 10 else isbnlib.isbn13_to_isbn10(s["ean"]),
         "title": s["title"], "volume": vol, "series_key": key, "series_title": display,
-        "author": " / ".join(dict.fromkeys(a for a in s["authors"] if a and a != "講談社")),
-        "publisher": "講談社", "label": label,
+        "author": " / ".join(dict.fromkeys(a for a in s["authors"] if a and a != publisher)),
+        "publisher": publisher, "label": label,
         "release_date": s["published"], "source_url": None, "editions": flags,
         "source_note": "Amazon の商品情報より",
     }
 
 
-def merge_kodansha(prev, found_slims):
+def merge_kodansha(prev, found_slims, publisher="講談社"):
     """前回分に今回見つかった分を足す（ISBNで上書き）。スキャンが空でも前回分は消さない。"""
     by = {b["isbn13"]: b for b in prev}
     for s in found_slims:
-        b = kodansha_book(s)
+        b = kodansha_book(s, publisher)
         if b:
             by[b["isbn13"]] = b
     return sorted(by.values(), key=lambda b: (b["release_date"], b["title"]))

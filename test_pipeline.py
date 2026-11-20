@@ -19,6 +19,7 @@ import enrich
 import parse_pub as pp
 import pubfetch
 import update
+import scan_kodansha
 
 TODAY = datetime.date(2026, 11, 20)
 FAKE_ENV = {"CREATORSAPI_CREDENTIAL_ID": "dummy-id-for-test", "CREATORSAPI_CREDENTIAL_SECRET": "dummy-secret-for-test",
@@ -61,8 +62,8 @@ class AmazonBase(unittest.TestCase):
 
 
 class CapTest(AmazonBase):
-    def test_default_cap_is_200(self):
-        self.assertEqual(amazon.DAILY_CAP, 200)  # 共有枠。オーナーの確認なしに上げない
+    def test_default_cap_is_260(self):
+        self.assertEqual(amazon.DAILY_CAP, 260)  # 共有枠。2026-11-21 にオーナーが200→260を承認。確認なしに上げない
 
     def test_cap_checked_before_every_call(self):
         self.mock_http()
@@ -241,3 +242,86 @@ class TodayTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+def raw_item(asin, title, manufacturer, pub, ean=None):
+    """searchItems 応答の商品1件（slim が読む形）。"""
+    return {"asin": asin, "detailPageURL": "https://example.com/" + asin,
+            "itemInfo": {"title": {"displayValue": title},
+                         "byLineInfo": {"manufacturer": {"displayValue": manufacturer}, "contributors": [{"name": "著者"}]},
+                         "contentInfo": {"publicationDate": {"displayValue": pub}},
+                         "externalIds": {"eans": {"displayValues": [ean]}} if ean else {}}}
+
+
+class ShueishaScanTest(AmazonBase):
+    def scan(self, items, max_calls=60):
+        # 1ページ目に固定の商品を返し、以後は空。呼び出しごとに本文を記録する
+        def f(url, body):
+            self.sent.append(body)
+            page = body.get("itemPage", 1)
+            return 200, {"searchResult": {"items": items if page == 1 else []}}
+        amazon._http_post = f
+        store, found = {"items": {}, "invalid": []}, {}
+        n = scan_kodansha.scan_shueisha(store, TODAY, max_calls, found, log=lambda *_: None)
+        return n, store, found
+
+    def test_manufacturer_and_date_window(self):
+        items = [raw_item("4088800001", "集英作品 1 (ジャンプコミックス)", "集英社", "2026-11-25", "9784088800004"),
+                 raw_item("4065000009", "講談作品 1", "講談社", "2026-11-25", "9784065000001"),
+                 raw_item("4088800002", "範囲外(未来)", "集英社", "2027-03-01", "9784088800028"),
+                 raw_item("4088800003", "範囲外(過去)", "集英社", "2026-11-01", "9784088800035"),
+                 raw_item("4088800004", "窓の端(今日-7)", "集英社", "2026-11-13", "9784088800042")]
+        n, store, found = self.scan(items)
+        self.assertEqual(sorted(found), ["4088800001", "4088800004"])
+        self.assertEqual(sorted(store["items"]), ["4088800001", "4088800004"])  # 他社・範囲外は保存しない
+        self.assertEqual(n, len(self.sent))
+
+    def test_stops_paging_when_older_than_window_and_respects_budget(self):
+        old = [raw_item("4088800009", "古い", "集英社", "2026-10-01", "9784088800097")]
+        n, _, found = self.scan(old)
+        self.assertEqual(found, {})
+        self.assertEqual(n, len(scan_kodansha.SHUEISHA_IMPRINTS))  # キーワードごとに1ページで打ち切り
+        import shutil
+        shutil.rmtree(amazon.CACHE, ignore_errors=True)  # 応答キャッシュ命中は呼び出しに数えないため消す
+        amazon.reset_run()
+        n2, _, _ = self.scan(old, max_calls=3)
+        self.assertEqual(n2, 3)
+
+    def test_shueisha_book_record(self):
+        s = amazon.slim(raw_item("4088800001", "集英作品(3) (ジャンプコミックス)", "集英社", "2026-11-25", "9784088800004"), "2026-11-20")
+        b = enrich.kodansha_book(s, "集英社")
+        self.assertEqual((b["publisher"], b["volume"], b["label"]), ("集英社", 3, "ジャンプコミックス"))
+        self.assertEqual(b["source_note"], "Amazon の商品情報より")
+        self.assertIsNone(enrich.kodansha_book(amazon.slim(raw_item("B0XXXXXXXX", "電子のみ 1", "集英社", "2026-11-25")), "集英社"))
+
+
+class BudgetSplitTest(unittest.TestCase):
+    def test_step_budgets_fit_daily_cap(self):
+        total = (update.SCAN_MAX_CALLS + update.SCAN_SHUEISHA_MAX_CALLS + update.ENRICH_MAX_CALLS
+                 + update.REFRESH_MAX_CALLS)
+        self.assertEqual(update.SCAN_SHUEISHA_MAX_CALLS, 60)
+        self.assertLessEqual(total, amazon.DAILY_CAP)
+
+
+class ShueishaUpdateTest(UpdateRunTest):
+    def test_shueisha_scan_runs_separately_and_is_logged(self):
+        self.mock_http(200, {"itemsResult": {"items": []}, "searchResult": {"items": [
+            raw_item("4088800001", "集英作品 1 (ジャンプコミックス)", "集英社", "2026-11-25", "9784088800004")]}})
+        r, out = self.go()
+        saved = json.loads((self.data / "books_shueisha.json").read_text(encoding="utf-8"))
+        self.assertEqual([b["publisher"] for b in saved], ["集英社"])
+        self.assertEqual(r["shueisha"], 1)
+        self.assertGreater(r["calls"]["shueisha"], 0)
+        self.assertLessEqual(r["calls"]["shueisha"], update.SCAN_SHUEISHA_MAX_CALLS)
+        self.assertIn("shueisha=", out)
+
+    def test_shueisha_empty_keeps_previous(self):
+        prev = [{"id": "9784088800004", "isbn13": "9784088800004", "isbn10": "4088800001", "title": "集英作品 1",
+                 "volume": 1, "series_key": "集英作品", "series_title": "集英作品", "author": "", "publisher": "集英社",
+                 "label": "", "release_date": "2026-11-27", "source_url": None, "editions": []}]
+        common.dump_records(self.data / "books_shueisha.json", prev)
+        self.mock_http(200, {"itemsResult": {"items": []}, "searchResult": {"items": []}})
+        r, out = self.go()
+        kept = json.loads((self.data / "books_shueisha.json").read_text(encoding="utf-8"))
+        self.assertEqual([b["isbn13"] for b in kept], ["9784088800004"])
+        self.assertIn("集英社の新着が0件", out)

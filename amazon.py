@@ -32,7 +32,7 @@ SEARCH_URL = "https://creatorsapi.amazon/catalog/v1/searchItems"
 GET_ITEMS_URL = "https://creatorsapi.amazon/catalog/v1/getItems"
 SCOPE = "creatorsapi::default"
 MARKETPLACE = "www.amazon.co.jp"
-DAILY_CAP = 200   # 1日の上限。共有枠のため、オーナーの確認なしに上げない
+DAILY_CAP = 260   # 1日の上限。共有枠。オーナーが2026-11-21に200→260を承認（集英社スキャン分）。今後もオーナーの確認なしに上げない
 GAP = 1.1         # 呼び出し間隔(秒)
 KEEP_DAYS = 30    # api_usage.json に残す日数
 

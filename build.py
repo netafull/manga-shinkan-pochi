@@ -25,7 +25,7 @@ CNAME = "shinkan.netaful.jp"
 NAME = "マンガ新刊ポチ"
 TAGLINE = "コミック新刊の発売日を、まとめてチェック"
 DESCRIPTION = ("コミック新刊（マンガの新刊）の発売日を発売日順にまとめたサイトです。"
-               "小学館・秋田書店・白泉社・講談社の紙のコミックスについて、今日・今週・来週の発売をひと目で確認できます。")
+               "小学館・秋田書店・白泉社・講談社・集英社の紙のコミックスについて、今日・今週・来週の発売をひと目で確認できます。")
 MANGA_POCHI = "https://manga.netaful.jp/"
 WEEKDAYS = "月火水木金土日"
 PUBLISHERS = {  # slug -> (表示名, 公式ページ)
@@ -33,7 +33,9 @@ PUBLISHERS = {  # slug -> (表示名, 公式ページ)
     "akitashoten": ("秋田書店", "https://www.akitashoten.co.jp/books/upcoming"),
     "hakusensha": ("白泉社", "https://www.hakusensha.co.jp/shinkan/"),
     "kodansha": ("講談社", None),
+    "shueisha": ("集英社", None),
 }
+AMAZON_SOURCED = ("講談社", "集英社")  # 公式サイトに触れず、Amazonの商品情報だけから作る出版社
 PUB_SLUG = {v[0]: k for k, v in PUBLISHERS.items()}
 
 # フッターの関連サイト（ポチシリーズ。netafull-pochi-rotator/pochi.js の一覧から自サイトを除いたもの）
@@ -68,12 +70,13 @@ def work_slug(series_key, publisher):
 def load_all(data=None):
     d = data or DATA
     books = json.loads((d / "books.json").read_text(encoding="utf-8"))
-    kp = d / "books_kodansha.json"
     seen = {b["isbn13"] for b in books if b["isbn13"]}
-    if kp.exists():
-        for b in json.loads(kp.read_text(encoding="utf-8")):
-            if b["isbn13"] not in seen:
-                books.append(b)
+    for kp in (d / "books_kodansha.json", d / "books_shueisha.json"):
+        if kp.exists():
+            for b in json.loads(kp.read_text(encoding="utf-8")):
+                if b["isbn13"] not in seen:
+                    books.append(b)
+                    seen.add(b["isbn13"])
     sp = d / "amazon_items.json"
     store = json.loads(sp.read_text(encoding="utf-8")) if sp.exists() else {"items": {}}
     pochi = {}
@@ -234,7 +237,7 @@ def card(b, show_date=False):
     date = f'<span class="rd">{fmt_date(b["release_date"])}</span>' if show_date else ""
     btn = (f'<a class="btn" href="{escape(a["url"])}" rel="sponsored nofollow noopener" target="_blank">Amazonで見る</a>'
            if a.get("url") else "")
-    if b["publisher"] == "講談社":
+    if b["publisher"] in AMAZON_SOURCED:
         src = "Amazon の商品情報より"
     else:
         src = f'出典: <a href="{escape(b["source_url"])}" rel="noopener" target="_blank">{escape(b["publisher"])}公式</a>'
@@ -491,7 +494,7 @@ def build(today=None, data=None, docs=None, write_lastmod=True):
     next_week = span(week_end + datetime.timedelta(days=1), next_end)
 
     body = (f'<div class="hero"><h1>マンガ・コミック新刊の発売日一覧</h1><p class="intro">{fmt_date(iso)} 時点。'
-            '小学館・秋田書店・白泉社・講談社の紙のコミックスを掲載しています。</p></div>')
+            '小学館・秋田書店・白泉社・講談社・集英社の紙のコミックスを掲載しています。</p></div>')
     body += '<h2 class="band" id="today">今日発売</h2>'
     body += (day_section(iso, today_books, True) if today_books else '<p class="empty">今日発売の新刊は登録がありません。</p>')
     body += '<h2 class="band" id="week">今週</h2>' + ("".join(day_section(d, bs) for d, bs in this_week) or '<p class="empty">今週の残りは登録がありません。</p>')
@@ -532,7 +535,7 @@ def build(today=None, data=None, docs=None, write_lastmod=True):
         if url:
             src = f'公式の発売予定: <a href="{url}" rel="noopener" target="_blank">{escape(name)}</a>'
         else:
-            src = "講談社の作品はAmazonの商品情報（Amazon の商品情報より）から拾っています。網羅はしていません。"
+            src = f"{escape(name)}の作品はAmazonの商品情報（Amazon の商品情報より）から拾っています。網羅はしていません。"
         upcoming = [(d, bs) for d, bs in sorted(pd.items()) if d >= iso]
         crumb_html, crumb_ld = crumbs([("トップ", "/"), (name, None)])
         body = (crumb_html + f'<h1>{escape(name)}のコミック新刊 発売日一覧</h1>'
