@@ -14,6 +14,7 @@ import unicodedata
 from html import escape
 
 import common
+import pochi_verify
 from common import today  # noqa: F401  (build.today() として使われる)
 
 ROOT = common.ROOT
@@ -76,7 +77,7 @@ def load_all(data=None):
     sp = d / "amazon_items.json"
     store = json.loads(sp.read_text(encoding="utf-8")) if sp.exists() else {"items": {}}
     pochi = {}
-    pp = d / "manga_pochi_titles.json"
+    pp = d / "manga_pochi_candidates.json"  # scripts/verify_pochi_links.py が作る（題名→候補。採否は group_works で裏取り）
     if pp.exists():
         pochi = json.loads(pp.read_text(encoding="utf-8"))
     for b in books:
@@ -96,9 +97,11 @@ def group_works(books, pochi):
         w["books"].append(b)
         b["work_slug"] = slug
     for w in works.values():
-        hit = pochi.get(norm_title(w["title"]))
-        if hit:
-            w["pochi"] = hit
+        cands = pochi.get(norm_title(w["title"]))
+        if cands:
+            pick = pochi_verify.pick_candidate(w["author"], w["publisher"], cands)[0]
+            if pick:
+                w["pochi"] = pick["catalogId"]
     return works
 
 

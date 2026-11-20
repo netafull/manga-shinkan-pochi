@@ -14,7 +14,8 @@
 - `scripts/scan_kodansha.py` Amazon新着順検索で講談社コミックスを拾う（講談社サイトにはアクセスしない）。
 - `scripts/enrich.py` getItems(ISBN-10)で画像・価格・URLを補う／価格を更新する。`data/amazon_items.json` に集約。
 - `scripts/update.py` 毎日の更新のエントリ（上の3つ＋ビルド）。
-- `scripts/make_pochi_titles.py` 漫画ポチの題名→catalogId 表 `data/manga_pochi_titles.json`（manga-rss-reader は読み取りのみ。手元でだけ実行。通常の更新では触らない）。
+- `scripts/make_pochi_titles.py` 漫画ポチの題名→catalogId 表 `data/manga_pochi_titles.json`（旧・題名のみの照合。build.py は使わない）。
+- `scripts/verify_pochi_links.py` 漫画ポチの題名→候補（catalogId・サイト・著者）を `data/manga_pochi_candidates.json` に作る。手元でだけ実行（ネットワークなし、manga-rss-reader は読み取りのみ）。採否は build.py が build 時に `pochi_verify.pick_candidate`（著者の重なり・出版社の整合）で決めるので、新しい作品もリンクされる。判定の記録は `data/manga_pochi_verify_report.json`。
 - `build.py` → `docs/`（`/`, `/date/YYYY-MM-DD/`, `/month/YYYY-MM/`, `/publisher/<slug>/`, `/work/`, `/work/<slug>/`, `404.html`, `sitemap.xml`, `robots.txt`, `CNAME`）。
 - `make_icons.py` ロゴ・favicon・apple-touch-icon・OGP を `static/assets/` に作る（pochi-branding の関数を流用。専用色 `BRAND_COLOR` = #5E35B1）。ヘッドレスChromeとネット接続（Googleフォント）が必要。画像は作り直さない限り `static/assets/` のものを `docs/` にコピーする。
 - `test_build.py`（パーサ・サイト生成）、`test_pipeline.py`（上限・429・出版社の失敗・資格情報の扱い。すべてモックでネットワークなし）。
@@ -27,7 +28,8 @@
 | `amazon_items.json` | Amazon の応答から抜いた項目だけ（画像URL・価格・リンク・取得日 `updated`）。生応答は持たない |
 | `api_usage.json` | 日付ごとのAmazon呼び出し回数（上限の判定に使う。直近30日） |
 | `page_lastmod.json` | ページごとのHTMLハッシュと最終変更日（sitemap の lastmod 用） |
-| `manga_pochi_titles.json` | 漫画ポチの題名→catalogId |
+| `manga_pochi_candidates.json` | 漫画ポチの題名→候補（採否は build 時に裏取り） |
+| `manga_pochi_verify_report.json` | 上の判定の記録（confirmed / publisher_consistent / mismatch） |
 
 `cache/`（生HTML・生API応答）と `logs/`（呼び出しごとのログ）は gitignore。
 
@@ -77,6 +79,6 @@ python3 scripts/update.py
 - 白泉社のISBNは詳細ページが必要で、今日〜30日先の未取得分だけ取得（1日最大40ページ）。それ以外は仮ID(`haku:ID`)でAmazonリンクなし。分かったISBNは `books.json` に残して再取得しない。
 - 秋田書店は電子版を除外。月から年を推定（今月以降は今年、それより前の月は来年）。
 - 愛蔵版・新装版・完全版などは別作品として扱う（series_key統一は未対応）。
-- 漫画ポチ照合は題名の完全一致(NFKC・空白除去)のみ。同名別作品の取り違えが起こり得る。リンクは `https://manga.netaful.jp/manga/{catalogId}`。
+- 漫画ポチ照合は題名一致＋著者の重なり／出版社の整合（`verify_pochi_links.py`）。著者の証拠が漫画ポチ側に無い作品は出版社の整合だけで通すため、同じ出版社内の同名別作品は防げない。リンクは `https://manga.netaful.jp/manga/{catalogId}`。
 - 出版社データは過去分も残す（作品ページの履歴のため）。データ量は日々増えるので、将来古いものの整理が必要になる。
 - sitemap の lastmod は「ページのHTMLが前回から変わった日」（`data/page_lastmod.json`）。トップページは毎日変わる。
