@@ -250,3 +250,48 @@ class BuildSmokeTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class PochiVerifyTest(unittest.TestCase):
+    def c(self, author, pub, pa, site):
+        import pochi_verify as pv
+        return pv.classify(author, pub, pa, site)[0]
+
+    def test_same_title_different_author_is_mismatch(self):
+        self.assertEqual(self.c("甲野 乙男", "講談社", ["丙川丁子"], "マガポケ"), "mismatch")
+
+    def test_author_overlap_confirmed(self):
+        self.assertEqual(self.c("原作:山田 太郎 作画:鈴木 花子", "小学館", ["鈴木花子"], "サンデーうぇぶり"), "confirmed")
+        self.assertEqual(self.c("ツジトモ / 綱本 将也", "講談社", ["綱本将也"], "マガポケ"), "confirmed")
+
+    def test_publisher_only(self):
+        self.assertEqual(self.c("誰か", "講談社", [], "コミックDAYS"), "publisher_consistent")
+
+    def test_publisher_contradiction_is_mismatch(self):
+        self.assertEqual(self.c("誰か", "白泉社", [], "マガポケ"), "mismatch")
+
+    def test_unknown_site_without_authors(self):
+        self.assertEqual(self.c("誰か", "講談社", [], "くらげバンチ"), "unknown")
+
+    def test_authors_confirm_even_on_other_publisher_site(self):
+        self.assertEqual(self.c("江口夏実", "講談社", ["江口夏実"], "くらげバンチ"), "confirmed")
+
+    def test_build_links_unseen_work_by_candidates(self):
+        def bk(pub, author):
+            return {"series_key": "新作", "series_title": "新作", "publisher": pub, "author": author,
+                    "title": "新作 1", "release_date": "2026-12-01"}
+        cands = {"新作": [{"catalogId": "9", "site": "マガポケ", "authors": ["山田太郎"]}]}
+        ok = build.group_works([bk("講談社", "山田 太郎")], cands)
+        self.assertEqual([w["pochi"] for w in ok.values()], ["9"])
+        other_author = build.group_works([bk("講談社", "鈴木 花子")], cands)
+        self.assertEqual([w["pochi"] for w in other_author.values()], [None])
+        other_pub = build.group_works([bk("小学館", "鈴木 花子")], cands)
+        self.assertEqual([w["pochi"] for w in other_pub.values()], [None])
+
+    def test_pick_prefers_confirmed_then_wikidata(self):
+        import pochi_verify as pv
+        cs = [{"catalogId": "5", "site": "コミックDAYS", "authors": []},
+              {"catalogId": "7", "site": "マガポケ", "authors": [], "wikidata": True},
+              {"catalogId": "9", "site": "マガポケ", "authors": ["山田太郎"]}]
+        self.assertEqual(pv.pick_candidate("山田太郎", "講談社", cs)[0]["catalogId"], "9")
+        self.assertEqual(pv.pick_candidate("誰か", "講談社", cs[:2])[0]["catalogId"], "7")
