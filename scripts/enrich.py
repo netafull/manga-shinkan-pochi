@@ -1,16 +1,12 @@
 #!/usr/bin/env python3
-"""Amazon応答を data/amazon_items.json に集約し、足りない分だけ getItems(ISBN-10)で補う。
+"""Amazon の応答を data/amazon_items.json（ホワイトリスト項目のみ）に集約する。
 
-  source ~/.secrets/env && python3 scripts/enrich.py [--max-calls N]
-
-- cache/api/ の getItems / searchItems 応答を全部取り込む（APIは叩かない）。
-- 対象: books.json のうち 今日-7日〜今日+30日 に発売で、まだ store にない isbn10。
-- 無効ASIN（"The ItemIds X provided in the request is invalid"）は invalid として記録し二度と引かない。
-- 講談社は kodansha_found.json（Amazon検索結果）から data/books_kodansha.json を作る。
+- 新規ISBN: books.json のうち 今日-7日〜今日+30日 に発売で、まだ store にない isbn10 を getItems で補う。
+- 価格の更新: 同じ期間の本を、最後に取得した日(updated)が古い順に getItems で取り直す。
+- 無効ASIN（"The ItemIds X provided in the request is invalid"）は invalid に記録し二度と引かない。
+- 呼び出しは amazon.py の日次上限・429停止に従う。Stop が出たら残りは呼ばず、ここまでのデータを保存する。
+- 生の応答はコミットしない（保存するのは slim() の項目だけ）。
 """
-import argparse
-import datetime
-import json
 import re
 import sys
 from pathlib import Path
@@ -18,111 +14,114 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 import amazon  # noqa: E402
+import common  # noqa: E402
 import isbnlib  # noqa: E402
 import parse_pub as pp  # noqa: E402
 
 STORE = ROOT / "data" / "amazon_items.json"
-TODAY = datetime.date.today()
+KODANSHA = ROOT / "data" / "books_kodansha.json"
+WINDOW_BEFORE, WINDOW_AFTER = 7, 30
 
 
-def slim(i):
-    ii = i.get("itemInfo", {})
-    by = ii.get("byLineInfo", {})
-    listing = ((i.get("offersV2") or {}).get("listings") or [{}])[0]
-    money = (listing.get("price") or {}).get("money") or {}
-    img = (((i.get("images") or {}).get("primary") or {}).get("large") or {})
-    eans = ((ii.get("externalIds") or {}).get("eans") or {}).get("displayValues") or []
-    return {
-        "asin": i["asin"], "url": i.get("detailPageURL"),
-        "title": (ii.get("title") or {}).get("displayValue"),
-        "manufacturer": (by.get("manufacturer") or {}).get("displayValue"),
-        "brand": (by.get("brand") or {}).get("displayValue"),
-        "authors": [c.get("name") for c in by.get("contributors") or []],
-        "published": ((ii.get("contentInfo") or {}).get("publicationDate") or {}).get("displayValue", "")[:10],
-        "ean": eans[0] if eans else None,
-        "price": money.get("amount"),
-        # 幅100px未満の画像は「画像なし」のプレースホルダー
-        "image": img.get("url") if (img.get("width") or 0) >= 100 else None,
-        "binding": ((ii.get("classifications") or {}).get("binding") or {}).get("displayValue"),
-    }
+def load_store(path=None):
+    import json
+    path = path or STORE
+    if path.exists():
+        s = json.loads(path.read_text(encoding="utf-8"))
+        s.setdefault("invalid", [])
+        return s
+    return {"items": {}, "invalid": []}
 
 
-def load_store():
-    return json.loads(STORE.read_text(encoding="utf-8")) if STORE.exists() else {"items": {}, "invalid": []}
-
-
-def ingest_cache(store):
-    for p in sorted(amazon.CACHE.glob("*.json")):
-        d = json.loads(p.read_text(encoding="utf-8"))
-        items = (d.get("itemsResult") or {}).get("items") or (d.get("searchResult") or {}).get("items") or []
-        for i in items:
-            store["items"][i["asin"]] = slim(i)
-        for e in d.get("errors") or []:
-            m = re.search(r"ItemIds (\w+) provided", e.get("message", ""))
-            if m and m.group(1) not in store["invalid"]:
-                store["invalid"].append(m.group(1))
-
-
-def kodansha_books(store):
-    found = ROOT / "data" / "kodansha_found.json"
-    if not found.exists():
-        return []
+def ingest(store, resp, today_iso):
+    """応答(getItems/searchItems)の商品を store に取り込む。取り込んだ slim のリストを返す。"""
+    items = (resp.get("itemsResult") or {}).get("items") or (resp.get("searchResult") or {}).get("items") or []
     out = []
-    for i in json.loads(found.read_text(encoding="utf-8")):
-        s = slim(i)
+    for i in items:
+        s = amazon.slim(i, today_iso)
         store["items"][s["asin"]] = s
-        if not s["ean"] or not isbnlib.valid_isbn13(s["ean"]):
-            continue
-        key, vol, display, flags = pp.parse_title(s["title"] or "")
-        label = ""
-        m = re.search(r"[(（]([^()（）]*(?:KC|コミックス|文庫|デラックス)[^()（）]*)[)）]\s*$", s["title"] or "")
-        if m:
-            label = m.group(1)
-            display = display.replace(m.group(0), "").strip()
-        # 「タイトル(3) (レーベル)」型: 括弧の巻数を取る
-        mv = re.search(r"^(.*?)[(（](\d{1,4})[)）]", s["title"] or "")
-        if mv:
-            vol = int(mv.group(2))
-            display = re.sub(r"\s+", " ", mv.group(1)).strip()
-            key = re.sub(r"\s+", "", display)
-        out.append({
-            "id": s["ean"], "isbn13": s["ean"], "isbn10": s["asin"] if len(s["asin"]) == 10 else isbnlib.isbn13_to_isbn10(s["ean"]),
-            "title": s["title"], "volume": vol, "series_key": key, "series_title": display,
-            "author": " / ".join(dict.fromkeys(a for a in s["authors"] if a and a != "講談社")), "publisher": "講談社", "label": label,
-            "release_date": s["published"], "source_url": None, "editions": flags,
-            "source_note": "Amazon の商品情報より",
-        })
+        out.append(s)
+    for e in resp.get("errors") or []:
+        m = re.search(r"ItemIds (\w+) provided", e.get("message", ""))
+        if m and m.group(1) not in store["invalid"]:
+            store["invalid"].append(m.group(1))
     return out
 
 
-def main():
-    ap = argparse.ArgumentParser()
-    ap.add_argument("--max-calls", type=int, default=60)
-    args = ap.parse_args()
-    store = load_store()
-    ingest_cache(store)
-    kb = kodansha_books(store)
-    (ROOT / "data" / "books_kodansha.json").write_text(json.dumps(kb, ensure_ascii=False, indent=1), encoding="utf-8")
+def kodansha_book(s):
+    """slim の1件 → books_kodansha.json のレコード。ISBNが取れないものは None。"""
+    if not s["ean"] or not isbnlib.valid_isbn13(s["ean"]) or not s["published"]:
+        return None
+    key, vol, display, flags = pp.parse_title(s["title"] or "")
+    label = ""
+    m = re.search(r"[(（]([^()（）]*(?:KC|コミックス|文庫|デラックス)[^()（）]*)[)）]\s*$", s["title"] or "")
+    if m:
+        label = m.group(1)
+        display = display.replace(m.group(0), "").strip()
+    # 「タイトル(3) (レーベル)」型: 括弧の巻数を取る
+    mv = re.search(r"^(.*?)[(（](\d{1,4})[)）]", s["title"] or "")
+    if mv:
+        vol = int(mv.group(2))
+        display = re.sub(r"\s+", " ", mv.group(1)).strip()
+        key = re.sub(r"\s+", "", display)
+    return {
+        "id": s["ean"], "isbn13": s["ean"],
+        "isbn10": s["asin"] if len(s["asin"]) == 10 else isbnlib.isbn13_to_isbn10(s["ean"]),
+        "title": s["title"], "volume": vol, "series_key": key, "series_title": display,
+        "author": " / ".join(dict.fromkeys(a for a in s["authors"] if a and a != "講談社")),
+        "publisher": "講談社", "label": label,
+        "release_date": s["published"], "source_url": None, "editions": flags,
+        "source_note": "Amazon の商品情報より",
+    }
 
-    lo = (TODAY - datetime.timedelta(days=7)).isoformat()
-    hi = (TODAY + datetime.timedelta(days=30)).isoformat()
-    books = json.loads((ROOT / "data" / "books.json").read_text(encoding="utf-8"))
-    todo = [b["isbn10"] for b in books if b["isbn10"] and lo <= b["release_date"] <= hi
+
+def merge_kodansha(prev, found_slims):
+    """前回分に今回見つかった分を足す（ISBNで上書き）。スキャンが空でも前回分は消さない。"""
+    by = {b["isbn13"]: b for b in prev}
+    for s in found_slims:
+        b = kodansha_book(s)
+        if b:
+            by[b["isbn13"]] = b
+    return sorted(by.values(), key=lambda b: (b["release_date"], b["title"]))
+
+
+def window(today):
+    d = today.toordinal()
+    return (today.fromordinal(d - WINDOW_BEFORE).isoformat(), today.fromordinal(d + WINDOW_AFTER).isoformat())
+
+
+def enrich_new(store, books, today, max_calls, log=print):
+    """未取得のISBN-10を getItems で補う。使った呼び出し数を返す。Stop は呼び出し側へ。"""
+    lo, hi = window(today)
+    todo = [b["isbn10"] for b in books if b.get("isbn10") and lo <= b["release_date"] <= hi
             and b["isbn10"] not in store["items"] and b["isbn10"] not in store["invalid"]]
-    print("todo", len(todo), "calls so far", amazon.calls_used())
+    todo = list(dict.fromkeys(todo))
     n = 0
     for k in range(0, len(todo), 10):
-        if n >= args.max_calls:
-            print("max-calls reached"); break
-        batch = todo[k:k + 10]
-        r, hit = amazon.get_items(batch, label="step4 enrich")
+        if n >= max_calls:
+            log(f"enrich: 新規分の呼び出し枠 {max_calls} に到達（残り {len(todo) - k} 件は次回）")
+            break
+        r, hit = amazon.get_items(todo[k:k + 10], label="enrich new")
         n += 0 if hit else 1
-        ingest_cache(store)
-        STORE.write_text(json.dumps(store, ensure_ascii=False), encoding="utf-8")
-        print("batch", k // 10, "ok" if "itemsResult" in r else r, "calls", amazon.calls_used(), flush=True)
-    STORE.write_text(json.dumps(store, ensure_ascii=False), encoding="utf-8")
-    print("store items", len(store["items"]), "invalid", len(store["invalid"]), "calls", amazon.calls_used())
+        ingest(store, r, today.isoformat())
+    return n
 
 
-if __name__ == "__main__":
-    main()
+def refresh_prices(store, books, today, max_calls):
+    """期間内の本を、取得日が古い順に取り直す。使った呼び出し数を返す。"""
+    lo, hi = window(today)
+    cands = {}
+    for b in books:
+        a = b.get("isbn10")
+        if a and lo <= b["release_date"] <= hi and a in store["items"]:
+            cands[a] = store["items"][a].get("updated") or "0000-00-00"
+    # 今日より前に取得したものだけ。同じ日に何度回しても同じ商品を引き直さない
+    order = [a for a, u in sorted(cands.items(), key=lambda kv: (kv[1], kv[0])) if u < today.isoformat()]
+    n = 0
+    for k in range(0, len(order), 10):
+        if n >= max_calls:
+            break
+        r, hit = amazon.get_items(order[k:k + 10], label="refresh")
+        n += 0 if hit else 1
+        ingest(store, r, today.isoformat())
+    return n

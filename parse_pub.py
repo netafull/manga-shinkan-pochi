@@ -9,7 +9,16 @@ import isbnlib
 SHOGAKUKAN_BASE = "https://www.shogakukan.co.jp/calendar/paper/comics"
 SHOGAKUKAN_URLS = [SHOGAKUKAN_BASE, SHOGAKUKAN_BASE + "/next", SHOGAKUKAN_BASE + "/next2"]
 AKITA_URL = "https://www.akitashoten.co.jp/books/upcoming"
-HAKU_MONTHS = [(2026, 11), (2026, 12), (2027, 1)]
+
+
+def haku_months(today):
+    """白泉社の新刊ページで見る月: 今月と先2か月。"""
+    out = []
+    y, m = today.year, today.month
+    for _ in range(3):
+        out.append((y, m))
+        y, m = (y + 1, 1) if m == 12 else (y, m + 1)
+    return out
 
 
 def haku_url(y, m):
@@ -40,7 +49,11 @@ def parse_shogakukan(page_html: str):
 
 
 # ---------- 秋田書店 ----------
-def parse_akita(page_html: str):
+def parse_akita(page_html: str, today=None):
+    """秋田書店は年が書かれていないので、今月以降の月は今年、それより前の月は来年と推定する。"""
+    if today is None:
+        import common
+        today = common.today()
     chunks = re.findall(r'self\.__next_f\.push\(\[1,"(.*?)"\]\)</script>', page_html, re.S)
     txt = "".join(json.loads('"' + c + '"') for c in chunks)
     dec = json.JSONDecoder()
@@ -51,7 +64,7 @@ def parse_akita(page_html: str):
         if j < 0:
             continue
         rd, _ = dec.raw_decode(txt[j + len('"releaseData":'):])
-        y = 2027 if mo <= 6 else 2026  # 取得時点(2026-11)から見た年の推定
+        y = today.year if mo >= today.month else today.year + 1
         for g in rd["dateGroups"]:
             for b in g["books"]:
                 link = b["link"]

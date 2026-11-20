@@ -1,0 +1,50 @@
+# マンガ新刊ポチの更新ワークフロー。
+# Cloud Scheduler（ジョブ名 shinkan-pochi-update、毎日 5:50 JST）が workflow_dispatch で起動する。
+# 5:50 は、Amazon の枠を共有する 家電ポチ（毎時 :07）・電書ポチ（4時間ごと :37）の実行と重ならない時刻として選んだ。
+# schedule: を使わないのは意図的。GitHub の cron は負荷が高いと実行がスキップされるため。
+# 処理: 出版社3社の取得 → 講談社(Amazon新着スキャン) → getItems(新規ISBN・価格更新) → docs/ のビルド。
+# Amazon の1日の呼び出し上限は amazon.py の DAILY_CAP（共有枠のため、オーナーの確認なしに上げない）。
+name: update
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Update data and build
+        run: python scripts/update.py
+        env:
+          CREATORSAPI_CREDENTIAL_ID: ${{ secrets.CREATORSAPI_CREDENTIAL_ID }}
+          CREATORSAPI_CREDENTIAL_SECRET: ${{ secrets.CREATORSAPI_CREDENTIAL_SECRET }}
+          CREATORSAPI_PARTNER_TAG: ${{ secrets.CREATORSAPI_PARTNER_TAG }}
+          GA4_ID: ${{ vars.GA4_ID }}
+
+      - name: Test
+        run: python -m unittest test_build test_pipeline
+
+      - name: Commit and push
+        run: |
+          if [ -n "$(git status --porcelain docs data)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add docs data
+            git commit -m "Update data ($(TZ=Asia/Tokyo date +%Y-%m-%d))"
+            git push
+          else
+            echo "変更なし"
+          fi

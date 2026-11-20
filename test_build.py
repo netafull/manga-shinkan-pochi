@@ -1,4 +1,6 @@
+import datetime
 import os
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -71,7 +73,7 @@ class CacheParseTest(unittest.TestCase):
         self.assertTrue(all(b["release_date"].startswith("2026-12") for b in r))
 
     def test_akita(self):
-        r = pp.parse_akita(self._page(pp.AKITA_URL))
+        r = pp.parse_akita(self._page(pp.AKITA_URL), today=datetime.date(2026, 11, 20))
         self.assertGreater(len(r), 30)
         self.assertTrue(all(isbnlib.valid_isbn13(b["isbn13"]) for b in r))
 
@@ -85,8 +87,16 @@ class BuildSmokeTest(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         os.environ["SHINKAN_TODAY"] = "2026-11-20"
-        cls.books, cls.works = build.build()
-        cls.docs = ROOT / "docs"
+        os.environ.pop("GA4_ID", None)
+        cls._tmp = tempfile.TemporaryDirectory()
+        cls.docs = Path(cls._tmp.name) / "docs"
+        old = build.DOCS
+        cls.books, cls.works = build.build(docs=cls.docs, write_lastmod=False)
+        build.DOCS = old
+
+    @classmethod
+    def tearDownClass(cls):
+        cls._tmp.cleanup()
 
     def test_pages_exist(self):
         for p in ["index.html", "404.html", "month/2026-12/index.html", "publisher/shogakukan/index.html",
@@ -119,14 +129,15 @@ class BuildSmokeTest(unittest.TestCase):
             self.assertIn(a, h)
         for i in ['id="today"', 'id="week"', 'id="nextweek"']:
             self.assertIn(i, h)
-        self.assertNotIn("今日・今週", h)
         self.assertEqual(h.count("<h1"), 1)
-        self.assertIn("<h1>マンガ新刊の発売日一覧</h1>", h)
+        self.assertIn("<h1>マンガ・コミック新刊の発売日一覧</h1>", h)
+        self.assertIn("<title>マンガ新刊ポチ｜コミック新刊の発売日一覧（今日・今週・来週）</title>", h)
 
     def test_work_index_counts(self):
         h = (self.docs / "work/index.html").read_text(encoding="utf-8")
         self.assertEqual(h.count('<li><a href="/work/'), len(self.works))
         self.assertIn("作品一覧（%d作品）" % len(self.works), h)
+        self.assertIn("漢字ではじまる作品", h)
         w = next(iter(self.works.values()))
         wp = (self.docs / "work" / w["slug"] / "index.html").read_text(encoding="utf-8")
         self.assertIn('href="/work/">作品一覧', wp)
@@ -135,8 +146,11 @@ class BuildSmokeTest(unittest.TestCase):
         self.assertEqual(build.kana_row("ブルーロック"), "は")
         self.assertEqual(build.kana_row("ゴッドマザー"), "か")
         self.assertEqual(build.kana_row("ぁ"), "あ")
-        self.assertEqual(build.kana_row("100年の恋"), "その他")
-        self.assertEqual(build.kana_row("薬屋"), "その他")
+        self.assertEqual(build.kana_row("100年の恋"), build.ALNUM)
+        self.assertEqual(build.kana_row("ONE PIECE"), build.ALNUM)
+        self.assertEqual(build.kana_row("薬屋のひとりごと"), build.KANJI)
+        self.assertEqual(build.kana_row("『薬屋』"), build.KANJI)
+        self.assertEqual(build.kana_row("★☆"), build.OTHER)
 
     def test_search_index(self):
         import json
@@ -149,6 +163,82 @@ class BuildSmokeTest(unittest.TestCase):
         h = (self.docs / "index.html").read_text(encoding="utf-8")
         self.assertIn('/static/search.js', h)
         self.assertIn('action="/work/"', h)
+
+    def test_sitemap_robots_cname_404(self):
+        sm = (self.docs / "sitemap.xml").read_text(encoding="utf-8")
+        self.assertIn("<loc>https://shinkan.netaful.jp/</loc>", sm)
+        self.assertIn("<loc>https://shinkan.netaful.jp/month/2026-12/</loc>", sm)
+        w = next(iter(self.works.values()))
+        self.assertIn(f"<loc>https://shinkan.netaful.jp/work/{w['slug']}/</loc>", sm)
+        self.assertIn("<lastmod>", sm)
+        self.assertNotIn("404.html", sm)
+        n_pages = len([p for p in self.docs.rglob("index.html")])
+        self.assertEqual(sm.count("<url>"), n_pages)
+        rb = (self.docs / "robots.txt").read_text(encoding="utf-8")
+        self.assertIn("Sitemap: https://shinkan.netaful.jp/sitemap.xml", rb)
+        self.assertEqual((self.docs / "CNAME").read_text(encoding="utf-8").strip(), "shinkan.netaful.jp")
+        h404 = (self.docs / "404.html").read_text(encoding="utf-8")
+        self.assertIn("ページが見つかりません", h404)
+
+    def test_canonical_and_no_noindex(self):
+        for p in self.docs.rglob("*.html"):
+            h = p.read_text(encoding="utf-8")
+            self.assertNotIn("noindex", h, p)
+            if p.name == "404.html":
+                continue
+            rel = str(p.relative_to(self.docs))
+            self.assertIn('<link rel="canonical" href="%s">' % build.canonical_of(rel), h, rel)
+            self.assertIn('property="og:image"', h)
+            self.assertIn('name="twitter:card"', h)
+
+    def test_titles(self):
+        h = (self.docs / "month/2026-12/index.html").read_text(encoding="utf-8")
+        self.assertIn("<title>2026年12月発売のコミック新刊（マンガ）一覧｜マンガ新刊ポチ</title>", h)
+        h = (self.docs / "date/2026-11-20/index.html").read_text(encoding="utf-8")
+        self.assertIn("<title>11月20日発売のマンガ・コミック新刊｜マンガ新刊ポチ</title>", h)
+        h = (self.docs / "publisher/kodansha/index.html").read_text(encoding="utf-8")
+        self.assertIn("<title>講談社のコミック新刊 発売日一覧｜マンガ新刊ポチ</title>", h)
+        w = next(w for w in self.works.values() if build.latest_book(w).get("volume"))
+        h = (self.docs / "work" / w["slug"] / "index.html").read_text(encoding="utf-8")
+        self.assertIn("最新刊%d巻の発売日" % build.latest_book(w)["volume"], h)
+        self.assertIn('"@type":"ItemList"', h)
+        self.assertIn('"@type":"Book"', h)
+
+    def test_website_jsonld_on_top(self):
+        h = (self.docs / "index.html").read_text(encoding="utf-8")
+        self.assertIn('"@type":"WebSite"', h)
+
+    def test_footer_series_and_notes(self):
+        h = (self.docs / "index.html").read_text(encoding="utf-8")
+        self.assertIn("関連サイト", h)
+        self.assertIn("https://manga.netaful.jp/", h)
+        self.assertIn("https://shinhatsubai.netaful.jp/", h)
+        self.assertIn("ポチシリーズ一覧：", h)
+        self.assertIn('href="https://pochi.netaful.jp/"', h)
+        self.assertIn("非公式サイト", h)
+        self.assertNotIn("試作", h)
+        self.assertIn('/static/assets/logo.png', h)
+
+    def test_assets(self):
+        for n in ("logo.png", "favicon.png", "favicon.ico", "apple-touch-icon.png", "ogp.jpg"):
+            self.assertTrue((self.docs / "static/assets" / n).exists(), n)
+
+    def test_ga4_only_with_env(self):
+        h = (self.docs / "index.html").read_text(encoding="utf-8")
+        self.assertNotIn("googletagmanager", h)
+        os.environ["GA4_ID"] = "G-TEST123456"
+        try:
+            with tempfile.TemporaryDirectory() as t:
+                old = build.DOCS
+                try:
+                    build.build(docs=Path(t) / "d", write_lastmod=False)
+                    h2 = (Path(t) / "d/index.html").read_text(encoding="utf-8")
+                finally:
+                    build.DOCS = old
+        finally:
+            os.environ.pop("GA4_ID", None)
+        self.assertIn("googletagmanager.com/gtag/js?id=G-TEST123456", h2)
+        self.assertIn("gtag('config', 'G-TEST123456')", h2)
 
     def test_no_credentials_in_docs(self):
         for var in ("CREATORSAPI_CREDENTIAL_SECRET", "CREATORSAPI_CREDENTIAL_ID"):

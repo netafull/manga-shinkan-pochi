@@ -1,11 +1,11 @@
-/* マンガ新刊ポチ — ポチシリーズ共通の見た目（shinhatsubai-pochi の style.css を土台）。アクセントは青。 */
+/* マンガ新刊ポチ — ポチシリーズ共通の見た目（shinhatsubai-pochi の style.css を土台）。アクセントは濃い紫 #5E35B1（make_icons.py の BRAND_COLOR と同じ値）。 */
 :root {
-  --bg: #f6f9fe; --card: #ffffff; --text: #1f2430; --muted: #5d6677;
-  --accent: #1d4ed8; --accent-soft: #e6eefd; --on-accent: #ffffff; --line: #d9e2f2;
+  --bg: #f8f6fc; --card: #ffffff; --text: #1f2430; --muted: #5d6677;
+  --accent: #5E35B1; --accent-soft: #efe9fa; --on-accent: #ffffff; --line: #ddd6ee;
 }
 @media (prefers-color-scheme: dark) {
-  :root { --bg: #11151d; --card: #1a202c; --text: #e8ecf4; --muted: #a2adc0;
-    --accent: #8fb0ff; --accent-soft: #1e2a45; --on-accent: #0b1430; --line: #2c3548; }
+  :root { --bg: #14111d; --card: #1d1a2a; --text: #e8ecf4; --muted: #a2adc0;
+    --accent: #b9a2f0; --accent-soft: #2a2145; --on-accent: #170f30; --line: #3a3254; }
 }
 * { box-sizing: border-box; }
 body { margin: 0; font-family: "Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
@@ -67,3 +67,13 @@ h2.band { background: var(--accent-soft); border-left: 0; padding: 6px 10px; bor
 .works li { padding: 6px 0; border-bottom: 1px solid var(--line); }
 .works .meta { display: block; }
 .intro { overflow-wrap: anywhere; }
+
+/* 関連サイト（ポチシリーズ）。折り返すチップ。375px幅でも横スクロールしない */
+.site-footer nav.sites { margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap; align-items: baseline; }
+.site-footer nav.sites .lbl { font-size: 0.75rem; color: var(--muted); }
+.site-footer nav.sites a {
+  font-size: 0.78rem; padding: 3px 10px; border: 1px solid var(--line); border-radius: 999px;
+  background: var(--card); color: var(--text); text-decoration: none; overflow-wrap: anywhere;
+}
+.site-footer nav.sites a:hover { border-color: var(--accent); background: var(--accent-soft); }
+.site-footer nav.sites a .lbl { color: var(--muted); }
