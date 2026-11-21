@@ -167,6 +167,9 @@ class PagesTest(unittest.TestCase):
         self.assertEqual(s.count("<img"), 2)  # adult 未取得の本も表紙あり（除外本は出ない）
         self.assertIn("文字だけの本", s)
 
+    def test_snippet_single_line(self):
+        self.assertNotIn("\n", embed_pages.snippet_html("2026-11-25", [(self.books[0], True)]))
+
     def test_copy_page_notes_and_button(self):
         h = self.read("2026-11-25/index.html")
         self.assertIn("HTMLをコピー", h)

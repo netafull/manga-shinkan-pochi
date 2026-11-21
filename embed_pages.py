@@ -71,7 +71,7 @@ def _card(b, cover):
     label = embed_safety.label_of(b, a)
     meta = escape(b["publisher"]) + (f' / {escape(label)}' if label else "")
     return (f'<div style="{S_CARD}">{img_html}<div style="{S_MAIN}"><p style="{S_T}">{link}</p>'
-            f'<p style="{S_M}">{meta}</p></div></div>\n')
+            f'<p style="{S_M}">{meta}</p></div></div>')
 
 
 def _fmt(iso):
@@ -84,11 +84,12 @@ def heading(iso, pub_name=None):
 
 
 def snippet_html(iso, shown, pub_name=None):
-    """記事本文にそのまま貼る HTML。shown = [(book, show_cover)]。"""
-    out = f'<div style="{S_WRAP}">\n<p style="{S_H}">{escape(heading(iso, pub_name))}</p>\n'
+    """記事本文にそのまま貼る HTML。shown = [(book, show_cover)]。
+    改行を入れない1行にする（WordPress の wpautop が改行を <br>/<p> に変えて崩さないように）。"""
+    out = f'<div style="{S_WRAP}"><p style="{S_H}">{escape(heading(iso, pub_name))}</p>'
     out += "".join(_card(b, c) for b, c in shown)
     out += (f'<p style="{S_FOOT}"><a href="{SITE_URL}/date/{iso}/" target="_blank" rel="noopener">マンガ新刊ポチで全部見る</a><br>'
-            f"{AFFIL}</p>\n</div>")
+            f"{AFFIL}</p></div>")
     return out
 
 
