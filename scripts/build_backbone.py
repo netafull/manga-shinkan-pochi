@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-"""出版社3社(小学館・秋田書店・白泉社)の発売予定から data/books.json を更新する。
+"""出版社5社(小学館・秋田書店・白泉社・KADOKAWA・双葉社)の発売予定から data/books.json を更新する。
 
   python3 scripts/build_backbone.py            # キャッシュのみ使う（ネットワークなし）
   python3 scripts/build_backbone.py --fetch    # 一覧ページを各1回取得して更新
 
 毎日の実行は scripts/update.py から run() を呼ぶ。
-取得するページ: 小学館 3 / 秋田書店 1 / 白泉社 月別3 + 詳細(今日〜30日先でISBN未取得のものだけ、最大40件)。
+取得するページ: 小学館 3 / 秋田書店 1 / 白泉社 月別3 + 詳細(今日〜30日先でISBN未取得のものだけ、最大40件)
+/ KADOKAWA 今月・来月の2(Crawl-delay 20秒、ISBNは表紙画像URLのファイル名から) / 双葉社 公開JSON 今月・来月の2。
 
 失敗に強くする:
 - ページ単位（出版社×ページ）で成功・失敗を判定する。取得失敗・パース例外・0件は「失敗」。
@@ -29,14 +30,16 @@ BOOKS = ROOT / "data" / "books.json"
 
 
 def _process(b):
-    key, vol, display, flags = pp.parse_title(b["title_raw"])
-    uid = b["isbn13"] or "haku:" + b["haku_id"]
+    key, vol, display, flags = pp.parse_title(pp.volume_hint(b["title_raw"], b["publisher"]))
+    uid = b["isbn13"] or (("haku:" + b["haku_id"]) if b.get("haku_id") else "kadokawa:" + b["kadokawa_id"])
     return {
-        "id": uid, "isbn13": b["isbn13"], "isbn10": isbnlib.isbn13_to_isbn10(b["isbn13"]) if b["isbn13"] else None,
+        "id": uid, "isbn13": b["isbn13"],
+        "isbn10": isbnlib.isbn13_to_isbn10(b["isbn13"]) if b["isbn13"] and b["isbn13"].startswith("978") else None,
         "title": b["title_raw"], "volume": vol, "series_key": key, "series_title": display,
         "author": b["author"], "publisher": b["publisher"], "label": b["label"],
         "release_date": b["release_date"], "source_url": b["source_url"], "editions": flags,
         **({"haku_id": b["haku_id"]} if b.get("haku_id") else {}),
+        **({"kadokawa_id": b["kadokawa_id"]} if b.get("kadokawa_id") else {}),
     }
 
 
@@ -67,7 +70,7 @@ def run(today, prev_books, net=True, use_cache=False, log=print):
     """戻り値: (books, report)。report は {出版社: {"ok":bool,"new":n,"kept":n}} と warnings のリスト。"""
     today_iso = today.isoformat()
     warnings = []
-    units = {"小学館": [], "秋田書店": [], "白泉社": []}  # 出版社 -> ページ結果のリスト(None=失敗)
+    units = {"小学館": [], "秋田書店": [], "白泉社": [], "KADOKAWA": [], "双葉社": []}  # 出版社 -> ページ結果のリスト(None=失敗)
 
     def page(pub, url, parser, **kw):
         try:
@@ -89,6 +92,11 @@ def run(today, prev_books, net=True, use_cache=False, log=print):
         r = page("白泉社", pp.haku_url(y, m), pp.parse_haku_month)
         units["白泉社"].append(r)
         haku += r or []
+
+    for target, _y, _m in pp.kadokawa_months(today):
+        units["KADOKAWA"].append(page("KADOKAWA", pp.kadokawa_url(target), pp.parse_kadokawa))
+    for ym in pp.futaba_months(today):
+        units["双葉社"].append(page("双葉社", pp.futaba_url(ym), pp.parse_futabasha, ym=ym))
 
     # 白泉社: ISBNは詳細ページにしかない。前回までに分かったものは再利用し、今日〜30日先の未取得分だけ取りに行く
     prev_isbn = {}

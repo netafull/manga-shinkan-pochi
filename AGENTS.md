@@ -24,7 +24,7 @@
 対象サイト：https://shinkan.netaful.jp/（マンガ新刊ポチ。コミック新刊の発売日を発売日順にまとめる）。
 
 - **講談社のサイト（kodansha.co.jp）には絶対にアクセスしない。** 規約で自動収集が禁止されている。講談社の作品はAmazonの新着順検索（scripts/scan_kodansha.py）の結果だけから作り、「Amazon の商品情報より」と表示する（集英社も公式サイトのメンテ中は同じ方式、scan_shueisha）。pubfetch.py は kodansha を含むホストを拒否する。この拒否を外さない。
-- 出版社ページ（小学館・秋田書店・白泉社）の取得は礼儀正しく。一覧は1日1回、各URL1回だけ。小学館は10秒、その他は3秒以上の間隔（Crawl-delay）、正直なUA（`MangaShinkanPochi/1.0 (+https://shinkan.netaful.jp/)`）。UAを偽装しない・間隔を詰めない・取得頻度を上げない。
+- 出版社ページ（小学館・秋田書店・白泉社・KADOKAWA・双葉社）の取得は礼儀正しく。一覧は1日1回、各URL1回だけ。小学館は10秒、KADOKAWAは20秒（robots.txt の Crawl-delay: 20。今月・来月の2ページだけ）、その他は3秒以上の間隔（Crawl-delay）。双葉社は公開JSON（book-api.futabasha.co.jp の calendar_books、今月・来月の2回）、正直なUA（`MangaShinkanPochi/1.0 (+https://shinkan.netaful.jp/)`）。UAを偽装しない・間隔を詰めない・取得頻度を上げない。
 - 出版社から保存するのは書誌事実だけ（発売日・書名・巻数・著者・出版社・レーベル・ISBN・出典URL）。出版社の表紙画像・あらすじ・試し読みは保存も表示もしない。画像・価格・リンクはAmazonの商品情報のみ。生のAPI応答・生HTMLはコミットしない（cache/ は gitignore）。
 - **Amazon Creators API の枠は家電ポチ・電書ポチと共有。** 1日の呼び出し上限は `amazon.py` の `DAILY_CAP`（260。2026-11-21に集英社の分としてオーナーが200→260を承認）。オーナーの確認なしに上げない。429が出たらその実行では以後呼ばない。ローカルでの確認でも、むやみにAPIを叩かない（テストはモックで書く）。`minSavingPercent` は送らない。
 - 認証情報は環境変数 `CREATORSAPI_CREDENTIAL_ID` / `CREATORSAPI_CREDENTIAL_SECRET` / `CREATORSAPI_PARTNER_TAG` からだけ読む。値を表示・ログ・コミットしない。
