@@ -32,3 +32,4 @@
 - `docs/` は生成物。直接直さず `python3 build.py` で作り直す（`GA4_ID` を付けないと計測タグが消える）。`data/` の `books.json` / `books_kodansha.json` / `amazon_items.json` / `api_usage.json` / `page_lastmod.json` は更新スクリプトが書く状態なので、手で編集しない。
 - ロゴ・OGP は `make_icons.py`（pochi-branding の関数を流用。専用色 `BRAND_COLOR`）で作る。pochi-branding 側のファイルは変更しない。
 - 埋め込み（docs/embed/）: ブログ記事に貼る「○月○日発売のマンガ」のコピー元ページ（noindex・sitemap外）。生成は embed_pages.py、判定は embed_safety.py、ルールは config/embed_rules.json、手動除外は config/embed_overrides.json。overrides の exclude は必ず優先。迷ったら外す。表紙はチェックを通った本に出す（Creators API は isAdultProduct をほぼ返さないため、未取得は成人向けでない扱い。2026-11-21オーナー判断）。
+- 五十音の読み: 作品名の読みは openBD（販促・紹介目的に限り使用可）から作品ごとに取得し `data/yomi.json` に保存する（`yomi.py`、毎日の更新の出版社の段の後・ビルドの前）。手動辞書 `config/yomi_manual.json`（`{series_key: "カタカナの読み"}`）が最優先。間隔は1秒以上、ISBNはまとめて問い合わせ、エラー・429が出たらその実行では以後呼ばない。`data/yomi.json` は更新スクリプトが書く状態なので手で編集しない。NDLサーチ API は営利目的の申請が要るので使わない。

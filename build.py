@@ -16,6 +16,7 @@ from html import escape
 import common
 import embed_pages
 import pochi_verify
+import yomi as yomi_mod
 from common import today  # noqa: F401  (build.today() として使われる)
 
 ROOT = common.ROOT
@@ -101,7 +102,8 @@ def group_works(books, pochi):
     for b in books:
         slug = work_slug(b["series_key"], b["publisher"])
         w = works.setdefault(slug, {"slug": slug, "title": b["series_title"], "publisher": b["publisher"],
-                                    "author": b["author"], "books": [], "pochi": None})
+                                    "author": b["author"], "books": [], "pochi": None, "series_key": b["series_key"],
+                                    "yomi": None})
         w["books"].append(b)
         b["work_slug"] = slug
     for w in works.values():
@@ -111,6 +113,17 @@ def group_works(books, pochi):
             if pick:
                 w["pochi"] = pick["catalogId"]
     return works
+
+
+def apply_yomi(works, data=None):
+    """作品に読み（w["yomi"]）を付ける。手動辞書 config/yomi_manual.json が最優先、次に data/yomi.json（openBD）。"""
+    d = data or DATA
+    manual = yomi_mod.load_manual()
+    state = yomi_mod.load_state(d / "yomi.json")
+    for w in works.values():
+        k = w["series_key"]
+        y = manual.get(k) or (state.get(k) or {}).get("yomi")
+        w["yomi"] = yomi_mod.to_katakana(unicodedata.normalize("NFKC", y)) if y else None
 
 
 # ---------- HTML ----------
@@ -282,7 +295,7 @@ def write(path, html):
 
 # 作品一覧の分類。読みの情報がないので、先頭の文字の種類で分ける。
 # 仮名ではじまるものは五十音の行、英数字、漢字、その他。漢字ではじまる作品は読みが分からないため、
-# 五十音には入れず題名の文字コード順に並べる（既知の制約。README参照）。
+# 読みが分からない作品（漢字ではじまるもの）は五十音に入れず題名の文字コード順に並べる（README参照）。
 ROWS = [("あ", "あいうえお"), ("か", "かきくけこ"), ("さ", "さしすせそ"), ("た", "たちつてと"), ("な", "なにぬねの"),
         ("は", "はひふへほ"), ("ま", "まみむめも"), ("や", "やゆよ"), ("ら", "らりるれろ"), ("わ", "わをん")]
 SMALL = dict(zip("ぁぃぅぇぉっゃゅょゎ", "あいうえおつやゆよわ"))
@@ -291,8 +304,12 @@ KANJI = "漢字ではじまる作品"
 OTHER = "その他"
 
 
-def kana_row(title):
-    """題名の先頭文字から分類を返す。「あ」〜「わ」の行・「英数字」・「漢字ではじまる作品」・「その他」。"""
+def kana_row(title, yomi=None):
+    """読み（あれば）、なければ題名の先頭文字から分類を返す。「あ」〜「わ」の行・「英数字」・「漢字ではじまる作品」・「その他」。"""
+    if yomi:
+        r = kana_row(yomi)
+        if r not in (KANJI, OTHER):
+            return r
     t = unicodedata.normalize("NFKC", title).strip()
     t = t.lstrip("「『【（([〈<~〜-・!?！？ ")
     if not t:
@@ -331,7 +348,7 @@ def work_title(w):
 def build_work_index(works, page):
     groups = {}
     for w in works.values():
-        groups.setdefault(kana_row(w["title"]), []).append(w)
+        groups.setdefault(kana_row(w["title"], w.get("yomi")), []).append(w)
     order = [l for l, _c in ROWS] + [ALNUM, KANJI, OTHER]
     rows = {r for r, _c in ROWS}
 
@@ -342,12 +359,12 @@ def build_work_index(works, page):
         f'<li><a href="#row-{i}">{label_of(l)}</a></li>' for i, l in enumerate(order) if l in groups) + "</ul>"
     crumb_html, crumb_ld = crumbs([("トップ", "/"), ("作品一覧", None)])
     body = (crumb_html + f'<h1>マンガ・コミック作品一覧（{len(works)}作品）</h1>'
-            '<p class="intro">当サイトが把握している発売予定のある作品です。先頭の文字による簡易的な五十音順で、'
-            '漢字ではじまる作品は読みが分からないため、別にまとめて題名の文字コード順に並べています。</p>' + chips)
+            '<p class="intro">当サイトが把握している発売予定のある作品です。作品名の読みが分かる作品は五十音順に、'
+            '読みが分からない漢字ではじまる作品は別にまとめて題名の文字コード順に並べています。</p>' + chips)
     for i, l in enumerate(order):
         if l not in groups:
             continue
-        ws = sorted(groups[l], key=lambda w: (unicodedata.normalize("NFKC", w["title"]), w["publisher"]))
+        ws = sorted(groups[l], key=lambda w: (yomi_mod.to_katakana(w.get("yomi") or unicodedata.normalize("NFKC", w["title"])), w["publisher"]))
         body += f'<section><h2 id="row-{i}">{label_of(l)}<small>{len(ws)}作品</small></h2><ul class="works">'
         for w in ws:
             v, d = latest_of(w)
@@ -467,6 +484,7 @@ def build(today=None, data=None, docs=None, write_lastmod=True):
     _pages.clear()
     books, pochi = load_all(data)
     works = group_works(books, pochi)
+    apply_yomi(works, data)
     if DOCS.exists():
         shutil.rmtree(DOCS)
     (DOCS / "static").mkdir(parents=True)
