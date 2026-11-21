@@ -5,7 +5,8 @@
  2. Amazon の成人向けフラグ adult が True … 除外（include でも戻さない）
  3. include … 自動除外の誤判定を戻す
  4. NG レーベル・NG キーワード … 除外
-表紙は Amazon の adult が False と分かっている本だけ出す（キー無し＝未取得は文字だけ）。
+表紙は上のチェックを通った本に出す。Creators API は isAdultProduct を返さないことが多い（2026-11-21確認）ので、
+キー無しは「成人向けではない」と同じ扱い（オーナー判断）。気になる本は目視確認ページから手動除外する。
 ルールは config/embed_rules.json。コードに直書きしない。
 """
 import json
@@ -78,6 +79,4 @@ def judge(book, item, rules, overrides):
         for kw in rules["ng_keywords"]:
             if _kw_hit(book.get("title") or "", kw) or _kw_hit(label, kw) or _kw_hit(item.get("title") or "", kw):
                 return False, False, f"NGキーワード: {kw}"
-    if adult is False:
-        return True, True, ""
-    return True, False, "成人向けフラグ未取得のため表紙なし"
+    return True, True, ""

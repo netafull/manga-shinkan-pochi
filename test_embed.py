@@ -42,11 +42,11 @@ class JudgeTest(unittest.TestCase):
         self.assertFalse(s)
         self.assertIn("成人向け", r)
 
-    def test_adult_missing_text_only(self):
+    def test_adult_missing_shows_cover(self):
         i = item()
         del i["adult"]
-        self.assertEqual(es.judge(book(), i, RULES, NO_OV)[:2], (True, False))
-        self.assertEqual(es.judge(book(), None, RULES, NO_OV)[:2], (True, False))
+        self.assertEqual(es.judge(book(), i, RULES, NO_OV)[:2], (True, True))
+        self.assertEqual(es.judge(book(), None, RULES, NO_OV)[:2], (True, True))
 
     def test_ng_label_on_book(self):
         s, _c, r = es.judge(book(label="花丸コミックス"), item(), RULES, NO_OV)
@@ -164,7 +164,7 @@ class PagesTest(unittest.TestCase):
         self.assertNotIn("除外される本", h)
         self.assertIn("テスト作品", h)
         s = self.snippet("2026-11-25/index.html")
-        self.assertEqual(s.count("<img"), 1)  # adult 未取得の本は表紙なし
+        self.assertEqual(s.count("<img"), 2)  # adult 未取得の本も表紙あり（除外本は出ない）
         self.assertIn("文字だけの本", s)
 
     def test_copy_page_notes_and_button(self):
@@ -179,13 +179,12 @@ class PagesTest(unittest.TestCase):
         self.assertEqual(sorted(d["publishers"]), ["小学館", "秋田書店"])
         books = [b for v in d["publishers"].values() for b in v]
         self.assertEqual(len(books), 2)
-        self.assertTrue(all(b["image"] is None for b in books if "文字だけ" in b["title"]))
+        self.assertTrue(all(b["image"] for b in books if "文字だけ" in b["title"]))  # adult 未取得でも表紙あり
         self.assertTrue(any(b["image"] for b in books))
 
     def test_review_shows_reasons(self):
         h = self.read("review/index.html")
         self.assertIn("自動除外：NGレーベル", h)
-        self.assertIn("表紙なしで表示", h)
         self.assertIn("除外される本", h)
 
     def test_index_links(self):
