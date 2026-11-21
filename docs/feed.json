@@ -3,7 +3,7 @@
  "site": "shinkan",
  "site_name": "マンガ新刊ポチ",
  "site_url": "https://shinkan.netaful.jp/",
- "generated": "2026-11-21T23:20:35+09:00",
+ "generated": "2026-11-22T05:54:50+09:00",
  "items": [
   {
    "id": "shinkan:9784065454619",
@@ -83,6 +83,8 @@
    "url": "https://shinkan.netaful.jp/work/036627d775/",
    "date": "2026-11-20",
    "note": "11月20日発売",
+   "image": "https://m.media-amazon.com/images/I/51ZgHR3sDmL._SL500_.jpg",
+   "image_link": "https://www.amazon.co.jp/dp/4065454417?tag=natafull-22&linkCode=osi&th=1&psc=1",
    "source": "shinkan",
    "source_name": "マンガ新刊ポチ",
    "icon": null
@@ -214,7 +216,7 @@
    "date": "2026-11-20",
    "note": "11月20日発売",
    "image": "https://m.media-amazon.com/images/I/41Tl4yHYuTL._SL500_.jpg",
-   "image_link": "https://www.amazon.co.jp/dp/4065461723?tag=natafull-22&linkCode=osi&th=1&psc=1",
+   "image_link": "https://www.amazon.co.jp/dp/4065461723?tag=natafull-22&linkCode=ogi&th=1&psc=1",
    "source": "shinkan",
    "source_name": "マンガ新刊ポチ",
    "icon": null
