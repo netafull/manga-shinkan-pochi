@@ -196,7 +196,7 @@ class BuildSmokeTest(unittest.TestCase):
         self.assertIn(f"<loc>https://shinkan.netaful.jp/work/{w['slug']}/</loc>", sm)
         self.assertIn("<lastmod>", sm)
         self.assertNotIn("404.html", sm)
-        n_pages = len([p for p in self.docs.rglob("index.html")])
+        n_pages = len([p for p in self.docs.rglob("index.html") if "embed" not in p.relative_to(self.docs).parts])  # embed/ は noindex で sitemap 外
         self.assertEqual(sm.count("<url>"), n_pages)
         rb = (self.docs / "robots.txt").read_text(encoding="utf-8")
         self.assertIn("Sitemap: https://shinkan.netaful.jp/sitemap.xml", rb)
@@ -206,6 +206,8 @@ class BuildSmokeTest(unittest.TestCase):
 
     def test_canonical_and_no_noindex(self):
         for p in self.docs.rglob("*.html"):
+            if "embed" in p.relative_to(self.docs).parts:  # embed/ は noindex が正
+                continue
             h = p.read_text(encoding="utf-8")
             self.assertNotIn("noindex", h, p)
             if p.name == "404.html":

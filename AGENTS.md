@@ -31,3 +31,4 @@
 - 更新は Cloud Scheduler のジョブ `shinkan-pochi-update` が毎日 5:50（JST）に `.github/workflows/update.yml` を `workflow_dispatch` で起動する。時刻は家電ポチ（毎時:07）・電書ポチ（4時間ごと:37）と重ならないように選んである。同じAmazon枠を共有するので、時刻や頻度を変えるときは先に確認する。`schedule:` は使わない。
 - `docs/` は生成物。直接直さず `python3 build.py` で作り直す（`GA4_ID` を付けないと計測タグが消える）。`data/` の `books.json` / `books_kodansha.json` / `amazon_items.json` / `api_usage.json` / `page_lastmod.json` は更新スクリプトが書く状態なので、手で編集しない。
 - ロゴ・OGP は `make_icons.py`（pochi-branding の関数を流用。専用色 `BRAND_COLOR`）で作る。pochi-branding 側のファイルは変更しない。
+- 埋め込み（docs/embed/）: ブログ記事に貼る「○月○日発売のマンガ」のコピー元ページ（noindex・sitemap外）。生成は embed_pages.py、判定は embed_safety.py、ルールは config/embed_rules.json、手動除外は config/embed_overrides.json。overrides の exclude は必ず優先。迷ったら外す。Amazon の adult フラグが未取得の本は表紙を出さない。

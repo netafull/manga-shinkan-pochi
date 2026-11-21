@@ -42,6 +42,7 @@ ITEM_RESOURCES = [
     "itemInfo.classifications",
     "itemInfo.contentInfo",
     "itemInfo.externalIds",
+    "itemInfo.productInfo",
     "images.primary.large",
     "offersV2.listings.price",
 ]
@@ -212,7 +213,9 @@ def slim(i, today_iso=None):
     money = (listing.get("price") or {}).get("money") or {}
     img = (((i.get("images") or {}).get("primary") or {}).get("large") or {})
     eans = ((ii.get("externalIds") or {}).get("eans") or {}).get("displayValues") or []
-    return {
+    adult = (ii.get("productInfo") or {}).get("isAdultProduct")
+    adult = adult.get("displayValue") if isinstance(adult, dict) else adult
+    out = {
         "asin": i["asin"], "url": i.get("detailPageURL"),
         "title": (ii.get("title") or {}).get("displayValue"),
         "manufacturer": (by.get("manufacturer") or {}).get("displayValue"),
@@ -226,3 +229,6 @@ def slim(i, today_iso=None):
         "binding": ((ii.get("classifications") or {}).get("binding") or {}).get("displayValue"),
         "updated": today_iso or common.today().isoformat(),
     }
+    if isinstance(adult, bool):  # 成人向けフラグ（埋め込み可否の判定に使う）。取れなければキー無し
+        out["adult"] = adult
+    return out

@@ -14,6 +14,7 @@ import unicodedata
 from html import escape
 
 import common
+import embed_pages
 import pochi_verify
 from common import today  # noqa: F401  (build.today() として使われる)
 
@@ -588,12 +589,13 @@ def build(today=None, data=None, docs=None, write_lastmod=True):
     write_search_index(works)
     write_pochi_latest(works, t)
     write_feed(books, t)
+    embed_stats = embed_pages.write_all(DOCS, books, t)  # sitemap には入れない（_pages を通さない）
     write("404.html", fill(head("ページが見つかりません｜" + NAME, "お探しのページは見つかりませんでした。"))
           + '<h1>ページが見つかりません</h1><p><a href="/">トップへ</a></p>' + foot())
     n_sitemap = write_sitemap_and_robots(data / "page_lastmod.json" if write_lastmod else None, t)
     n_works = sum(1 for w in works.values() if w["pochi"])
     print(f"books={len(books)} works={len(works)} dates={len(dd)} months={len(months)} "
-          f"pochi_matched={n_works} sitemap_urls={n_sitemap}")
+          f"pochi_matched={n_works} sitemap_urls={n_sitemap} embed={embed_stats}")
     return books, works
 
 
