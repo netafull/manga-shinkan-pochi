@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""毎日の更新: 出版社 → 講談社・集英社(Amazon新着スキャン) → getItems(新規ISBN・価格更新) → ビルド。
+"""毎日の更新: 出版社 → 講談社・集英社(Amazon新着スキャン) → getItems(新規ISBN・価格更新) → 作品名の読み(openBD) → ビルド。
 
   source ~/.secrets/env     # CREATORSAPI_*（無ければAmazonの段は飛ばして既存データでビルド）
   GA4_ID=G-XXXX python3 scripts/update.py
@@ -20,6 +20,7 @@ import build_backbone  # noqa: E402
 import common  # noqa: E402
 import enrich  # noqa: E402
 import scan_kodansha  # noqa: E402
+import yomi  # noqa: E402
 
 # 1回の実行での段ごとの呼び出し枠（合計が DAILY_CAP 以下になるように）
 SCAN_MAX_CALLS = 70
@@ -103,7 +104,17 @@ def run(data_dir=None, today=None, net=True, build_fn=None, log=print):
     store["items"] = {k: v for k, v in store["items"].items() if k in used}
     common.dump_store(data / "amazon_items.json", store)
 
-    # 3) ビルド
+    # 3) 作品名の読み（openBD。失敗してもビルドは続ける）
+    ystats = {"queries": 0, "got": 0, "pending": 0, "stopped": None}
+    try:
+        ystats = yomi.run(books + kb + sb, data / "yomi.json", today, net=net, log=log)
+        if ystats["stopped"] and net:
+            warnings.append("yomi: " + ystats["stopped"])
+    except Exception as e:
+        ystats["stopped"] = type(e).__name__
+        warn(f"読みの更新で例外 ({type(e).__name__})。前回のデータでビルドします")
+
+    # 4) ビルド
     if build_fn is None:
         import build
         build_fn = lambda: build.build(today=today, data=data)  # noqa: E731
@@ -111,12 +122,12 @@ def run(data_dir=None, today=None, net=True, build_fn=None, log=print):
 
     used_calls = amazon.run_calls()
     log("[update] today=%s amazon_calls=%d (enrich=%d scan=%d shueisha=%d refresh=%d) today_total=%d/%d stopped=%s "
-        "books=%d kodansha=%d shueisha=%d items=%d warnings=%d"
+        "books=%d kodansha=%d shueisha=%d items=%d yomi_queries=%d yomi_got=%d yomi_pending=%d warnings=%d"
         % (today, used_calls, calls["enrich"], calls["scan"], calls["shueisha"], calls["refresh"],
            amazon.calls_today(), amazon.DAILY_CAP,
-           stop_reason or "no", len(books), len(kb), len(sb), len(store["items"]), len(warnings)))
+           stop_reason or "no", len(books), len(kb), len(sb), len(store["items"]), ystats["queries"], ystats["got"], ystats["pending"], len(warnings)))
     return {"calls": calls, "run_calls": used_calls, "stopped": stop_reason, "warnings": warnings,
-            "books": len(books), "kodansha": len(kb), "shueisha": len(sb), "build": info}
+            "books": len(books), "kodansha": len(kb), "shueisha": len(sb), "yomi": ystats, "build": info}
 
 
 if __name__ == "__main__":

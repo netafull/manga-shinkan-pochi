@@ -19,6 +19,7 @@ import enrich
 import parse_pub as pp
 import pubfetch
 import update
+import yomi
 import scan_kodansha
 
 TODAY = datetime.date(2026, 11, 20)
@@ -122,8 +123,11 @@ class UpdateRunTest(AmazonBase):
         # 出版社の段はそのまま前回データを返す（ネットワークに出ない）
         build_backbone.run = lambda today, prev, net=True, use_cache=False, log=print: (prev, {"publishers": {}, "warnings": []})
         self.built = []
+        self._yfetch = yomi.fetch_batch
+        yomi.fetch_batch = lambda isbns: {i: None for i in isbns}  # テストで openBD に出ない
 
     def tearDown(self):
+        yomi.fetch_batch = self._yfetch
         build_backbone.run = self._run
         super().tearDown()
 
