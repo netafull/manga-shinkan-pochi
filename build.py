@@ -106,12 +106,25 @@ def group_works(books, pochi):
                                     "yomi": None})
         w["books"].append(b)
         b["work_slug"] = slug
+    fuzzy = None
     for w in works.values():
         cands = pochi.get(norm_title(w["title"]))
         if cands:
             pick = pochi_verify.pick_candidate(w["author"], w["publisher"], cands)[0]
             if pick:
                 w["pochi"] = pick["catalogId"]
+        if not w["pochi"]:
+            # 二段目: 題名の表記ゆれ（記号・括弧書き・版の付記）。著者が一致したものだけ採用する
+            if fuzzy is None:
+                fuzzy = {}
+                for t, cs in pochi.items():
+                    fuzzy.setdefault(pochi_verify.fuzzy_key(t), []).extend(cs)
+            fk = pochi_verify.fuzzy_key(w["title"])
+            fc = fuzzy.get(fk) if len(fk) >= 3 else None
+            if fc:
+                pick = pochi_verify.pick_confirmed(w["author"], w["publisher"], fc)
+                if pick:
+                    w["pochi"] = pick["catalogId"]
     return works
 
 
