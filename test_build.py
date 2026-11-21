@@ -366,16 +366,19 @@ class PochiVerifyTest(unittest.TestCase):
         self.assertEqual(self.c("OYSTER", "双葉社", ["ÖYSTER"], "webアクション"), "confirmed")
         self.assertEqual(self.c("かき", "双葉社", ["かぎ"], "webアクション"), "mismatch")  # 濁点は外さない
 
-    def test_fuzzy_title_links_only_when_author_matches(self):
+    def test_fuzzy_title_uses_same_rule_as_exact(self):
         def bk(author, title="作品~副題", pub="小学館"):
             return {"series_key": title, "series_title": title, "publisher": pub, "author": author,
                     "title": title + " 1", "release_date": "2026-12-01"}
         cands = {"作品~副題~": [{"catalogId": "9", "site": "サンデーうぇぶり", "authors": ["山田太郎"]}]}
         self.assertEqual([w["pochi"] for w in build.group_works([bk("山田 太郎")], cands).values()], ["9"])
         self.assertEqual([w["pochi"] for w in build.group_works([bk("鈴木 花子")], cands).values()], [None])
-        # 著者の証拠がなく出版社の整合だけの候補は、表記ゆれでは付けない
+        # 著者データが無くても出版社が整合すれば付ける（一段目と同じ基準。オーナー決定 2026-11-22）
         nauth = {"作品~副題~": [{"catalogId": "9", "site": "サンデーうぇぶり", "authors": []}]}
-        self.assertEqual([w["pochi"] for w in build.group_works([bk("山田 太郎")], nauth).values()], [None])
+        self.assertEqual([w["pochi"] for w in build.group_works([bk("山田 太郎")], nauth).values()], ["9"])
+        # 出版社が食い違う（講談社のサイトに小学館の本）なら付けない
+        other = {"作品~副題~": [{"catalogId": "9", "site": "マガポケ", "authors": []}]}
+        self.assertEqual([w["pochi"] for w in build.group_works([bk("山田 太郎")], other).values()], [None])
         # 続編(+)・外伝は本編に寄せない
         seq = {"作品": [{"catalogId": "9", "site": "サンデーうぇぶり", "authors": ["山田太郎"]}]}
         self.assertEqual([w["pochi"] for w in build.group_works([bk("山田 太郎", "作品+")], seq).values()], [None])

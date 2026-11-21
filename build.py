@@ -114,7 +114,8 @@ def group_works(books, pochi):
             if pick:
                 w["pochi"] = pick["catalogId"]
         if not w["pochi"]:
-            # 二段目: 題名の表記ゆれ（記号・括弧書き・版の付記）。著者が一致したものだけ採用する
+            # 二段目: 題名の表記ゆれ（記号・括弧書き・版の付記）。採用の基準は一段目と同じ
+            # （著者一致、または漫画ポチ側に著者データが無く出版社が整合。著者不一致は付けない。オーナー決定 2026-11-22）
             if fuzzy is None:
                 fuzzy = {}
                 for t, cs in pochi.items():
@@ -122,7 +123,7 @@ def group_works(books, pochi):
             fk = pochi_verify.fuzzy_key(w["title"])
             fc = fuzzy.get(fk) if len(fk) >= 3 else None
             if fc:
-                pick = pochi_verify.pick_confirmed(w["author"], w["publisher"], fc)
+                pick = pochi_verify.pick_candidate(w["author"], w["publisher"], fc)[0]
                 if pick:
                     w["pochi"] = pick["catalogId"]
     return works

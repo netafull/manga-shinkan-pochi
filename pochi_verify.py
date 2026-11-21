@@ -135,10 +135,3 @@ def fuzzy_key(title):
     t = _EDITION.sub("", _BRACKETED.sub("", t))
     return _FUZZY_DROP.sub("", t)
 
-
-def pick_confirmed(work_author, work_publisher, cands):
-    """cands から、著者が一致（confirmed）した候補だけを選ぶ。出版社の整合だけでは採用しない。"""
-    pick, st, why, judged = pick_candidate(work_author, work_publisher, cands)
-    if pick and st == CONFIRMED:
-        return pick
-    return None
