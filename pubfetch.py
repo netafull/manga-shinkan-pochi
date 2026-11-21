@@ -20,7 +20,8 @@ ROOT = common.ROOT
 CACHE = ROOT / "cache" / "pub"
 LOG = ROOT / "logs" / "publisher_requests.jsonl"
 MIN_GAP = 3.0
-HOST_GAP = {"www.shogakukan.co.jp": 10.0}  # Crawl-delay に合わせる
+HOST_GAP = {"www.shogakukan.co.jp": 10.0,   # Crawl-delay に合わせる
+            "www.kadokawa.co.jp": 20.0}    # robots.txt の Crawl-delay: 20
 _last = {"any": 0.0}
 _last_host = {}
 
