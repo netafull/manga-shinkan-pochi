@@ -1,0 +1,121 @@
+{
+ "date": "2026-11-24",
+ "publishers": {
+  "KADOKAWA": [
+   {
+    "id": "9784041180402",
+    "title": "MEGAPHONE PARADE 1巻",
+    "volume": 1,
+    "label": "あすかコミックスDX",
+    "url": "https://www.amazon.co.jp/dp/4041180406?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51y79A7t3OL._SL500_.jpg"
+   },
+   {
+    "id": "9784041180426",
+    "title": "tu casa ここは君の家",
+    "volume": null,
+    "label": "あすかコミックスDX",
+    "url": "https://www.amazon.co.jp/dp/4041180422?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51lvqNzYLfL._SL500_.jpg"
+   },
+   {
+    "id": "9784041180105",
+    "title": "アガリビトの後始末 2巻",
+    "volume": 2,
+    "label": "あすかコミックスDX",
+    "url": "https://www.amazon.co.jp/dp/4041180104?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51o0XjNPKRL._SL500_.jpg"
+   },
+   {
+    "id": "9784041180396",
+    "title": "オリジナルコミックアンソロジー 秘密のフェチズム -感じて、もっと-",
+    "volume": null,
+    "label": "あすかコミックスDX",
+    "url": "https://www.amazon.co.jp/dp/4041180392?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51WNDLq+XWL._SL500_.jpg"
+   },
+   {
+    "id": "9784041180419",
+    "title": "マーメイド・シンドローム",
+    "volume": null,
+    "label": "あすかコミックスDX",
+    "url": "https://www.amazon.co.jp/dp/4041180414?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51pophc7QOL._SL500_.jpg"
+   },
+   {
+    "id": "9784041179239",
+    "title": "心霊探偵八雲 INITIAL FILE 思考のバイアス",
+    "volume": null,
+    "label": "あすかコミックスDX",
+    "url": "https://www.amazon.co.jp/dp/4041179238?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/41ycLa0PClL._SL500_.jpg"
+   }
+  ],
+  "少年画報社": [
+   {
+    "id": "sgh:20261124-f870e82d",
+    "title": "いきもにあっく! 3巻",
+    "volume": 3,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "sgh:20261124-267c41dc",
+    "title": "オニハソト ー鬼門街外伝 2巻",
+    "volume": 2,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "sgh:20261124-af560469",
+    "title": "ギャングキング 2巻",
+    "volume": 2,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "sgh:20261124-f82c2e7c",
+    "title": "バカ姉弟キング 3巻",
+    "volume": 3,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "sgh:20261124-5fe4cc7e",
+    "title": "マジカル☆エージェント 1巻",
+    "volume": 1,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "sgh:20261124-09e71681",
+    "title": "伝言猫がカフェにいます 2巻",
+    "volume": 2,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "sgh:20261124-09536d94",
+    "title": "家に黒猫がいます 2巻",
+    "volume": 2,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "sgh:20261124-94f4c409",
+    "title": "終電前のちょいごはん 薬院文月のみかづきレシピ 1巻",
+    "volume": 1,
+    "label": "",
+    "url": null,
+    "image": null
+   }
+  ]
+ }
+}

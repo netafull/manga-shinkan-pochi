@@ -1,0 +1,339 @@
+{
+ "date": "2026-12-11",
+ "publishers": {
+  "KADOKAWA": [
+   {
+    "id": "9784045003448",
+    "title": "3組の幼なじみ 4巻",
+    "volume": 4,
+    "label": "ビームコミックス",
+    "url": "https://www.amazon.co.jp/dp/4045003444?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/41O3hIi37TL._SL500_.jpg"
+   },
+   {
+    "id": "9784045003943",
+    "title": "MAMBA ２ 特殊業務委託機関マジカルステップ第19分室",
+    "volume": null,
+    "label": "ビームコミックス",
+    "url": "https://www.amazon.co.jp/dp/4045003940?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51pGqmNOtHL._SL500_.jpg"
+   },
+   {
+    "id": "9784045003394",
+    "title": "SUG★R -シュガー 1巻",
+    "volume": 1,
+    "label": "ビームコミックス",
+    "url": "https://www.amazon.co.jp/dp/4045003398?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/516RBxjT94L._SL500_.jpg"
+   },
+   {
+    "id": "9784045003400",
+    "title": "SUG★R -シュガー 2巻",
+    "volume": 2,
+    "label": "ビームコミックス",
+    "url": "https://www.amazon.co.jp/dp/4045003401?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/41Zr6UO14BL._SL500_.jpg"
+   },
+   {
+    "id": "9784045003424",
+    "title": "きみと光さす食卓で 上",
+    "volume": null,
+    "label": "ビームコミックス",
+    "url": "https://www.amazon.co.jp/dp/4045003428?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51EXAYkLXvL._SL500_.jpg"
+   },
+   {
+    "id": "9784045003431",
+    "title": "きみと光さす食卓で 下",
+    "volume": null,
+    "label": "ビームコミックス",
+    "url": "https://www.amazon.co.jp/dp/4045003436?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/418P8-ldXiL._SL500_.jpg"
+   },
+   {
+    "id": "9784045002984",
+    "title": "和山やま作品４冊セット 小冊子＆アクリルスタンド付き特装版",
+    "volume": null,
+    "label": "ビームコミックス",
+    "url": "https://www.amazon.co.jp/dp/4045002987?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/611DwxYlGSL._SL500_.jpg"
+   },
+   {
+    "id": "9784045003462",
+    "title": "自分しか知らない彼氏の一面 2巻",
+    "volume": 2,
+    "label": "ビームコミックス",
+    "url": "https://www.amazon.co.jp/dp/4045003460?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51w0GM8TRDL._SL500_.jpg"
+   },
+   {
+    "id": "9784045003417",
+    "title": "虎はメイドに牙がたたない 1巻",
+    "volume": 1,
+    "label": "ビームコミックス",
+    "url": "https://www.amazon.co.jp/dp/404500341X?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51aPv9lgSkL._SL500_.jpg"
+   }
+  ],
+  "小学館": [
+   {
+    "id": "9784098641574",
+    "title": "あくまで!アットホームな職場です。 3巻",
+    "volume": 3,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4098641577?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784098550555",
+    "title": "うちのルカなら。 海外のすごい犬とわが家の愛犬どっちもたまらん 4巻",
+    "volume": 4,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4098550555?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784098550418",
+    "title": "かくして季節はアオを知る 1巻",
+    "volume": 1,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4098550415?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784098550159",
+    "title": "かくて謀反の冬は去り 1巻",
+    "volume": 1,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4098550156?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784098548873",
+    "title": "と~ふのあわこ 1巻",
+    "volume": 1,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4098548879?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784098550197",
+    "title": "ギャル神官はリザレがダルい 3巻",
+    "volume": 3,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4098550199?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/513coSjpcsL._SL500_.jpg"
+   },
+   {
+    "id": "9784098550524",
+    "title": "ケンガンオメガ 35巻",
+    "volume": 35,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4098550520?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784098550432",
+    "title": "サブソング 1巻",
+    "volume": 1,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4098550431?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784098550203",
+    "title": "ジャイアントお嬢様 14巻",
+    "volume": 14,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4098550202?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784098548934",
+    "title": "ミハルの戦場 5巻",
+    "volume": 5,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4098548933?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784098641390",
+    "title": "何の怪異かわかりません 1巻",
+    "volume": 1,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4098641399?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784098550425",
+    "title": "供物のヴァンテ 1巻",
+    "volume": 1,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4098550423?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784098550371",
+    "title": "初恋あるごりずむ 1巻",
+    "volume": 1,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4098550377?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784098550548",
+    "title": "大ダーク 10巻",
+    "volume": 10,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4098550547?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784098550388",
+    "title": "宮倉ぼたんのスキャンダル 1巻",
+    "volume": 1,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4098550385?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784098550562",
+    "title": "放課後、僕らは宇宙に惑う 4巻",
+    "volume": 4,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4098550563?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784098550401",
+    "title": "最強女師匠たちが育成方針を巡って修羅場 13巻",
+    "volume": 13,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4098550407?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784098550449",
+    "title": "紅葉と紅葉 1巻",
+    "volume": 1,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/409855044X?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784098641857",
+    "title": "縁もゆかりも 4巻",
+    "volume": 4,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4098641852?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784098550517",
+    "title": "裏バイト:逃亡禁止 21巻",
+    "volume": 21,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4098550512?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784098550395",
+    "title": "閻魔ちゃんのリザルト 3巻",
+    "volume": 3,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4098550393?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   }
+  ],
+  "講談社": [
+   {
+    "id": "9784065461020",
+    "title": "あまのじゃく男子とベタ惚れ男子 2巻",
+    "volume": 2,
+    "label": "KCデラックス",
+    "url": "https://www.amazon.co.jp/dp/4065461022?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065460658",
+    "title": "しゅごキャラ! ジュエルジョーカー 5巻",
+    "volume": 5,
+    "label": "KCデラックス",
+    "url": "https://www.amazon.co.jp/dp/4065460654?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065460580",
+    "title": "しゅごキャラ! ジュエルジョーカー 5巻",
+    "volume": 5,
+    "label": "プレミアムKC",
+    "url": "https://www.amazon.co.jp/dp/4065460581?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065460696",
+    "title": "ひかえめに言っても、これは愛 10巻",
+    "volume": 10,
+    "label": "KC デザート",
+    "url": "https://www.amazon.co.jp/dp/4065460697?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065460627",
+    "title": "ゆびさきと恋々 15巻",
+    "volume": 15,
+    "label": "KC デザート",
+    "url": "https://www.amazon.co.jp/dp/406546062X?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065460511",
+    "title": "ケイ×ヤク -あぶない相棒- 16巻",
+    "volume": 16,
+    "label": "KCデラックス",
+    "url": "https://www.amazon.co.jp/dp/4065460514?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065455470",
+    "title": "バニラとオレンジ 2巻",
+    "volume": 2,
+    "label": "KC デザート",
+    "url": "https://www.amazon.co.jp/dp/4065455472?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065460597",
+    "title": "俺の声に堕ちてください 4巻",
+    "volume": 4,
+    "label": "KC デザート",
+    "url": "https://www.amazon.co.jp/dp/406546059X?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065460641",
+    "title": "初恋と青い嘘 1巻",
+    "volume": 1,
+    "label": "KCデラックス",
+    "url": "https://www.amazon.co.jp/dp/4065460646?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065460610",
+    "title": "山口くんはワルくない 14巻",
+    "volume": 14,
+    "label": "講談社コミックス別冊フレンド",
+    "url": "https://www.amazon.co.jp/dp/4065460611?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065460689",
+    "title": "運命の人に出会う話 9巻",
+    "volume": 9,
+    "label": "KC デザート",
+    "url": "https://www.amazon.co.jp/dp/4065460689?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   }
+  ]
+ }
+}

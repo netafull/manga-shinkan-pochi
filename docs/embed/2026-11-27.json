@@ -1,0 +1,415 @@
+{
+ "date": "2026-11-27",
+ "publishers": {
+  "KADOKAWA": [
+   {
+    "id": "9784049525618",
+    "title": "Fate/stay night[Unlimited Blade Works] 9巻",
+    "volume": 9,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4049525615?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/41GeaTKXW3L._SL500_.jpg"
+   },
+   {
+    "id": "9784040900391",
+    "title": "UN：LOGICAL 公式ビジュアルファンブック",
+    "volume": null,
+    "label": "B’sLOG COLLECTION",
+    "url": "https://www.amazon.co.jp/dp/4040900391?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51-afXa-sBL._SL500_.jpg"
+   },
+   {
+    "id": "9784040900544",
+    "title": "Unanswered//butterfly -SWORD ART ONLINE 1巻",
+    "volume": 1,
+    "label": "電撃コミックスNEXT",
+    "url": "https://www.amazon.co.jp/dp/4040900545?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51ZPqCBp2KL._SL500_.jpg"
+   },
+   {
+    "id": "9784049525359",
+    "title": "おっさん、転生して天才役者になる 10巻",
+    "volume": 10,
+    "label": "電撃コミックスNEXT",
+    "url": "https://www.amazon.co.jp/dp/4049525356?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51169UTuC1L._SL500_.jpg"
+   },
+   {
+    "id": "9784049525717",
+    "title": "ちゃんと好きって言える子無双 2巻",
+    "volume": 2,
+    "label": "電撃コミックスNEXT",
+    "url": "https://www.amazon.co.jp/dp/4049525712?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51pg8e24OlL._SL500_.jpg"
+   },
+   {
+    "id": "9784046608239",
+    "title": "わたしのために脱ぎなさいっ! 10巻",
+    "volume": 10,
+    "label": "MFC キューンシリーズ",
+    "url": "https://www.amazon.co.jp/dp/4046608234?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51mq6dSq5ML._SL500_.jpg"
+   },
+   {
+    "id": "9784049525670",
+    "title": "ギルドの受付嬢ですが、残業は嫌なのでボスをソロ討伐しようと思います 8巻",
+    "volume": 8,
+    "label": "電撃コミックスNEXT",
+    "url": "https://www.amazon.co.jp/dp/4049525674?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51i1lKsdvOL._SL500_.jpg"
+   },
+   {
+    "id": "9784049525687",
+    "title": "クラスの陰キャお嬢様の執事になりました 3巻",
+    "volume": 3,
+    "label": "電撃コミックスEX",
+    "url": "https://www.amazon.co.jp/dp/4049525682?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51WJ0kH+DJL._SL500_.jpg"
+   },
+   {
+    "id": "9784049525731",
+    "title": "シャーマニカ 涼森弐敷作品集",
+    "volume": null,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4049525739?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51G3sAU7uDL._SL500_.jpg"
+   },
+   {
+    "id": "9784046608215",
+    "title": "ソリストたちは青春不可避! 1巻",
+    "volume": 1,
+    "label": "MFC キューンシリーズ",
+    "url": "https://www.amazon.co.jp/dp/4046608218?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51lbh07pytL._SL500_.jpg"
+   },
+   {
+    "id": "9784049525625",
+    "title": "ハブられルーン使いの異世界冒険譚 2巻",
+    "volume": 2,
+    "label": "電撃コミックスNEXT",
+    "url": "https://www.amazon.co.jp/dp/4049525623?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51h8IetbNVL._SL500_.jpg"
+   },
+   {
+    "id": "9784049525144",
+    "title": "バスタード・ソードマン 5巻",
+    "volume": 5,
+    "label": "電撃コミックスNEXT",
+    "url": "https://www.amazon.co.jp/dp/4049525143?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/512hFGf5IzL._SL500_.jpg"
+   },
+   {
+    "id": "9784046840851",
+    "title": "ベノム 求愛性少女症候群 3巻",
+    "volume": 3,
+    "label": "MFコミックス ジーンシリーズ",
+    "url": "https://www.amazon.co.jp/dp/4046840854?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51TYjkE2lXL._SL500_.jpg"
+   },
+   {
+    "id": "9784046607065",
+    "title": "偽葬家の一族 1巻",
+    "volume": 1,
+    "label": "MFコミックス ジーンシリーズ",
+    "url": "https://www.amazon.co.jp/dp/4046607068?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51V1NLFqt+L._SL500_.jpg"
+   },
+   {
+    "id": "9784046607096",
+    "title": "光の庭~調香師と失われた香り 1巻",
+    "volume": 1,
+    "label": "MFC ジーンピクシブシリーズ",
+    "url": "https://www.amazon.co.jp/dp/4046607092?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/518+RavI1mL._SL500_.jpg"
+   },
+   {
+    "id": "9784046608031",
+    "title": "恐怖コレクター 2巻",
+    "volume": 2,
+    "label": "MFコミックス ジーンシリーズ",
+    "url": "https://www.amazon.co.jp/dp/404660803X?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/518W0aoojPL._SL500_.jpg"
+   },
+   {
+    "id": "9784049525366",
+    "title": "愚かな天使は悪魔と踊る 24巻",
+    "volume": 24,
+    "label": "電撃コミックスNEXT",
+    "url": "https://www.amazon.co.jp/dp/4049525364?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/519nMgtZ0fL._SL500_.jpg"
+   },
+   {
+    "id": "9784049525656",
+    "title": "捨てられ王子が最前線で敵国の兵士を治療したら実は第七皇女だった件 2巻",
+    "volume": 2,
+    "label": "電撃コミックスNEXT",
+    "url": "https://www.amazon.co.jp/dp/4049525658?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/513eyF6hV9L._SL500_.jpg"
+   },
+   {
+    "id": "9784049525663",
+    "title": "極悪貴族、謙虚堅実に無双する1 ～原作知識と固有魔法＜虚空＞を駆使して、破滅エンドを回避します～",
+    "volume": null,
+    "label": "電撃コミックスNEXT",
+    "url": "https://www.amazon.co.jp/dp/4049525666?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51qUdxTUXbL._SL500_.jpg"
+   },
+   {
+    "id": "9784049525373",
+    "title": "無敵商人の異世界成り上がり物語 ~現代の製品を自在に取り寄せるスキルがあるので異世界では楽勝です 9巻",
+    "volume": 9,
+    "label": "電撃コミックスNEXT",
+    "url": "https://www.amazon.co.jp/dp/4049525372?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/31aQndD0wpL._SL500_.jpg"
+   },
+   {
+    "id": "9784046607041",
+    "title": "異世界では最推しになりたい 1巻",
+    "volume": 1,
+    "label": "アルコリリカ",
+    "url": "https://www.amazon.co.jp/dp/4046607041?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51RWJETB7DL._SL500_.jpg"
+   },
+   {
+    "id": "9784040900537",
+    "title": "百英雄伝 1巻",
+    "volume": 1,
+    "label": "ファミ通クリアコミックス",
+    "url": "https://www.amazon.co.jp/dp/4040900537?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51cX-eErQ+L._SL500_.jpg"
+   },
+   {
+    "id": "9784046607997",
+    "title": "距離感バグな双子に迫られて戸惑ってます",
+    "volume": null,
+    "label": "MFC ジーンピクシブシリーズ",
+    "url": "https://www.amazon.co.jp/dp/4046607998?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/511nG925MvL._SL500_.jpg"
+   },
+   {
+    "id": "9784049525137",
+    "title": "魔法少女に復讐を 1巻",
+    "volume": 1,
+    "label": "電撃コミックスNEXT",
+    "url": "https://www.amazon.co.jp/dp/4049525135?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51u2qcri9nL._SL500_.jpg"
+   }
+  ],
+  "小学館": [
+   {
+    "id": "9784091544193",
+    "title": "Ｓｐｌａｔｏｏｎ　イカすキッズ４コマフェス　ウズシオ諸島編",
+    "volume": null,
+    "label": "コロコロコミックススペシャル",
+    "url": "https://www.amazon.co.jp/dp/4091544193?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/517nBaBJs2L._SL500_.jpg"
+   },
+   {
+    "id": "9784091544049",
+    "title": "イナズマイレブンＧＯ　完全版　下巻",
+    "volume": null,
+    "label": "コロコロコミックススペシャル",
+    "url": "https://www.amazon.co.jp/dp/4091544045?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51dczemaXyL._SL500_.jpg"
+   },
+   {
+    "id": "9784091543905",
+    "title": "ケツバトラー 5巻",
+    "volume": 5,
+    "label": "コロコロコミックススペシャル",
+    "url": "https://www.amazon.co.jp/dp/4091543901?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784091543929",
+    "title": "デュエル・マスターズ愛蔵版 7巻",
+    "volume": 7,
+    "label": "コロコロコミックススペシャル",
+    "url": "https://www.amazon.co.jp/dp/4091543928?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/515A3UzNMYL._SL500_.jpg"
+   },
+   {
+    "id": "9784091543912",
+    "title": "ドラゴン娘になりたくないっ! 5巻",
+    "volume": 5,
+    "label": "コロコロコミックススペシャル",
+    "url": "https://www.amazon.co.jp/dp/409154391X?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784091543936",
+    "title": "ドロケイファミリー 2巻",
+    "volume": 2,
+    "label": "てんとう虫コミックス",
+    "url": "https://www.amazon.co.jp/dp/4091543936?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51oTVljEO2L._SL500_.jpg"
+   },
+   {
+    "id": "9784091543943",
+    "title": "ホロビート 1巻",
+    "volume": 1,
+    "label": "てんとう虫コミックス",
+    "url": "https://www.amazon.co.jp/dp/4091543944?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/518ifbsMdeL._SL500_.jpg"
+   },
+   {
+    "id": "9784091543837",
+    "title": "ワン! 3巻",
+    "volume": 3,
+    "label": "てんとう虫コミックススペシャル",
+    "url": "https://www.amazon.co.jp/dp/4091543839?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784091543899",
+    "title": "勝利の女神:NIKKE すいーとえんかうんと 6巻",
+    "volume": 6,
+    "label": "コロコロコミックススペシャル",
+    "url": "https://www.amazon.co.jp/dp/4091543898?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/519oLbLgvzL._SL500_.jpg"
+   },
+   {
+    "id": "9784778033897",
+    "title": "地球へ... 永久愛蔵版 3巻",
+    "volume": 3,
+    "label": "書籍扱いコミックス単行本",
+    "url": "https://www.amazon.co.jp/dp/4778033892?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51J5A3MQFBL._SL500_.jpg"
+   }
+  ],
+  "白泉社": [
+   {
+    "id": "9784592167327",
+    "title": "Sランクモンスターの《ベヒーモス》だけど、猫と間違われてエルフ娘の騎士として暮らしてます 15巻",
+    "volume": 15,
+    "label": "ヤングアニマルコミックス",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784592167334",
+    "title": "《最強ステータス》を引き継いで人間に転生した聖獣ベヒーモス、勇者の婚約者(お姫様)をうっかり寝取ってしまう 4巻",
+    "volume": 4,
+    "label": "ヤングアニマルコミックス",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784592160991",
+    "title": "ケンカザカリ 2巻",
+    "volume": 2,
+    "label": "ヤングアニマルコミックス",
+    "url": "https://www.amazon.co.jp/dp/4592160991?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51882J+oi7L._SL500_.jpg"
+   },
+   {
+    "id": "9784592167341",
+    "title": "捕虜英雄~捨て駒にされた剣奴は敵国で成り上がる 4巻",
+    "volume": 4,
+    "label": "ヤングアニマルコミックス",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784592161493",
+    "title": "異世界に行ったので手に職を持って生き延びます 2巻",
+    "volume": 2,
+    "label": "ヤングアニマルコミックス",
+    "url": "https://www.amazon.co.jp/dp/4592161491?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51FEB6uMUJL._SL500_.jpg"
+   },
+   {
+    "id": "9784592167297",
+    "title": "真田魂 6巻",
+    "volume": 6,
+    "label": "ヤングアニマルコミックス",
+    "url": "https://www.amazon.co.jp/dp/4592167295?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51v7-kKB3SL._SL500_.jpg"
+   },
+   {
+    "id": "9784592162384",
+    "title": "軍師 黒田官兵衛伝 8巻",
+    "volume": 8,
+    "label": "ヤングアニマルコミックス",
+    "url": "https://www.amazon.co.jp/dp/4592162382?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51ir1rzXRJL._SL500_.jpg"
+   }
+  ],
+  "秋田書店": [
+   {
+    "id": "9784253020978",
+    "title": "サンタ令嬢は眠れぬ騎士へのプレゼントになりたくない 2巻",
+    "volume": 2,
+    "label": "ヤングチャンピオン・コミックス",
+    "url": "https://www.amazon.co.jp/dp/4253020976?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51ZW7Rc8liL._SL500_.jpg"
+   },
+   {
+    "id": "9784253020985",
+    "title": "シーカーズ 〜迷宮最強のおじさん、神配信者となる〜 7巻",
+    "volume": 7,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784253020992",
+    "title": "勇者殺しの元暗殺者。 〜無職のおっさんから始まるセカンドライフ〜 6巻",
+    "volume": 6,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784253020954",
+    "title": "売れ残りの奴隷エルフを拾ったので、娘にすることにした 5巻",
+    "volume": 5,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784253020961",
+    "title": "婚約者に「あなたは将来浮気をしてわたしを捨てるから別れてください」と言ってみた 6巻",
+    "volume": 6,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784253018968",
+    "title": "異世界すしざんまい マグロ大王木村社長、食を通じて異世界改革! 2巻",
+    "volume": 2,
+    "label": "ボニータ・コミックス",
+    "url": "https://www.amazon.co.jp/dp/4253018963?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51odh5liNoL._SL500_.jpg"
+   },
+   {
+    "id": "9784253021005",
+    "title": "運送屋のおっさんがなぜか副業で絶対無敵剣士を務めることに 〜さえない人生を送ってた俺が魔王討伐の切り札に?〜 5巻",
+    "volume": 5,
+    "label": "",
+    "url": null,
+    "image": null
+   }
+  ],
+  "竹書房": [
+   {
+    "id": "9784801991347",
+    "title": "吾心を食む紅 中",
+    "volume": null,
+    "label": "麗人セレクション",
+    "url": "https://www.amazon.co.jp/dp/4801991343?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51tzeZFPTZL._SL500_.jpg"
+   },
+   {
+    "id": "9784801991330",
+    "title": "雑兵めし物語 5巻",
+    "volume": 5,
+    "label": "竹コミ！",
+    "url": "https://www.amazon.co.jp/dp/4801991335?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51RqH-pnxxL._SL500_.jpg"
+   }
+  ]
+ }
+}

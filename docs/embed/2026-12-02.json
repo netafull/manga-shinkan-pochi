@@ -1,0 +1,33 @@
+{
+ "date": "2026-12-02",
+ "publishers": {
+  "KADOKAWA": [
+   {
+    "id": "9784040900216",
+    "title": "The Art of PRAGMATA　プラグマタ 公式設定画集 -Lunar Echoes-",
+    "volume": null,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4040900219?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/4177pg6ua0L._SL500_.jpg"
+   }
+  ],
+  "小学館": [
+   {
+    "id": "9784099432508",
+    "title": "ドラミちゃん　かわいいポスターコレクション１　わくわくしてる",
+    "volume": null,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4099432505?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784099432515",
+    "title": "ドラミちゃん　かわいいポスターコレクション２　ごそごそしてる",
+    "volume": null,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4099432513?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   }
+  ]
+ }
+}

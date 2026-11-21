@@ -3,7 +3,7 @@
  "site": "shinkan",
  "site_name": "マンガ新刊ポチ",
  "site_url": "https://shinkan.netaful.jp/",
- "generated": "2026-11-21T05:53:31+09:00",
+ "generated": "2026-11-21T23:20:35+09:00",
  "items": [
   {
    "id": "shinkan:9784065454619",
@@ -11,7 +11,7 @@
    "url": "https://shinkan.netaful.jp/work/b800997f40/",
    "date": "2026-11-20",
    "note": "11月20日発売",
-   "image": "https://m.media-amazon.com/images/I/61QxnUbXvOL._SL500_.jpg",
+   "image": "https://m.media-amazon.com/images/I/51cAZ5nav4L._SL500_.jpg",
    "image_link": "https://www.amazon.co.jp/dp/4065454611?tag=natafull-22&linkCode=osi&th=1&psc=1",
    "source": "shinkan",
    "source_name": "マンガ新刊ポチ",
@@ -208,6 +208,18 @@
    "icon": null
   },
   {
+   "id": "shinkan:9784065461723",
+   "title": "スーパーマーモットへようこそ! 1巻",
+   "url": "https://shinkan.netaful.jp/work/a14cd5984e/",
+   "date": "2026-11-20",
+   "note": "11月20日発売",
+   "image": "https://m.media-amazon.com/images/I/41Tl4yHYuTL._SL500_.jpg",
+   "image_link": "https://www.amazon.co.jp/dp/4065461723?tag=natafull-22&linkCode=osi&th=1&psc=1",
+   "source": "shinkan",
+   "source_name": "マンガ新刊ポチ",
+   "icon": null
+  },
+  {
    "id": "shinkan:9784065456743",
    "title": "スキップとローファー 14巻",
    "url": "https://shinkan.netaful.jp/work/4f923f77c8/",
@@ -227,18 +239,6 @@
    "note": "11月20日発売",
    "image": "https://m.media-amazon.com/images/I/41AaJWd391L._SL500_.jpg",
    "image_link": "https://www.amazon.co.jp/dp/4065451280?tag=natafull-22&linkCode=osi&th=1&psc=1",
-   "source": "shinkan",
-   "source_name": "マンガ新刊ポチ",
-   "icon": null
-  },
-  {
-   "id": "shinkan:9784065456866",
-   "title": "ゴールデンファントム 2巻",
-   "url": "https://shinkan.netaful.jp/work/fe4b466dc0/",
-   "date": "2026-11-20",
-   "note": "11月20日発売",
-   "image": "https://m.media-amazon.com/images/I/51r7pPX1L7L._SL500_.jpg",
-   "image_link": "https://www.amazon.co.jp/dp/406545686X?tag=natafull-22&linkCode=osi&th=1&psc=1",
    "source": "shinkan",
    "source_name": "マンガ新刊ポチ",
    "icon": null

@@ -1,0 +1,227 @@
+{
+ "date": "2026-12-23",
+ "publishers": {
+  "KADOKAWA": [
+   {
+    "id": "9784046607676",
+    "title": "ELECEED -エレキシード 3巻",
+    "volume": 3,
+    "label": "MFC",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784046607683",
+    "title": "ELECEED -エレキシード 4巻",
+    "volume": 4,
+    "label": "MFC",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784046608192",
+    "title": "じいさんばあさん若返る 10巻",
+    "volume": 10,
+    "label": "MFC",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784046608161",
+    "title": "ニセモノの錬金術師 6巻",
+    "volume": 6,
+    "label": "MFC",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784046607652",
+    "title": "俺だけレベルアップな件外伝 2巻",
+    "volume": 2,
+    "label": "MFC",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784046606785",
+    "title": "召喚された賢者は異世界を往く ~最強なのは不要在庫のアイテムでした 16巻",
+    "volume": 16,
+    "label": "MFC",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784046607904",
+    "title": "宝石商のメイド 9巻",
+    "volume": 9,
+    "label": "MFC",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784046608154",
+    "title": "成長チートでなんでもできるようになったが、無職だけは辞められないようです 33巻",
+    "volume": 33,
+    "label": "MFC",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784046608130",
+    "title": "異世界の主役は我々だ! 18巻",
+    "volume": 18,
+    "label": "MFC",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784046608079",
+    "title": "盛りあがらないデート 4巻",
+    "volume": 4,
+    "label": "MFC",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784046608086",
+    "title": "盛りあがらないデート 5巻",
+    "volume": 5,
+    "label": "MFC",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784046608147",
+    "title": "魔法少女ノ魔女裁判 3巻",
+    "volume": 3,
+    "label": "MFC",
+    "url": null,
+    "image": null
+   }
+  ],
+  "双葉社": [
+   {
+    "id": "9784575425758",
+    "title": "優しい家族と、たくさんのもふもふに囲まれて。~異世界で幸せに暮らします 13巻",
+    "volume": 13,
+    "label": "モンスターコミックスｆ",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784575425734",
+    "title": "年上陛下の不器用な寵愛 ~政略結婚なのに、私を大事にしすぎです! 3巻",
+    "volume": 3,
+    "label": "モンスターコミックスｆ",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784575425710",
+    "title": "後宮の謎解きはお昼寝のあとで ~稀代の怠け巫女、なぜか腹黒皇帝に愛でられています 1巻",
+    "volume": 1,
+    "label": "モンスターコミックスｆ",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784575425741",
+    "title": "悪夢から目覚めた傲慢令嬢はやり直しを模索中 12巻",
+    "volume": 12,
+    "label": "モンスターコミックスｆ",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784575425727",
+    "title": "悪女アリエッタの処世術 ~あざとくてごめんあそばせ 2巻",
+    "volume": 2,
+    "label": "モンスターコミックスｆ",
+    "url": null,
+    "image": null
+   }
+  ],
+  "集英社": [
+   {
+    "id": "9784088433288",
+    "title": "おとなの恋は、やぶさかにつき。 7 (マーガレットコミックス)",
+    "volume": null,
+    "label": "マーガレットコミックス",
+    "url": "https://www.amazon.co.jp/dp/4088433289?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784088433349",
+    "title": "だってこれが初恋 3 (マーガレットコミックス)",
+    "volume": null,
+    "label": "マーガレットコミックス",
+    "url": "https://www.amazon.co.jp/dp/4088433343?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784088678511",
+    "title": "アニマル横町 26 (りぼんマスコットコミックス)",
+    "volume": null,
+    "label": "りぼんマスコットコミックス",
+    "url": "https://www.amazon.co.jp/dp/4088678516?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784088433486",
+    "title": "キミと越えて恋になる 13 (マーガレットコミックス)",
+    "volume": null,
+    "label": "マーガレットコミックス",
+    "url": "https://www.amazon.co.jp/dp/4088433483?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784088678528",
+    "title": "シュガーレスロマンス 1 (りぼんマスコットコミックス)",
+    "volume": null,
+    "label": "りぼんマスコットコミックス",
+    "url": "https://www.amazon.co.jp/dp/4088678524?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784088433271",
+    "title": "包帯ごっこ 9 (マーガレットコミックス)",
+    "volume": null,
+    "label": "マーガレットコミックス",
+    "url": "https://www.amazon.co.jp/dp/4088433270?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/41C6uI4nzDL._SL500_.jpg"
+   },
+   {
+    "id": "9784088433264",
+    "title": "恋とシンクロニシティ 3 (マーガレットコミックス)",
+    "volume": null,
+    "label": "マーガレットコミックス",
+    "url": "https://www.amazon.co.jp/dp/4088433262?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/515utVFdJKL._SL500_.jpg"
+   },
+   {
+    "id": "9784088678542",
+    "title": "翔けて春風 4 (りぼんマスコットコミックス)",
+    "volume": null,
+    "label": "りぼんマスコットコミックス",
+    "url": "https://www.amazon.co.jp/dp/4088678540?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784088433493",
+    "title": "花見小路北日記 6 (マーガレットコミックス)",
+    "volume": null,
+    "label": "マーガレットコミックス",
+    "url": "https://www.amazon.co.jp/dp/4088433491?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784088678535",
+    "title": "霧島くんは普通じゃない 1 (りぼんマスコットコミックス)",
+    "volume": null,
+    "label": "りぼんマスコットコミックス",
+    "url": "https://www.amazon.co.jp/dp/4088678532?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51PRUQnv66L._SL500_.jpg"
+   }
+  ]
+ }
+}

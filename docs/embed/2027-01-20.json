@@ -1,0 +1,185 @@
+{
+ "date": "2027-01-20",
+ "publishers": {
+  "秋田書店": [
+   {
+    "id": "9784253022200",
+    "title": "OUT 30巻",
+    "volume": 30,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784253022224",
+    "title": "オーロラビジョンにご注目 1巻",
+    "volume": 1,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784253022286",
+    "title": "キミの顔で僕にキスして 1巻",
+    "volume": 1,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784253022125",
+    "title": "サキュバス&ヒットマン 15巻",
+    "volume": 15,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784253022187",
+    "title": "バブル 〜チカーノKEI歌舞伎町血闘編〜 12巻",
+    "volume": 12,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784253022163",
+    "title": "上伊那ぼたん、酔へる姿は百合の花 9巻",
+    "volume": 9,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784253022217",
+    "title": "僕の家に巣喰う君 1巻",
+    "volume": 1,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784253022149",
+    "title": "冬嵐記 福島勝千代一代記 3巻",
+    "volume": 3,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784253022231",
+    "title": "刺青道〜三兄妹の絆〜 1巻",
+    "volume": 1,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784253022248",
+    "title": "惨劇山脈 〜ヒグマ襲撃〜 4巻",
+    "volume": 4,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784253022262",
+    "title": "教生カンケイ 2巻",
+    "volume": 2,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784253021050",
+    "title": "新装版 名探偵マーニー 9巻",
+    "volume": 9,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784253021067",
+    "title": "新装版 名探偵マーニー 10巻",
+    "volume": 10,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784253021074",
+    "title": "新装版 名探偵マーニー 11巻",
+    "volume": 11,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784253022132",
+    "title": "新装版 名探偵マーニー 12巻",
+    "volume": 12,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784253022194",
+    "title": "路地裏のアイリス 1巻",
+    "volume": 1,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784253022279",
+    "title": "鬱ごはん 7巻",
+    "volume": 7,
+    "label": "",
+    "url": null,
+    "image": null
+   }
+  ],
+  "講談社": [
+   {
+    "id": "9784065464052",
+    "title": "10000人斬りの魔法使い 1巻",
+    "volume": 1,
+    "label": "ヤンマガKCスペシャル",
+    "url": "https://www.amazon.co.jp/dp/4065464056?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065464762",
+    "title": "GLITCH WITCH 1巻",
+    "volume": 1,
+    "label": "KCデラックス",
+    "url": "https://www.amazon.co.jp/dp/4065464765?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065457269",
+    "title": "THE LAST TERRAN 1巻",
+    "volume": 1,
+    "label": "ヤンマガKCスペシャル",
+    "url": "https://www.amazon.co.jp/dp/4065457262?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/61jwE6RxxAL._SL500_.jpg"
+   },
+   {
+    "id": "9784065467190",
+    "title": "七分の一のサバイバー 1巻",
+    "volume": 1,
+    "label": "ヤンマガKCスペシャル",
+    "url": "https://www.amazon.co.jp/dp/4065467195?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51kNUPs4lCL._SL500_.jpg"
+   },
+   {
+    "id": "9784065464243",
+    "title": "君の髪が気になるんだ 1巻",
+    "volume": 1,
+    "label": "ヤンマガKCスペシャル",
+    "url": "https://www.amazon.co.jp/dp/4065464242?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/515dijiyypL._SL500_.jpg"
+   }
+  ]
+ }
+}

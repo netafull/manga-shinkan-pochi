@@ -1,0 +1,297 @@
+{
+ "date": "2026-12-25",
+ "publishers": {
+  "KADOKAWA": [
+   {
+    "id": "9784046607935",
+    "title": "きみにだけハートビート",
+    "volume": null,
+    "label": "MFC ジーンピクシブシリーズ",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784046606020",
+    "title": "けやき商店街 桜ノ湯 3巻",
+    "volume": 3,
+    "label": "MFC ジーンピクシブシリーズ",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784046606051",
+    "title": "クソカス男と激メロ男",
+    "volume": null,
+    "label": "MFC ジーンピクシブシリーズ",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784046606037",
+    "title": "波を辿った先に 3巻",
+    "volume": 3,
+    "label": "MFC ジーンピクシブシリーズ",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784041180211",
+    "title": "継母の連れ子が元カノだった Art Works たかやKi画集",
+    "volume": null,
+    "label": "",
+    "url": null,
+    "image": null
+   }
+  ],
+  "小学館": [
+   {
+    "id": "9784091544018",
+    "title": "まんがで!にゃんこ大戦争 20巻",
+    "volume": 20,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784091544216",
+    "title": "アメイジング デジタル サーカス 3巻",
+    "volume": 3,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784091544186",
+    "title": "オレだけはマトモくん 中学生編 4巻",
+    "volume": 4,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784091543219",
+    "title": "カレコレ 10巻",
+    "volume": 10,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784091543967",
+    "title": "ケツバトラー2 1巻",
+    "volume": 1,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784091544025",
+    "title": "ソニックと勇気のつるぎ 3巻",
+    "volume": 3,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784091436566",
+    "title": "ポケットモンスタースペシャル 65巻",
+    "volume": 65,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784091543950",
+    "title": "城とドラゴン 1巻",
+    "volume": 1,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784091544032",
+    "title": "逆転バリバリバース 2巻",
+    "volume": 2,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784099432522",
+    "title": "逆転バリバリバース　２　金のバリバコイン２枚つき特装版",
+    "volume": null,
+    "label": "",
+    "url": null,
+    "image": null
+   }
+  ],
+  "少年画報社": [
+   {
+    "id": "sgh:20261225-0169502c",
+    "title": "おちこぼれ 1巻",
+    "volume": 1,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "sgh:20261225-c66cf4e2",
+    "title": "ギャングキング 3巻",
+    "volume": 3,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "sgh:20261225-2c36db6a",
+    "title": "ドンケツ 第2章 19巻",
+    "volume": 19,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "sgh:20261225-cc753048",
+    "title": "ベアフェイス ~公安を去った男 9巻",
+    "volume": 9,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "sgh:20261225-e918e245",
+    "title": "七海ちゃんより好きって言って。 上巻",
+    "volume": null,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "sgh:20261225-8e1636a6",
+    "title": "株式会社 神かくし 13巻",
+    "volume": 13,
+    "label": "",
+    "url": null,
+    "image": null
+   }
+  ],
+  "白泉社": [
+   {
+    "id": "haku:80801",
+    "title": "おそらくカノジョは俺の兄貴を狙ってる 4巻",
+    "volume": 4,
+    "label": "ヤングアニマルコミックス",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "haku:80798",
+    "title": "キッチンカー『デリ・ジョイ』―車窓から異世界へ美味いもの密輸販売中!― 9巻",
+    "volume": 9,
+    "label": "ヤングアニマルコミックス",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "haku:80796",
+    "title": "ペンと手錠と事実婚 8巻",
+    "volume": 8,
+    "label": "ヤングアニマルコミックス",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "haku:80794",
+    "title": "俺と聖女がデキてることがバレたらこのパーティーは崩壊する 3巻",
+    "volume": 3,
+    "label": "ヤングアニマルコミックス",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "haku:80795",
+    "title": "妖怪王きゅん学園 2巻",
+    "volume": 2,
+    "label": "ヤングアニマルコミックス",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "haku:80799",
+    "title": "拳奴死闘伝セスタス 13巻",
+    "volume": 13,
+    "label": "ヤングアニマルコミックス",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "haku:80797",
+    "title": "拷問バイトくんの日常 9巻",
+    "volume": 9,
+    "label": "ヤングアニマルコミックス",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "haku:80800",
+    "title": "描くなるうえは 9巻",
+    "volume": 9,
+    "label": "ヤングアニマルコミックス",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "haku:80793",
+    "title": "魔法機械人間906 2巻",
+    "volume": 2,
+    "label": "ヤングアニマルコミックス",
+    "url": null,
+    "image": null
+   }
+  ],
+  "竹書房": [
+   {
+    "id": "take:10204019",
+    "title": "本気になるには遅すぎる",
+    "volume": null,
+    "label": "バンブーコミックスmoment",
+    "url": null,
+    "image": null
+   }
+  ],
+  "集英社": [
+   {
+    "id": "9784081153213",
+    "title": "こち亀 超50周年!! お宝!チョイス 1月 (集英社リミックス)",
+    "volume": null,
+    "label": "集英社リミックス",
+    "url": "https://www.amazon.co.jp/dp/4081153213?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784086316798",
+    "title": "異世界ラクラク無人島ライフ 5 ~クラス転移でクラフト能力を選んだ俺だけが、美少女たちとスローライフを送れるっぽい~ (ダッシュエックス文庫)",
+    "volume": null,
+    "label": "ダッシュエックス文庫",
+    "url": "https://www.amazon.co.jp/dp/408631679X?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51CnPjU-lnL._SL500_.jpg"
+   },
+   {
+    "id": "9784086316804",
+    "title": "転生したら糞ゲーの悪役令嬢の義兄でした。 ~没落に巻き込まれて死ぬのはゴメンなのでシナリオを壊していきます!~ (ダッシュエックス文庫)",
+    "volume": null,
+    "label": "ダッシュエックス文庫",
+    "url": "https://www.amazon.co.jp/dp/4086316803?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51768WxWONL._SL500_.jpg"
+   },
+   {
+    "id": "9784086316781",
+    "title": "高校時代に傲慢だった女王様との同棲生活は意外と居心地が悪くない 6 (ダッシュエックス文庫)",
+    "volume": null,
+    "label": "ダッシュエックス文庫",
+    "url": "https://www.amazon.co.jp/dp/4086316781?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/41P9chDetXL._SL500_.jpg"
+   }
+  ]
+ }
+}

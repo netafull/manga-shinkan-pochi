@@ -1,0 +1,289 @@
+{
+ "date": "2026-12-08",
+ "publishers": {
+  "KADOKAWA": [
+   {
+    "id": "9784049211955",
+    "title": "BanG Dream! It's MyGO!!!!! 雨にそよいで晴れを請う 4巻",
+    "volume": 4,
+    "label": "ブシロードコミックス",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784049211962",
+    "title": "BanG Dream! It's MyGO!!!!! 雨にそよいで晴れを請う 4巻",
+    "volume": 4,
+    "label": "ブシロードコミックス",
+    "url": "https://www.amazon.co.jp/dp/4049211963?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51MJEFI4c4L._SL500_.jpg"
+   },
+   {
+    "id": "9784046609137",
+    "title": "JK漱石 4巻",
+    "volume": 4,
+    "label": "BRIDGE COMICS",
+    "url": "https://www.amazon.co.jp/dp/4046609133?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/31TcPB8kCpL._SL500_.jpg"
+   },
+   {
+    "id": "9784049212273",
+    "title": "その子供、伝説の剣聖につき 2巻",
+    "volume": 2,
+    "label": "ブシロードコミックス",
+    "url": "https://www.amazon.co.jp/dp/4049212277?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51A+pgac8oL._SL500_.jpg"
+   },
+   {
+    "id": "9784049212242",
+    "title": "グリーンスライムに転生した俺は、呪われた異世界を緑でいっぱいにするようです。 1巻",
+    "volume": 1,
+    "label": "ブシロードコミックス",
+    "url": "https://www.amazon.co.jp/dp/4049212242?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51x+MYgtMcL._SL500_.jpg"
+   },
+   {
+    "id": "9784049212099",
+    "title": "倒れた婦人を救ったご褒美は、娘の美人双子とのお付き合いでした。 2巻",
+    "volume": 2,
+    "label": "ブシロードコミックス",
+    "url": "https://www.amazon.co.jp/dp/4049212099?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51k7a2x-R0L._SL500_.jpg"
+   },
+   {
+    "id": "9784049212259",
+    "title": "勇者落選野郎は大悪王へ 1巻",
+    "volume": 1,
+    "label": "ブシロードコミックス",
+    "url": "https://www.amazon.co.jp/dp/4049212250?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/511ByG1lHHL._SL500_.jpg"
+   },
+   {
+    "id": "9784049212105",
+    "title": "双子の妹に殺された姉、二度目の人生は初恋のイケおじ王弟にフルベットします! 2巻",
+    "volume": 2,
+    "label": "ブシロードコミックス",
+    "url": "https://www.amazon.co.jp/dp/4049212102?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51MW7l4G-9L._SL500_.jpg"
+   },
+   {
+    "id": "9784049212280",
+    "title": "後悔しても知らない！ 今度は無下にされた令嬢の勝利ですわ！ アンソロジーコミック",
+    "volume": null,
+    "label": "ブシロードコミックス",
+    "url": "https://www.amazon.co.jp/dp/4049212285?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51aiFOIqg6L._SL500_.jpg"
+   },
+   {
+    "id": "9784049212266",
+    "title": "魔法少女イナバ 3巻",
+    "volume": 3,
+    "label": "ブシロードコミックス",
+    "url": "https://www.amazon.co.jp/dp/4049212269?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/511doAT6NnL._SL500_.jpg"
+   }
+  ],
+  "秋田書店": [
+   {
+    "id": "9784253021234",
+    "title": "6年生としたいこと 1巻",
+    "volume": 1,
+    "label": "少年チャンピオン・コミックス",
+    "url": "https://www.amazon.co.jp/dp/4253021239?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51HFELvRTIL._SL500_.jpg"
+   },
+   {
+    "id": "9784253021142",
+    "title": "BEAST COMPLEX V 5巻",
+    "volume": 5,
+    "label": "少年チャンピオン・コミックス",
+    "url": "https://www.amazon.co.jp/dp/425302114X?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784253021135",
+    "title": "BREAK BACK 26巻",
+    "volume": 26,
+    "label": "少年チャンピオン・コミックス",
+    "url": "https://www.amazon.co.jp/dp/4253021131?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51DEI+VvQLL._SL500_.jpg"
+   },
+   {
+    "id": "9784253021364",
+    "title": "おひ釣りさま 16巻",
+    "volume": 16,
+    "label": "少年チャンピオン・コミックス・タップ!",
+    "url": "https://www.amazon.co.jp/dp/4253021360?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784253021272",
+    "title": "きみは四葉のクローバー 12巻",
+    "volume": 12,
+    "label": "少年チャンピオン・コミックス",
+    "url": "https://www.amazon.co.jp/dp/4253021271?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51F91oHLPpL._SL500_.jpg"
+   },
+   {
+    "id": "9784253021241",
+    "title": "せやかて珠世ちゃんは恋がしたい 1巻",
+    "volume": 1,
+    "label": "少年チャンピオン・コミックス",
+    "url": "https://www.amazon.co.jp/dp/4253021247?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51O1Ghpf1YL._SL500_.jpg"
+   },
+   {
+    "id": "9784253021357",
+    "title": "ましろくん 第2巻 特装版",
+    "volume": null,
+    "label": "少年チャンピオン・コミックス",
+    "url": "https://www.amazon.co.jp/dp/4253021352?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51KvsygL-BL._SL500_.jpg"
+   },
+   {
+    "id": "9784253021203",
+    "title": "よ〜こそホラー学科へ 2巻",
+    "volume": 2,
+    "label": "少年チャンピオン・コミックス",
+    "url": "https://www.amazon.co.jp/dp/4253021204?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784253021197",
+    "title": "カンピオーニ 5巻",
+    "volume": 5,
+    "label": "少年チャンピオン・コミックス",
+    "url": "https://www.amazon.co.jp/dp/4253021190?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784253021258",
+    "title": "ガブ 7巻",
+    "volume": 7,
+    "label": "少年チャンピオン・コミックス",
+    "url": "https://www.amazon.co.jp/dp/4253021255?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784253021210",
+    "title": "ガールズ×ヴァンパイア 2巻",
+    "volume": 2,
+    "label": "少年チャンピオン・コミックス",
+    "url": "https://www.amazon.co.jp/dp/4253021212?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51-6LT6mCzL._SL500_.jpg"
+   },
+   {
+    "id": "9784253021296",
+    "title": "キミに恋する三姉妹 10巻",
+    "volume": 10,
+    "label": "少年チャンピオン・コミックス",
+    "url": "https://www.amazon.co.jp/dp/4253021298?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784253021166",
+    "title": "タイカの理性 9巻",
+    "volume": 9,
+    "label": "少年チャンピオン・コミックス",
+    "url": "https://www.amazon.co.jp/dp/4253021166?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784253021111",
+    "title": "チキン 「ドロップ」前夜の物語 49巻",
+    "volume": 49,
+    "label": "少年チャンピオン・コミックス",
+    "url": "https://www.amazon.co.jp/dp/4253021115?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51rEwybjvTL._SL500_.jpg"
+   },
+   {
+    "id": "9784253021180",
+    "title": "ナインピークス NINE PEAKS 22巻",
+    "volume": 22,
+    "label": "少年チャンピオン・コミックス",
+    "url": "https://www.amazon.co.jp/dp/4253021182?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784253021326",
+    "title": "バキ外伝 烈海王は異世界転生しても一向にかまわんッッ 18巻",
+    "volume": 18,
+    "label": "少年チャンピオン・コミックス",
+    "url": "https://www.amazon.co.jp/dp/4253021328?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784253021333",
+    "title": "ババンババンバンバンパイア 15巻",
+    "volume": 15,
+    "label": "少年チャンピオン・コミックス",
+    "url": "https://www.amazon.co.jp/dp/4253021336?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784253021302",
+    "title": "京四郎 少年ヤクザ編 5巻",
+    "volume": 5,
+    "label": "少年チャンピオン・コミックス",
+    "url": "https://www.amazon.co.jp/dp/4253021301?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784253021289",
+    "title": "呪解 2巻",
+    "volume": 2,
+    "label": "少年チャンピオン・コミックス",
+    "url": "https://www.amazon.co.jp/dp/425302128X?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51N75-udb5L._SL500_.jpg"
+   },
+   {
+    "id": "9784253021173",
+    "title": "弱虫ペダル 103巻",
+    "volume": 103,
+    "label": "少年チャンピオン・コミックス",
+    "url": "https://www.amazon.co.jp/dp/4253021174?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784253020596",
+    "title": "火喰鳥 羽州ぼろ鳶組 7巻",
+    "volume": 7,
+    "label": "少年チャンピオン・コミックス",
+    "url": "https://www.amazon.co.jp/dp/4253020593?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784253021265",
+    "title": "私たちはカケちがっている 4巻",
+    "volume": 4,
+    "label": "少年チャンピオン・コミックス",
+    "url": "https://www.amazon.co.jp/dp/4253021263?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51yM43PLYkL._SL500_.jpg"
+   },
+   {
+    "id": "9784253021159",
+    "title": "蟻の王 22巻",
+    "volume": 22,
+    "label": "少年チャンピオン・コミックス",
+    "url": "https://www.amazon.co.jp/dp/4253021158?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784253021227",
+    "title": "選手の交代をお知らせいたします 3巻",
+    "volume": 3,
+    "label": "少年チャンピオン・コミックス",
+    "url": "https://www.amazon.co.jp/dp/4253021220?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51t3wd5xIZL._SL500_.jpg"
+   },
+   {
+    "id": "9784253021104",
+    "title": "閻魔の教室 8巻",
+    "volume": 8,
+    "label": "少年チャンピオン・コミックス",
+    "url": "https://www.amazon.co.jp/dp/4253021107?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   }
+  ]
+ }
+}

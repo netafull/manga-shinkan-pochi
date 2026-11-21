@@ -1,0 +1,335 @@
+{
+ "date": "2026-11-30",
+ "publishers": {
+  "KADOKAWA": [
+   {
+    "id": "9784046604101",
+    "title": "しぐれういファンブック",
+    "volume": null,
+    "label": "KITORA",
+    "url": "https://www.amazon.co.jp/dp/4046604107?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/513UCfwUNrL._SL500_.jpg"
+   }
+  ],
+  "双葉社": [
+   {
+    "id": "9784575425611",
+    "title": "S級パーティーから追放された狩人、実は世界最強 ~射程9999の男、帝国の狙撃手として無双する 5巻",
+    "volume": 5,
+    "label": "モンスターコミックス",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784575425093",
+    "title": "その門番、最強につき~追放された防御力9999の戦士、王都の門番として無双する 10巻",
+    "volume": 10,
+    "label": "モンスターコミックス",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784575425581",
+    "title": "世界最強の陰キャ、ダンジョン配信で億バズる 配信切り忘れのせいで、うっかりレベルカンストしていることがバレてしまった 5巻",
+    "volume": 5,
+    "label": "モンスターコミックス",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784575425567",
+    "title": "伝説に残らなかった大賢者 3巻",
+    "volume": 3,
+    "label": "モンスターコミックス",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784575425550",
+    "title": "怠惰な悪役王子に転生した俺、悪のおっぱい王国を築く ~ゲーム世界で好き勝手に生きていたのに、なぜか美少女達が俺を離さない件 1巻",
+    "volume": 1,
+    "label": "モンスターコミックス",
+    "url": "https://www.amazon.co.jp/dp/4575425559?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51QPeGoHNxL._SL500_.jpg"
+   },
+   {
+    "id": "9784575425604",
+    "title": "異世界でもふもふなでなでするためにがんばってます。 18巻",
+    "volume": 18,
+    "label": "モンスターコミックス",
+    "url": null,
+    "image": null
+   }
+  ],
+  "小学館": [
+   {
+    "id": "9784098641802",
+    "title": "Deep3 16巻",
+    "volume": 16,
+    "label": "ビッグコミックス",
+    "url": "https://www.amazon.co.jp/dp/4098641801?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/41zPLVPt9+L._SL500_.jpg"
+   },
+   {
+    "id": "9784098641727",
+    "title": "ROPPEN-六篇 13巻",
+    "volume": 13,
+    "label": "ビッグコミックス",
+    "url": "https://www.amazon.co.jp/dp/4098641720?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51hkNx8D5pL._SL500_.jpg"
+   },
+   {
+    "id": "9784098641680",
+    "title": "ありす、宇宙までも 8巻",
+    "volume": 8,
+    "label": "ビッグコミックス",
+    "url": "https://www.amazon.co.jp/dp/4098641682?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/41rgMLN+afL._SL500_.jpg"
+   },
+   {
+    "id": "9784098641819",
+    "title": "いけない二人 3巻",
+    "volume": 3,
+    "label": "ビッグコミックス",
+    "url": "https://www.amazon.co.jp/dp/409864181X?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/41ARf2e7SNL._SL500_.jpg"
+   },
+   {
+    "id": "9784098641772",
+    "title": "うっちゃれ五所瓦 粘り腰編 11巻",
+    "volume": 11,
+    "label": "ビッグコミックス",
+    "url": "https://www.amazon.co.jp/dp/4098641771?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784098641710",
+    "title": "お別れホスピタル 17巻",
+    "volume": 17,
+    "label": "ビッグコミックス",
+    "url": "https://www.amazon.co.jp/dp/4098641712?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/418CXTTflSL._SL500_.jpg"
+   },
+   {
+    "id": "9784098641840",
+    "title": "さよならごはん 2巻",
+    "volume": 2,
+    "label": "ビッグコミックス",
+    "url": "https://www.amazon.co.jp/dp/4098641844?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51qNREKm6gL._SL500_.jpg"
+   },
+   {
+    "id": "9784098641789",
+    "title": "じんちく以外 3巻",
+    "volume": 3,
+    "label": "ビッグコミックス",
+    "url": "https://www.amazon.co.jp/dp/409864178X?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784098641741",
+    "title": "そういう家の子の話 3巻",
+    "volume": 3,
+    "label": "ビッグコミックス",
+    "url": "https://www.amazon.co.jp/dp/4098641747?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/514fF+YdQoL._SL500_.jpg"
+   },
+   {
+    "id": "9784098641901",
+    "title": "らーめん再遊記 16巻",
+    "volume": 16,
+    "label": "ビッグコミックス",
+    "url": "https://www.amazon.co.jp/dp/4098641909?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/513Gr9CR6gL._SL500_.jpg"
+   },
+   {
+    "id": "9784098641895",
+    "title": "わたしは天国 1巻",
+    "volume": 1,
+    "label": "ビッグコミックス",
+    "url": "https://www.amazon.co.jp/dp/4098641895?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784098641796",
+    "title": "イキガミ 再臨 4巻",
+    "volume": 4,
+    "label": "ビッグコミックス",
+    "url": "https://www.amazon.co.jp/dp/4098641798?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/41RT4wESTNL._SL500_.jpg"
+   },
+   {
+    "id": "9784098641925",
+    "title": "スペリオールμ（ミュー）　ＢＩＢＬＥ",
+    "volume": null,
+    "label": "ビッグコミックス",
+    "url": "https://www.amazon.co.jp/dp/4098641925?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784098641512",
+    "title": "チラチラ 8巻",
+    "volume": 8,
+    "label": "ビッグコミックス",
+    "url": "https://www.amazon.co.jp/dp/4098641518?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/41LmPRpVKxL._SL500_.jpg"
+   },
+   {
+    "id": "9784098641642",
+    "title": "パーフェクトグリッター 6巻",
+    "volume": 6,
+    "label": "ビッグコミックス",
+    "url": "https://www.amazon.co.jp/dp/409864164X?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784098641758",
+    "title": "フールナイト 14巻",
+    "volume": 14,
+    "label": "ビッグコミックススペシャル",
+    "url": "https://www.amazon.co.jp/dp/4098641755?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/419o7QXXtLL._SL500_.jpg"
+   },
+   {
+    "id": "9784098641666",
+    "title": "ミワさんなりすます 18巻",
+    "volume": 18,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784098640805",
+    "title": "佐武と市捕物控〈完全版〉 3巻",
+    "volume": 3,
+    "label": "ビッグコミックス",
+    "url": "https://www.amazon.co.jp/dp/4098640805?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51KwsUc65dL._SL500_.jpg"
+   },
+   {
+    "id": "9784098641765",
+    "title": "味いちもんめ 継ぎ味 17巻",
+    "volume": 17,
+    "label": "ビッグコミックス",
+    "url": "https://www.amazon.co.jp/dp/4098641763?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51pa+I86Z-L._SL500_.jpg"
+   },
+   {
+    "id": "9784091530608",
+    "title": "土竜(モグラ)の唄 98巻",
+    "volume": 98,
+    "label": "ヤングサンデーコミックス",
+    "url": "https://www.amazon.co.jp/dp/4091530605?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784098641734",
+    "title": "夢なし先生の進路指導 9巻",
+    "volume": 9,
+    "label": "ビッグコミックス",
+    "url": "https://www.amazon.co.jp/dp/4098641739?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51cKdHmJ-KL._SL500_.jpg"
+   },
+   {
+    "id": "9784098641611",
+    "title": "捏造・痴人の愛　上",
+    "volume": null,
+    "label": "ビッグスピリッツコミックススペシャル",
+    "url": "https://www.amazon.co.jp/dp/4098641615?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51N4Cqh5smL._SL500_.jpg"
+   },
+   {
+    "id": "9784098638369",
+    "title": "諸星大二郎短編集成　１　生物都市",
+    "volume": null,
+    "label": "ビッグコミックススペシャル",
+    "url": "https://www.amazon.co.jp/dp/4098638363?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784098641659",
+    "title": "闇金ウシジマくん外伝 肉蝮伝説 27巻",
+    "volume": 27,
+    "label": "ビッグスピリッツコミックススペシャル",
+    "url": "https://www.amazon.co.jp/dp/4098641658?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51-6toGvu4L._SL500_.jpg"
+   },
+   {
+    "id": "9784098641697",
+    "title": "風都探偵 21巻",
+    "volume": 21,
+    "label": "ビッグコミックス",
+    "url": "https://www.amazon.co.jp/dp/4098641690?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51L16jmCnTL._SL500_.jpg"
+   },
+   {
+    "id": "9784098641703",
+    "title": "魔界の議場 4巻",
+    "volume": 4,
+    "label": "ビッグコミックス",
+    "url": "https://www.amazon.co.jp/dp/4098641704?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51+eLKf4sAL._SL500_.jpg"
+   },
+   {
+    "id": "9784098641932",
+    "title": "黄昏流星群 81巻",
+    "volume": 81,
+    "label": "ビッグコミックス",
+    "url": "https://www.amazon.co.jp/dp/4098641933?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/4140svyMDwL._SL500_.jpg"
+   }
+  ],
+  "少年画報社": [
+   {
+    "id": "sgh:20261130-23429df9",
+    "title": "おへんろちゃん! 3巻",
+    "volume": 3,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "sgh:20261130-832a684b",
+    "title": "刀匠火車 1巻",
+    "volume": 1,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "sgh:20261130-6e4b20a6",
+    "title": "朝ごはん亭 10巻",
+    "volume": 10,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "sgh:20261130-2608729d",
+    "title": "朱色の仮面 10巻",
+    "volume": 10,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "sgh:20261130-8902093a",
+    "title": "近畿霊務局 1巻",
+    "volume": 1,
+    "label": "",
+    "url": null,
+    "image": null
+   }
+  ],
+  "竹書房": [
+   {
+    "id": "9784801991354",
+    "title": "明けても暮れても -続 いつか恋になるまで 4巻",
+    "volume": 4,
+    "label": "バンブーコミックスmoment",
+    "url": "https://www.amazon.co.jp/dp/4801991351?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51XVaTHr6nL._SL500_.jpg"
+   }
+  ]
+ }
+}

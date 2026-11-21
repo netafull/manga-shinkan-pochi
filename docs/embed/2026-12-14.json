@@ -1,0 +1,107 @@
+{
+ "date": "2026-12-14",
+ "publishers": {
+  "KADOKAWA": [
+   {
+    "id": "9784049722772",
+    "title": "このキスは事故なのに色無しの私がなぜか最強の魔法使いにとらわれてます 3巻",
+    "volume": 3,
+    "label": "MANGAバル コミックス",
+    "url": "https://www.amazon.co.jp/dp/4049722771?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/31Oj1JCuVbL._SL500_.jpg"
+   },
+   {
+    "id": "9784049722383",
+    "title": "しのぶれど SHINOBI BLADE 1巻",
+    "volume": 1,
+    "label": "MANGAバル コミックス",
+    "url": "https://www.amazon.co.jp/dp/4049722380?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/31Oj1JCuVbL._SL500_.jpg"
+   },
+   {
+    "id": "9784049723380",
+    "title": "ボートガール! 2巻",
+    "volume": 2,
+    "label": "MANGAバル コミックス",
+    "url": "https://www.amazon.co.jp/dp/4049723387?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/31Oj1JCuVbL._SL500_.jpg"
+   },
+   {
+    "id": "9784049723366",
+    "title": "魔力ゼロ令嬢の異世界キッチン 1巻",
+    "volume": 1,
+    "label": "MANGAバル コミックス",
+    "url": "https://www.amazon.co.jp/dp/4049723360?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/31Oj1JCuVbL._SL500_.jpg"
+   }
+  ],
+  "少年画報社": [
+   {
+    "id": "sgh:20261214-b5b46e75",
+    "title": "やんちゃギャルの安城さん 18巻",
+    "volume": 18,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "sgh:20261214-1bda3b46",
+    "title": "クライマックスネクロマンス 5巻",
+    "volume": 5,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "sgh:20261214-6c56ce5a",
+    "title": "スピリットサークル新装版 上巻",
+    "volume": null,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "sgh:20261214-abe6af9a",
+    "title": "スピリットサークル新装版 下巻",
+    "volume": null,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "sgh:20261214-21349965",
+    "title": "リンガフランカDOGs 1巻",
+    "volume": 1,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "sgh:20261214-cc1f85fa",
+    "title": "ロストファミリー ~日本で一番多い殺人 2巻",
+    "volume": 2,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "sgh:20261214-1c7a101a",
+    "title": "異世界リフレ ~たわわ異種族娘に全力で迫られてるかもしれません 3巻",
+    "volume": 3,
+    "label": "",
+    "url": null,
+    "image": null
+   }
+  ],
+  "講談社": [
+   {
+    "id": "9784065461037",
+    "title": "君の瞳に堕ちる夜 2巻",
+    "volume": 2,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4065461030?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/61yeyMDUkNL._SL500_.jpg"
+   }
+  ]
+ }
+}

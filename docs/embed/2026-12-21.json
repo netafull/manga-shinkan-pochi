@@ -1,0 +1,49 @@
+{
+ "date": "2026-12-21",
+ "publishers": {
+  "KADOKAWA": [
+   {
+    "id": "9784049523553",
+    "title": "ラブライブ！虹ヶ咲学園スクールアイドル同好会Nijigaku Style Book",
+    "volume": null,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4049523558?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784049525700",
+    "title": "嵐に舞うプシュケ 3巻",
+    "volume": 3,
+    "label": "シルフコミックス",
+    "url": "https://www.amazon.co.jp/dp/4049525704?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/41mge8bAMpL._SL500_.jpg"
+   }
+  ],
+  "少年画報社": [
+   {
+    "id": "sgh:20261221-d41d6cf0",
+    "title": "しばいづけ 1巻",
+    "volume": 1,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "sgh:20261221-ae0b30ef",
+    "title": "先生の罪と痕 1巻",
+    "volume": 1,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "sgh:20261221-9f31f5a5",
+    "title": "外道外伝 2巻",
+    "volume": 2,
+    "label": "",
+    "url": null,
+    "image": null
+   }
+  ]
+ }
+}

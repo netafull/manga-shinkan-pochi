@@ -1,0 +1,389 @@
+{
+ "date": "2026-12-28",
+ "publishers": {
+  "KADOKAWA": [
+   {
+    "id": "9784041180761",
+    "title": "こう見えとるんよ　ひろしま県",
+    "volume": null,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784049525946",
+    "title": "りんく!らいふ!ラブライブ! 3巻",
+    "volume": 3,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784049723298",
+    "title": "クラスで2番目に可愛い女の子と友だちになった 9巻",
+    "volume": 9,
+    "label": "アライブ＋",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784046857392",
+    "title": "ディズニー・ロルカナ・トレーディングカードゲーム オフィシャル コレクターズ ガイド Sets 1 4巻",
+    "volume": 4,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784046857408",
+    "title": "ディズニー・ロルカナ・トレーディングカードゲーム オフィシャル コレクターズ ガイド Sets 5 8巻",
+    "volume": 8,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784049723281",
+    "title": "ビリオネア・プログラム１ 汝、解と黄金を求めよ",
+    "volume": null,
+    "label": "アライブ＋",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784049723243",
+    "title": "十文字くんしか見えない!! 1巻",
+    "volume": 1,
+    "label": "アライブ＋",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784045003820",
+    "title": "宵を待つ月の物語 2巻",
+    "volume": 2,
+    "label": "B's-LOG COMICS",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784045003790",
+    "title": "意地悪な母と姉に売られた私。 何故か若頭に溺愛されてます 6巻",
+    "volume": 6,
+    "label": "B's-LOG COMICS",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784045003844",
+    "title": "気弱令嬢に成り代わった元悪女 2巻",
+    "volume": 2,
+    "label": "B's-LOG COMICS",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784049723700",
+    "title": "異世界喫茶ハルシオンへようこそ! 1巻",
+    "volume": 1,
+    "label": "アライブ＋",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784045003806",
+    "title": "確かに私は、お嫁さんが欲しいと言いました。 ~女装の王子様はお断り! 2巻",
+    "volume": 2,
+    "label": "B's-LOG COMICS",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784045003813",
+    "title": "私の魔法使い 虐げられた少女は美しき王弟殿下に見初められる 1巻",
+    "volume": 1,
+    "label": "B's-LOG COMICS",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784045003783",
+    "title": "結界師の一輪華 9巻",
+    "volume": 9,
+    "label": "B's-LOG COMICS",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784045003837",
+    "title": "絶華の契り 仮初め呪術師夫婦は後宮を駆ける 1巻",
+    "volume": 1,
+    "label": "B's-LOG COMICS",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784049723687",
+    "title": "願ってもない追放後からのスローライフ? ~引退したはずが成り行きで美少女ギャルの師匠になったらなぜかめちゃくちゃ懐かれた 4巻",
+    "volume": 4,
+    "label": "アライブ＋",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784045003851",
+    "title": "黒狼王子が辺境に押し掛けてきました 2巻",
+    "volume": 2,
+    "label": "B's-LOG COMICS",
+    "url": null,
+    "image": null
+   }
+  ],
+  "小学館": [
+   {
+    "id": "9784098642021",
+    "title": "ごくりっ 8巻",
+    "volume": 8,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784098641963",
+    "title": "ひらやすみ 11巻",
+    "volume": 11,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784098642069",
+    "title": "まどいのいきもの -銀河生物観察記 2巻",
+    "volume": 2,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784098642014",
+    "title": "アオアシ ブラザーフット 4巻",
+    "volume": 4,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784098642045",
+    "title": "キキキル 2巻",
+    "volume": 2,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784098642083",
+    "title": "サテンdeサザン 4巻",
+    "volume": 4,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784098640812",
+    "title": "佐武と市捕物控〈完全版〉 4巻",
+    "volume": 4,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784098642076",
+    "title": "化けの皮のヒトバケ 5巻",
+    "volume": 5,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784098641826",
+    "title": "卑弥呼 -真説・邪馬台国伝 21巻",
+    "volume": 21,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784091530660",
+    "title": "土竜(モグラ)の唄 99巻",
+    "volume": 99,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784098641604",
+    "title": "夕暮れから元気いっぱい",
+    "volume": null,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784098550968",
+    "title": "少年院ウシジマくん 9巻",
+    "volume": 9,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784098642359",
+    "title": "戦闘メカ ザブングル アナザー・ゲイル 10巻",
+    "volume": 10,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784098641635",
+    "title": "旅する寿司 1巻",
+    "volume": 1,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784098641970",
+    "title": "植物病理学は明日の君を願う 9巻",
+    "volume": 9,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784098642052",
+    "title": "永世乙女の戦い方 16巻",
+    "volume": 16,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784098641949",
+    "title": "深夜食堂 32巻",
+    "volume": 32,
+    "label": "",
+    "url": null,
+    "image": null
+   }
+  ],
+  "少年画報社": [
+   {
+    "id": "sgh:20261228-b57e940c",
+    "title": "BADBOYS 1巻",
+    "volume": 1,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "sgh:20261228-65736d55",
+    "title": "BADBOYS 2巻",
+    "volume": 2,
+    "label": "",
+    "url": null,
+    "image": null
+   }
+  ],
+  "講談社": [
+   {
+    "id": "9784065461129",
+    "title": "千夜千食物語 ~敗国の姫ですが氷の皇子殿下がどうも溺愛してくれています~ 5巻",
+    "volume": 5,
+    "label": "KCx",
+    "url": "https://www.amazon.co.jp/dp/406546112X?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065460559",
+    "title": "千年の花嫁 4巻",
+    "volume": 4,
+    "label": "KCx",
+    "url": "https://www.amazon.co.jp/dp/4065460557?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065456941",
+    "title": "夜逃げ聖女の二度目の結婚 3巻",
+    "volume": 3,
+    "label": "KCx",
+    "url": "https://www.amazon.co.jp/dp/4065456940?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065461068",
+    "title": "婚約破棄されたので、好きにすることにした。 7巻",
+    "volume": 7,
+    "label": "KCx",
+    "url": "https://www.amazon.co.jp/dp/4065461065?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065460535",
+    "title": "婚約者は義妹の方が大切なので、ふたりが結婚できるようにしてあげようと思います。 3巻",
+    "volume": 3,
+    "label": "KCx",
+    "url": "https://www.amazon.co.jp/dp/4065460530?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/61q6vCqKfNL._SL500_.jpg"
+   },
+   {
+    "id": "9784065461006",
+    "title": "嫌われ者の令嬢は、私が愛しましょう。~いまさら溺愛してきても、もう遅いです!~ 6巻",
+    "volume": 6,
+    "label": "KCx",
+    "url": "https://www.amazon.co.jp/dp/4065461006?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065454305",
+    "title": "悪役令嬢ルートから解放されました! ~ゲームは終わったので、ヒロインには退場してもらいましょうか~ 6巻",
+    "volume": 6,
+    "label": "KCx",
+    "url": "https://www.amazon.co.jp/dp/4065454301?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/61JRIYiHJoL._SL500_.jpg"
+   },
+   {
+    "id": "9784065461044",
+    "title": "次期公爵夫人の役割だけを求めてきた、氷の薔薇と謳われる旦那様が家庭内ストーカーと化した件 7巻",
+    "volume": 7,
+    "label": "KCx",
+    "url": "https://www.amazon.co.jp/dp/4065461049?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065461013",
+    "title": "毒入り姫の嫁入り 2巻",
+    "volume": 2,
+    "label": "KCx",
+    "url": "https://www.amazon.co.jp/dp/4065461014?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065460566",
+    "title": "私が予言の子を生むまで ~澪の結婚~ 傷モノの花嫁 外伝 2巻",
+    "volume": 2,
+    "label": "KCx",
+    "url": "https://www.amazon.co.jp/dp/4065460565?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065454855",
+    "title": "隣国に輿入れした王女付きモフモフ侍女ですが、本当の王女は私なんです 5巻",
+    "volume": 5,
+    "label": "KCx",
+    "url": "https://www.amazon.co.jp/dp/4065454859?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   }
+  ]
+ }
+}

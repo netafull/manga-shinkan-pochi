@@ -1,0 +1,619 @@
+{
+ "date": "2026-12-18",
+ "publishers": {
+  "KADOKAWA": [
+   {
+    "id": "9784040900469",
+    "title": "THE TIME,　シマエナガちゃんずかん",
+    "volume": null,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4040900464?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/31N50z9UoVL._SL500_.jpg"
+   },
+   {
+    "id": "9784049169805",
+    "title": "raemz画集  Amour",
+    "volume": null,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4049169800?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784046609274",
+    "title": "アイアンマン 60th Anniversary Book",
+    "volume": null,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4046609273?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784040900636",
+    "title": "イタリアンブレインロット トララレロ トラララと仲間たち大集合図かん",
+    "volume": null,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4040900634?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51Po8sSr0LL._SL500_.jpg"
+   },
+   {
+    "id": "9784040900667",
+    "title": "イタリアンブレインロット　生態図鑑",
+    "volume": null,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4040900669?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51HIjJ8CT8L._SL500_.jpg"
+   },
+   {
+    "id": "9784040900476",
+    "title": "ダービースタリオン2　公式全書",
+    "volume": null,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4040900472?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51fMtS-hERL._SL500_.jpg"
+   },
+   {
+    "id": "9784045003585",
+    "title": "ランナウェイモール 1巻",
+    "volume": 1,
+    "label": "青騎士コミックス",
+    "url": "https://www.amazon.co.jp/dp/4045003584?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/5189FHjdfWL._SL500_.jpg"
+   },
+   {
+    "id": "9784045000522",
+    "title": "青騎士　第35号",
+    "volume": null,
+    "label": "青騎士コミックス",
+    "url": "https://www.amazon.co.jp/dp/4045000526?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   }
+  ],
+  "双葉社": [
+   {
+    "id": "9784575382662",
+    "title": "好きです先輩! 逃がしません!",
+    "volume": null,
+    "label": "チルシェコミックス",
+    "url": "https://www.amazon.co.jp/dp/4575382663?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   }
+  ],
+  "小学館": [
+   {
+    "id": "9784094532739",
+    "title": "かくて謀反の冬は去り 3巻",
+    "volume": 3,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4094532730?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784778033903",
+    "title": "のたり松太郎十番勝負",
+    "volume": null,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4778033906?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51ltH13bDcL._SL500_.jpg"
+   },
+   {
+    "id": "9784098641918",
+    "title": "ウルトラマン:アロング・ケイム・ア・スパイダーマン 5巻",
+    "volume": 5,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4098641917?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784094533194",
+    "title": "名前のない英雄 2巻",
+    "volume": 2,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4094533192?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784094533200",
+    "title": "小説　てつりょー！ｍｅｅｔ　ｗｉｔｈ　鉄道むすめ",
+    "volume": null,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4094533206?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784094611991",
+    "title": "後宮あやし女官 2巻",
+    "volume": 2,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4094611991?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784098548729",
+    "title": "湘南グラフィティ　愛蔵版",
+    "volume": null,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4098548720?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784094532876",
+    "title": "魔女と猟犬 7巻",
+    "volume": 7,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4094532870?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   }
+  ],
+  "白泉社": [
+   {
+    "id": "9784592226079",
+    "title": "100年の恋もさめなくて 2巻",
+    "volume": 2,
+    "label": "花とゆめコミックス",
+    "url": "https://www.amazon.co.jp/dp/4592226070?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784592226109",
+    "title": "WジュリエットII 18巻",
+    "volume": 18,
+    "label": "花とゆめコミックス",
+    "url": "https://www.amazon.co.jp/dp/4592226100?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784592226062",
+    "title": "まひると薔薇の魔法論 2巻",
+    "volume": 2,
+    "label": "花とゆめコミックス",
+    "url": "https://www.amazon.co.jp/dp/4592226062?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784592226093",
+    "title": "アテウマフラグ 1巻",
+    "volume": 1,
+    "label": "花とゆめコミックス",
+    "url": "https://www.amazon.co.jp/dp/4592226097?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784592231806",
+    "title": "ツーリング・エクスプレス～テネブル編～",
+    "volume": null,
+    "label": "花とゆめコミックススペシャル",
+    "url": "https://www.amazon.co.jp/dp/4592231805?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784592231790",
+    "title": "フレンドガールフレンド 3巻",
+    "volume": 3,
+    "label": "花とゆめコミックススペシャル",
+    "url": "https://www.amazon.co.jp/dp/4592231791?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784592231851",
+    "title": "不夜城のステラ 3巻",
+    "volume": 3,
+    "label": "花とゆめコミックススペシャル",
+    "url": "https://www.amazon.co.jp/dp/4592231856?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784592226048",
+    "title": "墜落ＪＫと廃人教師－エピローグ－",
+    "volume": null,
+    "label": "花とゆめコミックス",
+    "url": "https://www.amazon.co.jp/dp/4592226046?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784592226055",
+    "title": "忘却後のアレーティア 1巻",
+    "volume": 1,
+    "label": "花とゆめコミックス",
+    "url": "https://www.amazon.co.jp/dp/4592226054?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784592226086",
+    "title": "春は雲の上 2巻",
+    "volume": 2,
+    "label": "花とゆめコミックス",
+    "url": "https://www.amazon.co.jp/dp/4592226089?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   }
+  ],
+  "秋田書店": [
+   {
+    "id": "9784253021524",
+    "title": "おとぎの国のデスマシーン 2巻",
+    "volume": 2,
+    "label": "チャンピオンREDコミックス",
+    "url": "https://www.amazon.co.jp/dp/4253021522?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51st6addW1L._SL500_.jpg"
+   },
+   {
+    "id": "9784253021487",
+    "title": "しらない世界でりっぱなメスドラゴンとして生きます! 1巻",
+    "volume": 1,
+    "label": "チャンピオンREDコミックス",
+    "url": "https://www.amazon.co.jp/dp/4253021484?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51SBfvcAUsL._SL500_.jpg"
+   },
+   {
+    "id": "9784253021517",
+    "title": "はるかリセット 27巻",
+    "volume": 27,
+    "label": "チャンピオンREDコミックス",
+    "url": "https://www.amazon.co.jp/dp/4253021514?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51xmNXbcrxL._SL500_.jpg"
+   },
+   {
+    "id": "9784253021456",
+    "title": "キャシャーンR 3巻",
+    "volume": 3,
+    "label": "チャンピオンREDコミックス",
+    "url": "https://www.amazon.co.jp/dp/425302145X?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51K5SsGPs-L._SL500_.jpg"
+   },
+   {
+    "id": "9784253021579",
+    "title": "クロスオーバーレブ! 19巻",
+    "volume": 19,
+    "label": "ヤングチャンピオン・コミックス",
+    "url": "https://www.amazon.co.jp/dp/4253021573?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784253021630",
+    "title": "ゴジラ ギャラクシーオデッセイ 第4巻 特装版",
+    "volume": null,
+    "label": "ヤングチャンピオン・コミックス",
+    "url": "https://www.amazon.co.jp/dp/4253021638?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784253021593",
+    "title": "シリアルキラーランド 10巻",
+    "volume": 10,
+    "label": "ヤングチャンピオン・コミックス",
+    "url": "https://www.amazon.co.jp/dp/425302159X?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784253021586",
+    "title": "ワルハメ 〜マル秘潜入捜査官アガサ〜 5巻",
+    "volume": 5,
+    "label": "ヤングチャンピオン・コミックス",
+    "url": "https://www.amazon.co.jp/dp/4253021581?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784253021548",
+    "title": "信長を殺した男 〜日輪のデマルカシオン〜 11巻",
+    "volume": 11,
+    "label": "ヤングチャンピオン・コミックス",
+    "url": "https://www.amazon.co.jp/dp/4253021549?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784253021555",
+    "title": "公道ウルフ 22巻",
+    "volume": 22,
+    "label": "ヤングチャンピオン・コミックス",
+    "url": "https://www.amazon.co.jp/dp/4253021557?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784253021609",
+    "title": "去る者は日々に疎し 13巻",
+    "volume": 13,
+    "label": "ヤングチャンピオン・コミックス",
+    "url": "https://www.amazon.co.jp/dp/4253021603?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784253021470",
+    "title": "妻か死か 〜敗戦国の女たち〜 6巻",
+    "volume": 6,
+    "label": "チャンピオンREDコミックス",
+    "url": "https://www.amazon.co.jp/dp/4253021476?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784253019316",
+    "title": "愛蔵版 シグルイ 7巻",
+    "volume": 7,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4253019315?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784253021012",
+    "title": "新装版 名探偵マーニー 5巻",
+    "volume": 5,
+    "label": "チャンピオンREDコミックス",
+    "url": "https://www.amazon.co.jp/dp/4253021018?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51X040ABqeL._SL500_.jpg"
+   },
+   {
+    "id": "9784253021029",
+    "title": "新装版 名探偵マーニー 6巻",
+    "volume": 6,
+    "label": "チャンピオンREDコミックス",
+    "url": "https://www.amazon.co.jp/dp/4253021026?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51swhEkhvlL._SL500_.jpg"
+   },
+   {
+    "id": "9784253021036",
+    "title": "新装版 名探偵マーニー 7巻",
+    "volume": 7,
+    "label": "チャンピオンREDコミックス",
+    "url": "https://www.amazon.co.jp/dp/4253021034?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51TJzhJ4xNL._SL500_.jpg"
+   },
+   {
+    "id": "9784253021043",
+    "title": "新装版 名探偵マーニー 8巻",
+    "volume": 8,
+    "label": "チャンピオンREDコミックス",
+    "url": "https://www.amazon.co.jp/dp/4253021042?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51jfELNDzUL._SL500_.jpg"
+   },
+   {
+    "id": "9784253020909",
+    "title": "湘南爆走族 ファースト フラッグ 7巻",
+    "volume": 7,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784253021494",
+    "title": "科学的に存在しうるクリーチャー娘の観察日誌 19巻",
+    "volume": 19,
+    "label": "チャンピオンREDコミックス",
+    "url": "https://www.amazon.co.jp/dp/4253021492?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51aC2I5e-8L._SL500_.jpg"
+   },
+   {
+    "id": "9784253021647",
+    "title": "終末、なに食べる? 3巻",
+    "volume": 3,
+    "label": "ヤングチャンピオン・コミックス",
+    "url": "https://www.amazon.co.jp/dp/4253021646?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784253021463",
+    "title": "絢爛たるグランドセーヌ 31巻",
+    "volume": 31,
+    "label": "チャンピオンREDコミックス",
+    "url": "https://www.amazon.co.jp/dp/4253021468?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51tqkNXTjkL._SL500_.jpg"
+   },
+   {
+    "id": "9784253021500",
+    "title": "織津江大志の異世界クリ娘サバイバル日誌 13巻",
+    "volume": 13,
+    "label": "チャンピオンREDコミックス",
+    "url": "https://www.amazon.co.jp/dp/4253021506?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/518t6t-Js2L._SL500_.jpg"
+   },
+   {
+    "id": "9784253021531",
+    "title": "落日のパトス 20巻",
+    "volume": 20,
+    "label": "ヤングチャンピオン・コミックス",
+    "url": "https://www.amazon.co.jp/dp/4253021530?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784253020800",
+    "title": "轟大丸の奇怪体験談 5巻",
+    "volume": 5,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784253021562",
+    "title": "運びの犬 17巻",
+    "volume": 17,
+    "label": "ヤングチャンピオン・コミックス",
+    "url": "https://www.amazon.co.jp/dp/4253021565?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784253019323",
+    "title": "魔剣豪鬼譚 宮本武蔵",
+    "volume": null,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4253019323?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   }
+  ],
+  "竹書房": [
+   {
+    "id": "9784801977914",
+    "title": "憧憬の奥様劇場",
+    "volume": null,
+    "label": "B6廉価コミックス",
+    "url": "https://www.amazon.co.jp/dp/480197791X?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   }
+  ],
+  "講談社": [
+   {
+    "id": "9784065461341",
+    "title": "HACKING GHOST カラダにしか価値のない学園 8巻",
+    "volume": 8,
+    "label": "ヤンマガKCスペシャル",
+    "url": "https://www.amazon.co.jp/dp/4065461340?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065461372",
+    "title": "MADE IN YAMATO 2巻",
+    "volume": 2,
+    "label": "ヤンマガKCスペシャル",
+    "url": "https://www.amazon.co.jp/dp/4065461375?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065461204",
+    "title": "NTREVENGE 10巻",
+    "volume": 10,
+    "label": "ヤンマガKCスペシャル",
+    "url": "https://www.amazon.co.jp/dp/4065461200?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065461389",
+    "title": "まかない刑事の聴取メシ 2巻",
+    "volume": 2,
+    "label": "ヤンマガKCスペシャル",
+    "url": "https://www.amazon.co.jp/dp/4065461383?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065447482",
+    "title": "イジメとカエルとママと復讐 1巻",
+    "volume": 1,
+    "label": "ヤンマガKCスペシャル",
+    "url": "https://www.amazon.co.jp/dp/4065447488?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/61oXWv5vFcL._SL500_.jpg"
+   },
+   {
+    "id": "9784065461525",
+    "title": "サルビアの解憶 1巻",
+    "volume": 1,
+    "label": "ヤンマガKCスペシャル",
+    "url": "https://www.amazon.co.jp/dp/4065461529?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/61U5RnFJxzL._SL500_.jpg"
+   },
+   {
+    "id": "9784065461358",
+    "title": "ノカゼのピンクなトリセツ 4巻",
+    "volume": 4,
+    "label": "ヤンマガKCスペシャル",
+    "url": "https://www.amazon.co.jp/dp/4065461359?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065461365",
+    "title": "リュウツヘグイ 2巻",
+    "volume": 2,
+    "label": "ヤンマガKCスペシャル",
+    "url": "https://www.amazon.co.jp/dp/4065461367?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065461143",
+    "title": "上野くんは開発済み 11巻",
+    "volume": 11,
+    "label": "ヤンマガKCスペシャル",
+    "url": "https://www.amazon.co.jp/dp/4065461146?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065461310",
+    "title": "乙女のおかず 4巻",
+    "volume": 4,
+    "label": "ヤンマガKCスペシャル",
+    "url": "https://www.amazon.co.jp/dp/4065461316?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065460467",
+    "title": "再会の勇者 4巻",
+    "volume": 4,
+    "label": "ヤンマガKCスペシャル",
+    "url": "https://www.amazon.co.jp/dp/4065460468?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065461280",
+    "title": "牛山さん 4巻",
+    "volume": 4,
+    "label": "ヤンマガKCスペシャル",
+    "url": "https://www.amazon.co.jp/dp/4065461286?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065461327",
+    "title": "異世界出稼ぎ~年収一兆円を持ち帰る簡単なお仕事 3巻",
+    "volume": 3,
+    "label": "ヤンマガKCスペシャル",
+    "url": "https://www.amazon.co.jp/dp/4065461324?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065461297",
+    "title": "私が大好きな小説家を殺すまで 4巻",
+    "volume": 4,
+    "label": "ヤンマガKCスペシャル",
+    "url": "https://www.amazon.co.jp/dp/4065461294?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065461099",
+    "title": "笑顔のたえない職場です。 16巻",
+    "volume": 16,
+    "label": "KCデラックス",
+    "url": "https://www.amazon.co.jp/dp/406546109X?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065463772",
+    "title": "糸と鎧 1巻",
+    "volume": 1,
+    "label": "ヤンマガKCスペシャル",
+    "url": "https://www.amazon.co.jp/dp/4065463777?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51wAAP2nWoL._SL500_.jpg"
+   },
+   {
+    "id": "9784065460450",
+    "title": "聖なる乙女と秘めごとを 14巻",
+    "volume": 14,
+    "label": "ヤンマガKCスペシャル",
+    "url": "https://www.amazon.co.jp/dp/406546045X?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065461334",
+    "title": "聖巡エクスタシー ××しないと出られない部屋で魔族をブッ倒します 4巻",
+    "volume": 4,
+    "label": "ヤンマガKCスペシャル",
+    "url": "https://www.amazon.co.jp/dp/4065461332?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065461198",
+    "title": "股間無双~嫌われ勇者は魔族に愛される~ 9巻",
+    "volume": 9,
+    "label": "ヤンマガKCスペシャル",
+    "url": "https://www.amazon.co.jp/dp/4065461197?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065461105",
+    "title": "雨夜の月 13巻",
+    "volume": 13,
+    "label": "ヤンマガKCスペシャル",
+    "url": "https://www.amazon.co.jp/dp/4065461103?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065461303",
+    "title": "魔眼が効かない俺は、御伽話の四大魔王に溺愛されている。 2巻",
+    "volume": 2,
+    "label": "ヤンマガKCスペシャル",
+    "url": "https://www.amazon.co.jp/dp/4065461308?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   }
+  ]
+ }
+}

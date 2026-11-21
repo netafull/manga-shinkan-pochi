@@ -1,0 +1,289 @@
+{
+ "date": "2026-12-22",
+ "publishers": {
+  "KADOKAWA": [
+   {
+    "id": "9784046607300",
+    "title": "I Believe In You",
+    "volume": null,
+    "label": "MFC",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784049526059",
+    "title": "おうち彼氏 ~職場よりも可愛いあなた 3巻",
+    "volume": 3,
+    "label": "シルフコミックス",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784046826954",
+    "title": "くだみみの猫 12巻",
+    "volume": 12,
+    "label": "MFコミックス アライブシリーズ",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784046609236",
+    "title": "くだみみの猫 13巻",
+    "volume": 13,
+    "label": "MFコミックス アライブシリーズ",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784046608246",
+    "title": "ようこそ実力至上主義の教室へ 2年生編 2nd Stage 3巻",
+    "volume": 3,
+    "label": "MFコミックス アライブシリーズ",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784046600370",
+    "title": "幻想水滸伝 STAR LEAP ～星々の軌跡～",
+    "volume": null,
+    "label": "MFコミックス フラッパーシリーズ",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784046603081",
+    "title": "幼女な魔女と森の熊さん ~異世界でポーション創ってのんびりスローライフがしたいのじゃが? 1巻",
+    "volume": 1,
+    "label": "MFC",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784046606853",
+    "title": "魔術師クノンは見えている 9巻",
+    "volume": 9,
+    "label": "MFコミックス アライブシリーズ",
+    "url": null,
+    "image": null
+   }
+  ],
+  "講談社": [
+   {
+    "id": "9784065461136",
+    "title": "24時間界隈 2巻",
+    "volume": 2,
+    "label": "モーニング KC",
+    "url": "https://www.amazon.co.jp/dp/4065461138?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065459393",
+    "title": "8月31日のロングサマー 14巻",
+    "volume": 14,
+    "label": "モーニング KC",
+    "url": "https://www.amazon.co.jp/dp/4065459397?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065467466",
+    "title": "ON THE CORNER Vоl.1 (KCデラックス)",
+    "volume": null,
+    "label": "KCデラックス",
+    "url": "https://www.amazon.co.jp/dp/4065467462?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065463055",
+    "title": "いくばくか~承認の渇求~ 2巻",
+    "volume": 2,
+    "label": "モーニング KC",
+    "url": "https://www.amazon.co.jp/dp/406546305X?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065456958",
+    "title": "だんドーン 13巻",
+    "volume": 13,
+    "label": "モーニング KC",
+    "url": "https://www.amazon.co.jp/dp/4065456959?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065462447",
+    "title": "ひとりでしにたい 13巻",
+    "volume": 13,
+    "label": "モーニング KC",
+    "url": "https://www.amazon.co.jp/dp/4065462444?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065459362",
+    "title": "もうひとつのピアノの森 整う音 4巻",
+    "volume": 4,
+    "label": "モーニング KC",
+    "url": "https://www.amazon.co.jp/dp/4065459362?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065463246",
+    "title": "クッキングパパ カキ雑炊 (講談社プラチナコミックス)",
+    "volume": null,
+    "label": "講談社プラチナコミックス",
+    "url": "https://www.amazon.co.jp/dp/4065463246?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065461242",
+    "title": "ダーウィン事変 12巻",
+    "volume": 12,
+    "label": "アフタヌーンKC",
+    "url": "https://www.amazon.co.jp/dp/4065461243?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065461471",
+    "title": "デビルズライン2 [逆襲] 8巻",
+    "volume": 8,
+    "label": "モーニング KC",
+    "url": "https://www.amazon.co.jp/dp/4065461472?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065462508",
+    "title": "デリヲの推しごと 4巻",
+    "volume": 4,
+    "label": "モーニング KC",
+    "url": "https://www.amazon.co.jp/dp/4065462509?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065460474",
+    "title": "ドクターチルドレン~小児外科医~ 13巻",
+    "volume": 13,
+    "label": "モーニング KC",
+    "url": "https://www.amazon.co.jp/dp/4065460476?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065459430",
+    "title": "バトルスタディーズ 51巻",
+    "volume": 51,
+    "label": "モーニング KC",
+    "url": "https://www.amazon.co.jp/dp/4065459435?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065460436",
+    "title": "ブルーピリオド 20巻",
+    "volume": 20,
+    "label": "アフタヌーンKC",
+    "url": "https://www.amazon.co.jp/dp/4065460433?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065454589",
+    "title": "ブルーピリオド公式アートワーク",
+    "volume": null,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4065454581?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065460979",
+    "title": "プ~ねこ 11巻",
+    "volume": 11,
+    "label": "アフタヌーンKC",
+    "url": "https://www.amazon.co.jp/dp/4065460972?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/61tEh002B5L._SL500_.jpg"
+   },
+   {
+    "id": "9784065462461",
+    "title": "ボールパークでつかまえて! 21巻",
+    "volume": 21,
+    "label": "モーニング KC",
+    "url": "https://www.amazon.co.jp/dp/4065462460?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065463079",
+    "title": "ヨメトメ☆にっき~専業主婦歴30年の姑との日々~ 2巻",
+    "volume": 2,
+    "label": "モーニング KC",
+    "url": "https://www.amazon.co.jp/dp/4065463076?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065463253",
+    "title": "兄貴!メシですよ 4巻",
+    "volume": 4,
+    "label": "モーニング KC",
+    "url": "https://www.amazon.co.jp/dp/4065463254?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065461747",
+    "title": "出禁のモグラ 14巻",
+    "volume": 14,
+    "label": "モーニング KC",
+    "url": "https://www.amazon.co.jp/dp/406546174X?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065461662",
+    "title": "刷ったもんだ! 15巻",
+    "volume": 15,
+    "label": "モーニング KC",
+    "url": "https://www.amazon.co.jp/dp/4065461669?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065463062",
+    "title": "国を追われた竜師さん、拾われた隣国でうっかり無双してしまう。~弱小国家が大陸最強の竜の楽園になるまで~ 7巻",
+    "volume": 7,
+    "label": "モーニング KC",
+    "url": "https://www.amazon.co.jp/dp/4065463068?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065461594",
+    "title": "夜鷹ふたたび 4巻",
+    "volume": 4,
+    "label": "モーニング KC",
+    "url": "https://www.amazon.co.jp/dp/4065461596?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065456965",
+    "title": "焼いてるふたり 26巻",
+    "volume": 26,
+    "label": "モーニング KC",
+    "url": "https://www.amazon.co.jp/dp/4065456967?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065461730",
+    "title": "肩のりイケブクロさんエコバッグ付き 出禁のモグラ 14巻",
+    "volume": 14,
+    "label": "講談社キャラクターズA",
+    "url": "https://www.amazon.co.jp/dp/4065461731?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065453124",
+    "title": "首領ちゃん 4巻",
+    "volume": 4,
+    "label": "モーニング KC",
+    "url": "https://www.amazon.co.jp/dp/4065453127?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065462768",
+    "title": "高度に発達した医学は魔法と区別がつかない 12巻",
+    "volume": 12,
+    "label": "モーニング KC",
+    "url": "https://www.amazon.co.jp/dp/4065462762?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   }
+  ]
+ }
+}

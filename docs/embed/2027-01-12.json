@@ -1,0 +1,39 @@
+{
+ "date": "2027-01-12",
+ "publishers": {
+  "小学館": [
+   {
+    "id": "9784098550975",
+    "title": "MAD BOY 1巻",
+    "volume": 1,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784098550838",
+    "title": "アップルエイジ 3巻",
+    "volume": 3,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784098551125",
+    "title": "悪忍の頭領 1巻",
+    "volume": 1,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784098550739",
+    "title": "魔王都市@comic 4巻",
+    "volume": 4,
+    "label": "",
+    "url": null,
+    "image": null
+   }
+  ]
+ }
+}

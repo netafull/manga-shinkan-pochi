@@ -1,0 +1,55 @@
+{
+ "date": "2027-01-08",
+ "publishers": {
+  "小学館": [
+   {
+    "id": "9784098736850",
+    "title": "おとなの初恋 8巻",
+    "volume": 8,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784098737130",
+    "title": "スパダリ王子様の狂い愛 3巻",
+    "volume": 3,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784098550647",
+    "title": "君と花火と約束と@comic 2巻",
+    "volume": 2,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784098736843",
+    "title": "夜伽の双子-贄姫は二人の王子に愛される 13巻",
+    "volume": 13,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784098737048",
+    "title": "舞台裏のヒロイン 1巻",
+    "volume": 1,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784098737055",
+    "title": "花城院家の嫁取り 2巻",
+    "volume": 2,
+    "label": "",
+    "url": null,
+    "image": null
+   }
+  ]
+ }
+}

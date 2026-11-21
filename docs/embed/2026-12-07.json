@@ -1,0 +1,267 @@
+{
+ "date": "2026-12-07",
+ "publishers": {
+  "KADOKAWA": [
+   {
+    "id": "9784046858160",
+    "title": "BRAIN ALIVE 1巻",
+    "volume": 1,
+    "label": "カドコミ",
+    "url": "https://www.amazon.co.jp/dp/4046858168?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51Ij6UoGg-L._SL500_.jpg"
+   },
+   {
+    "id": "9784040900193",
+    "title": "SILENT HILL f 公式設定資料集",
+    "volume": null,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4040900197?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/411bQNJ9mEL._SL500_.jpg"
+   },
+   {
+    "id": "9784049723151",
+    "title": "アラサーがVTuberになった話。 6巻",
+    "volume": 6,
+    "label": "カドコミ",
+    "url": "https://www.amazon.co.jp/dp/4049723158?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/41+vXU6x3JL._SL500_.jpg"
+   },
+   {
+    "id": "9784049723090",
+    "title": "エモロイド 2巻",
+    "volume": 2,
+    "label": "カドコミ",
+    "url": "https://www.amazon.co.jp/dp/4049723093?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51Mv3Bt5SqL._SL500_.jpg"
+   },
+   {
+    "id": "9784049723403",
+    "title": "セブンス 5巻",
+    "volume": 5,
+    "label": "カドコミ",
+    "url": "https://www.amazon.co.jp/dp/4049723409?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51Gf8SuTMcL._SL500_.jpg"
+   },
+   {
+    "id": "9784049723137",
+    "title": "バカに告白 2巻",
+    "volume": 2,
+    "label": "カドコミ",
+    "url": "https://www.amazon.co.jp/dp/4049723131?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/41FhaeWoKFL._SL500_.jpg"
+   },
+   {
+    "id": "9784049723144",
+    "title": "バカに告白 3巻",
+    "volume": 3,
+    "label": "カドコミ",
+    "url": "https://www.amazon.co.jp/dp/404972314X?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51ovVaeIDCL._SL500_.jpg"
+   },
+   {
+    "id": "9784049723212",
+    "title": "ポコとわたしの車旅 1巻",
+    "volume": 1,
+    "label": "カドコミ",
+    "url": "https://www.amazon.co.jp/dp/4049723212?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51KHGUrFe5L._SL500_.jpg"
+   },
+   {
+    "id": "9784049723229",
+    "title": "ライバルアライバル 2巻",
+    "volume": 2,
+    "label": "カドコミ",
+    "url": "https://www.amazon.co.jp/dp/4049723220?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51kQQTUJyJL._SL500_.jpg"
+   },
+   {
+    "id": "9784049723595",
+    "title": "三重県津市西区平山町3-15-7 2巻",
+    "volume": 2,
+    "label": "カドコミ",
+    "url": "https://www.amazon.co.jp/dp/404972359X?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51hAEaEBufL._SL500_.jpg"
+   },
+   {
+    "id": "9784049723809",
+    "title": "不死王の息子 2巻",
+    "volume": 2,
+    "label": "カドコミ",
+    "url": "https://www.amazon.co.jp/dp/4049723808?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51uVFmx7wQL._SL500_.jpg"
+   },
+   {
+    "id": "9784049723083",
+    "title": "俺はホストにリア恋しない! 2巻",
+    "volume": 2,
+    "label": "カドコミ",
+    "url": "https://www.amazon.co.jp/dp/4049723085?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51uDR-almRL._SL500_.jpg"
+   },
+   {
+    "id": "9784046834522",
+    "title": "巫者",
+    "volume": null,
+    "label": "カドコミ",
+    "url": "https://www.amazon.co.jp/dp/4046834528?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51PqFZMLOnL._SL500_.jpg"
+   },
+   {
+    "id": "9784048115773",
+    "title": "悪役令嬢、俺 1巻",
+    "volume": 1,
+    "label": "カドコミ",
+    "url": "https://www.amazon.co.jp/dp/4048115774?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784049723113",
+    "title": "戦姫サバイバルサガ （6） -異世界の運命をかけた無人島フジュン異性交遊-",
+    "volume": null,
+    "label": "カドコミ",
+    "url": "https://www.amazon.co.jp/dp/4049723115?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/41NF6gsYaML._SL500_.jpg"
+   },
+   {
+    "id": "9784049723199",
+    "title": "部活動百合アンソロジー 文化部編",
+    "volume": null,
+    "label": "カドコミ",
+    "url": "https://www.amazon.co.jp/dp/4049723190?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51ncZ6YxxaL._SL500_.jpg"
+   },
+   {
+    "id": "9784049723182",
+    "title": "部活動百合アンソロジー 運動部編",
+    "volume": null,
+    "label": "カドコミ",
+    "url": "https://www.amazon.co.jp/dp/4049723182?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51cl7t8CYyL._SL500_.jpg"
+   }
+  ],
+  "竹書房": [
+   {
+    "id": "9784801991392",
+    "title": "エルフ、重騎士を拾う 1巻",
+    "volume": 1,
+    "label": "バンブーコミックス 異世界ＢＣ",
+    "url": "https://www.amazon.co.jp/dp/4801991394?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51htMWRUJfL._SL500_.jpg"
+   },
+   {
+    "id": "9784801991422",
+    "title": "手紙の魔女のおくり旅 1巻",
+    "volume": 1,
+    "label": "バンブーコミックス 異世界ＢＣ",
+    "url": "https://www.amazon.co.jp/dp/4801991424?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51ywgEt+-eL._SL500_.jpg"
+   },
+   {
+    "id": "9784801991415",
+    "title": "捨てられた転生令嬢は最強冒険者を目指す! 1巻",
+    "volume": 1,
+    "label": "バンブーコミックス 異世界ＢＣ",
+    "url": "https://www.amazon.co.jp/dp/4801991416?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51KvkQ+dONL._SL500_.jpg"
+   },
+   {
+    "id": "9784801991408",
+    "title": "異世界NTR戦争 1巻",
+    "volume": 1,
+    "label": "バンブーコミックス 異世界ＢＣ",
+    "url": "https://www.amazon.co.jp/dp/4801991408?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51t8mJBsIKL._SL500_.jpg"
+   }
+  ],
+  "講談社": [
+   {
+    "id": "9784065455463",
+    "title": "Q.E.D.UNIV. -証明終了- 5巻",
+    "volume": 5,
+    "label": "講談社コミックス月刊マガジン",
+    "url": "https://www.amazon.co.jp/dp/4065455464?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/61W043gEkzL._SL500_.jpg"
+   },
+   {
+    "id": "9784065459775",
+    "title": "STRAY BOY OVERKILL 1巻",
+    "volume": 1,
+    "label": "アフタヌーンKC",
+    "url": "https://www.amazon.co.jp/dp/406545977X?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065456972",
+    "title": "THE BAND 6巻",
+    "volume": 6,
+    "label": "KCデラックス",
+    "url": "https://www.amazon.co.jp/dp/4065456975?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065461235",
+    "title": "ノラのパン種 3巻",
+    "volume": 3,
+    "label": "アフタヌーンKC",
+    "url": "https://www.amazon.co.jp/dp/4065461235?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065458945",
+    "title": "卒業アルバムの彼女たち 6巻",
+    "volume": 6,
+    "label": "講談社コミックス月刊マガジン",
+    "url": "https://www.amazon.co.jp/dp/4065458943?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065456897",
+    "title": "月の女王の寝かしつけかた 1巻",
+    "volume": 1,
+    "label": "KCデラックス",
+    "url": "https://www.amazon.co.jp/dp/4065456894?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/61rnAnGNbaL._SL500_.jpg"
+   },
+   {
+    "id": "9784065459850",
+    "title": "武者嶽園 1巻",
+    "volume": 1,
+    "label": "KCデラックス",
+    "url": "https://www.amazon.co.jp/dp/4065459850?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065456903",
+    "title": "虚構推理 26巻",
+    "volume": 26,
+    "label": "講談社コミックス月刊マガジン",
+    "url": "https://www.amazon.co.jp/dp/4065456908?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065459584",
+    "title": "陸奥圓明流異界伝 修羅の紋 ムツさんはチョー強い?! 20巻",
+    "volume": 20,
+    "label": "講談社コミックス月刊マガジン",
+    "url": "https://www.amazon.co.jp/dp/4065459583?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065460924",
+    "title": "鬼の縁側 1巻",
+    "volume": 1,
+    "label": "アフタヌーンKC",
+    "url": "https://www.amazon.co.jp/dp/4065460921?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/61JiE9Kjq1L._SL500_.jpg"
+   },
+   {
+    "id": "9784065441756",
+    "title": "龍狩のナト -DRAGON HUNT TRIBE- 4巻",
+    "volume": 4,
+    "label": "KCデラックス",
+    "url": "https://www.amazon.co.jp/dp/4065441757?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   }
+  ]
+ }
+}

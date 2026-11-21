@@ -1,0 +1,229 @@
+{
+ "date": "2026-12-16",
+ "publishers": {
+  "双葉社": [
+   {
+    "id": "9784575792546",
+    "title": "DVD) TVシリーズ クレヨンしんちゃん 嵐を呼ぶイッキ見!!! カスカベ防衛隊、解散! オラたち、みんなのことを忘れません…編",
+    "volume": null,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4575792543?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   }
+  ],
+  "秋田書店": [
+   {
+    "id": "9784253021449",
+    "title": "ぼんくら陰陽師の鬼嫁 15巻",
+    "volume": 15,
+    "label": "ボニータ・コミックス",
+    "url": "https://www.amazon.co.jp/dp/4253021441?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784253019934",
+    "title": "アフレコブースの君たちへ 2巻",
+    "volume": 2,
+    "label": "ボニータ・コミックス",
+    "url": "https://www.amazon.co.jp/dp/4253019935?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784253021425",
+    "title": "魔女先輩日報 6巻",
+    "volume": 6,
+    "label": "プリンセス・コミックス",
+    "url": "https://www.amazon.co.jp/dp/4253021425?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784253021432",
+    "title": "魔女先輩日報 7巻",
+    "volume": 7,
+    "label": "プリンセス・コミックス",
+    "url": "https://www.amazon.co.jp/dp/4253021433?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784253021418",
+    "title": "魔王陛下のお掃除係 14巻",
+    "volume": 14,
+    "label": "プリンセス・コミックス",
+    "url": "https://www.amazon.co.jp/dp/4253021417?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   }
+  ],
+  "竹書房": [
+   {
+    "id": "9784801991477",
+    "title": "じょりく! 9巻",
+    "volume": 9,
+    "label": "竹コミ！",
+    "url": "https://www.amazon.co.jp/dp/4801991475?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784801991453",
+    "title": "どうやらボクの花嫁は女騎士団なようで。 7巻",
+    "volume": 7,
+    "label": "竹コミ！",
+    "url": "https://www.amazon.co.jp/dp/4801991459?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784801991460",
+    "title": "ガールズゾンビパーティー 6巻",
+    "volume": 6,
+    "label": "竹コミ！",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784801991484",
+    "title": "今日もカレーですか? 11巻",
+    "volume": 11,
+    "label": "竹コミ！",
+    "url": "https://www.amazon.co.jp/dp/4801991483?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51X4OZlqjNL._SL500_.jpg"
+   },
+   {
+    "id": "9784801991446",
+    "title": "今泉ん家はどうやらギャルの溜まり場になってるらしい~DEEP 11巻",
+    "volume": 11,
+    "label": "竹コミ！",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784801991491",
+    "title": "好物はだいじに育てて腹のなか",
+    "volume": null,
+    "label": "Qpaコレクション",
+    "url": "https://www.amazon.co.jp/dp/4801991491?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51cutg5uBLL._SL500_.jpg"
+   },
+   {
+    "id": "9784801977907",
+    "title": "旧フリテンくん 5巻",
+    "volume": 5,
+    "label": "B6廉価コミックス",
+    "url": "https://www.amazon.co.jp/dp/4801977901?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   }
+  ],
+  "講談社": [
+   {
+    "id": "9784065462034",
+    "title": "あの島の海音荘 4巻",
+    "volume": 4,
+    "label": "講談社コミックス",
+    "url": "https://www.amazon.co.jp/dp/4065462037?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065462010",
+    "title": "まじイヌ 2巻",
+    "volume": 2,
+    "label": "ワイドKC",
+    "url": "https://www.amazon.co.jp/dp/4065462010?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065462256",
+    "title": "よわよわ先生 20巻",
+    "volume": 20,
+    "label": "KCデラックス",
+    "url": "https://www.amazon.co.jp/dp/4065462258?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065462195",
+    "title": "りりむホリック 2巻",
+    "volume": 2,
+    "label": "講談社コミックス",
+    "url": "https://www.amazon.co.jp/dp/4065462193?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065457160",
+    "title": "カッコウの許嫁 35巻",
+    "volume": 35,
+    "label": "講談社コミックス",
+    "url": "https://www.amazon.co.jp/dp/4065457165?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065461990",
+    "title": "カナン様はあくまでチョロい 15巻",
+    "volume": 15,
+    "label": "KCデラックス",
+    "url": "https://www.amazon.co.jp/dp/4065461995?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065461976",
+    "title": "キラーシッター 2巻",
+    "volume": 2,
+    "label": "講談社コミックス",
+    "url": "https://www.amazon.co.jp/dp/4065461979?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065462058",
+    "title": "デッドアカウント 17巻",
+    "volume": 17,
+    "label": "講談社コミックス",
+    "url": "https://www.amazon.co.jp/dp/4065462053?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065462225",
+    "title": "怨霊日和 1巻",
+    "volume": 1,
+    "label": "講談社コミックス",
+    "url": "https://www.amazon.co.jp/dp/4065462223?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51Ue07Jf8gL._SL500_.jpg"
+   },
+   {
+    "id": "9784065462188",
+    "title": "柊さんちの吸血事情 7巻",
+    "volume": 7,
+    "label": "KCデラックス",
+    "url": "https://www.amazon.co.jp/dp/4065462185?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065462201",
+    "title": "生徒会にも穴はある! 14巻",
+    "volume": 14,
+    "label": "KCデラックス",
+    "url": "https://www.amazon.co.jp/dp/4065462207?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065462171",
+    "title": "盤上のオリオン 12巻",
+    "volume": 12,
+    "label": "講談社コミックス",
+    "url": "https://www.amazon.co.jp/dp/4065462177?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065462218",
+    "title": "群雄を綴る 2巻",
+    "volume": 2,
+    "label": "講談社コミックス",
+    "url": "https://www.amazon.co.jp/dp/4065462215?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065457337",
+    "title": "蒼く染めろ 22巻",
+    "volume": 22,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4065457335?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   }
+  ]
+ }
+}

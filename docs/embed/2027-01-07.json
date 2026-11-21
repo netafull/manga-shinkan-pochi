@@ -1,0 +1,129 @@
+{
+ "date": "2027-01-07",
+ "publishers": {
+  "秋田書店": [
+   {
+    "id": "9784253021937",
+    "title": "HP5ですけど自動治癒(オートヒール)があれば死にません! 4巻",
+    "volume": 4,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784253021319",
+    "title": "この冒険者、人類史最強です〜外れスキル『鑑定』が『継承』に覚醒したので、数多の英雄たちの力を受け継ぎ無双する〜 7巻",
+    "volume": 7,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784253021951",
+    "title": "まりも兄弟の茶飯事 12巻",
+    "volume": 12,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784253021944",
+    "title": "チェリー勇者と“せい”なる剣 11巻",
+    "volume": 11,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784253021890",
+    "title": "モーレツ!浦安鉄筋家族 4巻",
+    "volume": 4,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784253021845",
+    "title": "ヤンキーJKクズハナちゃん 34巻",
+    "volume": 34,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784253021128",
+    "title": "ルパン三世 異世界の姫君 22巻",
+    "volume": 22,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784253021883",
+    "title": "僕の心のヤバイやつ ラブコメディが始まらない 3巻",
+    "volume": 3,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784253021913",
+    "title": "半蔵と十三人の女忍たち 5巻",
+    "volume": 5,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784253021852",
+    "title": "桃源暗鬼 32巻",
+    "volume": 32,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784253021906",
+    "title": "桃源暗鬼外伝 〜月と桜の狂争曲〜 3巻",
+    "volume": 3,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784253021876",
+    "title": "桃源郷で会いましょう 桃源暗鬼公式アンソロジー 1巻",
+    "volume": 1,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784253021838",
+    "title": "魔入りました!入間くん 52巻",
+    "volume": 52,
+    "label": "",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784253021869",
+    "title": "魔入りました!入間くん if Episode of 魔フィア 10巻",
+    "volume": 10,
+    "label": "",
+    "url": null,
+    "image": null
+   }
+  ],
+  "講談社": [
+   {
+    "id": "9784065463949",
+    "title": "ぎるてぃらいぶらり 1巻",
+    "volume": 1,
+    "label": "KCデラックス",
+    "url": "https://www.amazon.co.jp/dp/4065463947?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/61GUY7Nz+4L._SL500_.jpg"
+   }
+  ]
+ }
+}

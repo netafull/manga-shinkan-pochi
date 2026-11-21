@@ -1,0 +1,291 @@
+{
+ "date": "2026-12-10",
+ "publishers": {
+  "KADOKAWA": [
+   {
+    "id": "9784041180747",
+    "title": "お酒のせいにはしませんから　２　百合×飲酒アンソロジー",
+    "volume": null,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4041180740?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784049526103",
+    "title": "ソードアート・オンライン Re:Aincrad 7巻",
+    "volume": 7,
+    "label": "電撃コミックスNEXT",
+    "url": "https://www.amazon.co.jp/dp/4049526107?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51CXmH0rZeL._SL500_.jpg"
+   },
+   {
+    "id": "9784041178843",
+    "title": "ニッターズハイ! 8巻",
+    "volume": 8,
+    "label": "角川コミックス・エース",
+    "url": "https://www.amazon.co.jp/dp/4041178843?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/41X5s6TqopL._SL500_.jpg"
+   },
+   {
+    "id": "9784049525151",
+    "title": "レベル0の無能探索者と蔑まれても実は世界最強です 4 ～探索ランキング1位は謎の人～",
+    "volume": null,
+    "label": "電撃コミックスNEXT",
+    "url": "https://www.amazon.co.jp/dp/4049525151?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51No3Y-iEML._SL500_.jpg"
+   },
+   {
+    "id": "9784049722581",
+    "title": "世界一可愛い私の幼馴染が隠れてVTuberをしているらしい 1巻",
+    "volume": 1,
+    "label": "角川コミックス・エース",
+    "url": "https://www.amazon.co.jp/dp/4049722585?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/41UUKvjMITL._SL500_.jpg"
+   },
+   {
+    "id": "9784046607331",
+    "title": "今さらですが、幼なじみを好きになってしまいました 3巻",
+    "volume": 3,
+    "label": "MFC",
+    "url": "https://www.amazon.co.jp/dp/4046607335?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/41uQFm5U7hL._SL500_.jpg"
+   },
+   {
+    "id": "9784049722956",
+    "title": "凡人転生の努力無双　１ ～赤ちゃんの頃から努力してたらいつのまにか日本の未来を背負ってました～",
+    "volume": null,
+    "label": "角川コミックス・エース",
+    "url": "https://www.amazon.co.jp/dp/404972295X?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51gak3-oUyL._SL500_.jpg"
+   },
+   {
+    "id": "9784041181256",
+    "title": "女子高生の無駄づかい 17巻",
+    "volume": 17,
+    "label": "角川コミックス・エース",
+    "url": "https://www.amazon.co.jp/dp/4041181259?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51H1UrF0TYL._SL500_.jpg"
+   },
+   {
+    "id": "9784049723618",
+    "title": "小さくて可愛い文芸部の知的な先輩を、膝の上に乗せたら毎日座ってくるようになった 1巻",
+    "volume": 1,
+    "label": "角川コミックス・エース",
+    "url": "https://www.amazon.co.jp/dp/4049723611?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/519WcxcNmQL._SL500_.jpg"
+   },
+   {
+    "id": "9784041178898",
+    "title": "転生した私は幼い女伯爵（３） 後見人の公爵に餌付けしながら、領地発展のために万能魔法で色々作るつもりです",
+    "volume": null,
+    "label": "角川コミックス・エース",
+    "url": "https://www.amazon.co.jp/dp/4041178894?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51qsBk65MIL._SL500_.jpg"
+   }
+  ],
+  "双葉社": [
+   {
+    "id": "9784575424980",
+    "title": "「お前が代わりに死ね」と言われた私。妹の身代わりに冷酷な辺境伯のもとへ嫁ぎ、幸せを手に入れる 6巻",
+    "volume": 6,
+    "label": "モンスターコミックスｆ",
+    "url": null,
+    "image": null
+   },
+   {
+    "id": "9784575863079",
+    "title": "だらしないです 堀田先生! 11巻",
+    "volume": 11,
+    "label": "アクションコミックス",
+    "url": "https://www.amazon.co.jp/dp/4575863076?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784575441390",
+    "title": "まめとむぎ 4巻",
+    "volume": 4,
+    "label": "アクションコミックス",
+    "url": "https://www.amazon.co.jp/dp/4575441392?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784575863031",
+    "title": "オッターヴァ!!! 小さな手のピアニスト 2巻",
+    "volume": 2,
+    "label": "アクションコミックス",
+    "url": "https://www.amazon.co.jp/dp/4575863033?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784575863055",
+    "title": "天蓋のヴォールト 2巻",
+    "volume": 2,
+    "label": "アクションコミックス",
+    "url": "https://www.amazon.co.jp/dp/457586305X?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784575425659",
+    "title": "役立たずスキル【ログインボーナス】で捨てられた令嬢が、本当の幸せをつかむまで 4巻",
+    "volume": 4,
+    "label": "モンスターコミックスｆ",
+    "url": "https://www.amazon.co.jp/dp/4575425656?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784575863086",
+    "title": "怪怪ギギギギギ 3巻",
+    "volume": 3,
+    "label": "アクションコミックス",
+    "url": "https://www.amazon.co.jp/dp/4575863084?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51cI81mg37L._SL500_.jpg"
+   },
+   {
+    "id": "9784575946352",
+    "title": "新婚のいろはさん 10巻",
+    "volume": 10,
+    "label": "まんがタウン",
+    "url": "https://www.amazon.co.jp/dp/4575946354?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784575441383",
+    "title": "本日の卜部さんと 4巻",
+    "volume": 4,
+    "label": "アクションコミックス",
+    "url": "https://www.amazon.co.jp/dp/4575441384?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784575382648",
+    "title": "腐男子召喚~異世界で神獣にハメられました 14巻",
+    "volume": 14,
+    "label": "マージナルコミックス",
+    "url": "https://www.amazon.co.jp/dp/4575382647?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784575382655",
+    "title": "腐男子召喚~異世界で神獣にハメられました 14巻",
+    "volume": 14,
+    "label": "マージナルコミックス",
+    "url": "https://www.amazon.co.jp/dp/4575382655?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784575863017",
+    "title": "赤髪エルフのお惣菜屋さん 2巻",
+    "volume": 2,
+    "label": "アクションコミックス",
+    "url": "https://www.amazon.co.jp/dp/4575863017?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784575425642",
+    "title": "身代わりで縁談に参加した愚妹の私、隣国の王子様に見初められました 4巻",
+    "volume": 4,
+    "label": "モンスターコミックスｆ",
+    "url": "https://www.amazon.co.jp/dp/4575425648?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784575425628",
+    "title": "転生幼女は両親の離婚を阻止して幸せになりたい! 〜前世のオタク知識で推しの運命変えちゃいます〜 1巻",
+    "volume": 1,
+    "label": "モンスターコミックスｆ",
+    "url": "https://www.amazon.co.jp/dp/4575425621?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784575863024",
+    "title": "雪はともえに 2巻",
+    "volume": 2,
+    "label": "アクションコミックス",
+    "url": "https://www.amazon.co.jp/dp/4575863025?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784575863048",
+    "title": "魔鉱戦列 2巻",
+    "volume": 2,
+    "label": "アクションコミックス",
+    "url": "https://www.amazon.co.jp/dp/4575863041?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   }
+  ],
+  "小学館": [
+   {
+    "id": "9784098736072",
+    "title": "3度捨てられた花嫁は呪いの軍人に嫁ぎたい 1巻",
+    "volume": 1,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4098736071?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784098735860",
+    "title": "VSルパン 9巻",
+    "volume": 9,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4098735865?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784098735945",
+    "title": "この極道調教中につき 12巻",
+    "volume": 12,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4098735946?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784098735938",
+    "title": "嘘つきな初恋~王子様はドSホスト 10巻",
+    "volume": 10,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4098735938?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784098736621",
+    "title": "後宮の影公主 ~呪術師は謎を読む 3巻",
+    "volume": 3,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4098736624?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784098735846",
+    "title": "数字であそぼ。 17巻",
+    "volume": 17,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4098735849?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784098735853",
+    "title": "煌燿国後宮譚 黒衣の守護 6巻",
+    "volume": 6,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4098735857?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784098737154",
+    "title": "顔に色を塗る　当麻ゆいこよみきり集",
+    "volume": null,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4098737159?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784098736614",
+    "title": "魔女と黒猫 家庭教師をしたら高慢な姫様に懐かれました 1巻",
+    "volume": 1,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4098736616?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   }
+  ]
+ }
+}
