@@ -25,7 +25,7 @@ CNAME = "shinkan.netaful.jp"
 NAME = "マンガ新刊ポチ"
 TAGLINE = "コミック新刊の発売日を、まとめてチェック"
 DESCRIPTION = ("コミック新刊（マンガの新刊）の発売日を発売日順にまとめたサイトです。"
-               "小学館・秋田書店・白泉社・KADOKAWA・双葉社・講談社・集英社の紙のコミックスについて、今日・今週・来週の発売をひと目で確認できます。")
+               "小学館・秋田書店・白泉社・KADOKAWA・双葉社・竹書房・少年画報社・講談社・集英社の紙のコミックスについて、今日・今週・来週の発売をひと目で確認できます。")
 MANGA_POCHI = "https://manga.netaful.jp/"
 WEEKDAYS = "月火水木金土日"
 PUBLISHERS = {  # slug -> (表示名, 公式ページ)
@@ -34,6 +34,8 @@ PUBLISHERS = {  # slug -> (表示名, 公式ページ)
     "hakusensha": ("白泉社", "https://www.hakusensha.co.jp/shinkan/"),
     "kadokawa": ("KADOKAWA", "https://www.kadokawa.co.jp/calendar/?largeGenre=13"),
     "futabasha": ("双葉社", "https://www.futabasha.co.jp/new-release-calendar/"),
+    "takeshobo": ("竹書房", "https://www.takeshobo.co.jp/search/g106010.html?amount=100&order=book_date_desc"),
+    "shonengahosha": ("少年画報社", "https://www.shonengahosha.co.jp/cal.php"),
     "kodansha": ("講談社", None),
     "shueisha": ("集英社", None),
 }
@@ -496,7 +498,7 @@ def build(today=None, data=None, docs=None, write_lastmod=True):
     next_week = span(week_end + datetime.timedelta(days=1), next_end)
 
     body = (f'<div class="hero"><h1>マンガ・コミック新刊の発売日一覧</h1><p class="intro">{fmt_date(iso)} 時点。'
-            '小学館・秋田書店・白泉社・KADOKAWA・双葉社・講談社・集英社の紙のコミックスを掲載しています。</p></div>')
+            '小学館・秋田書店・白泉社・KADOKAWA・双葉社・竹書房・少年画報社・講談社・集英社の紙のコミックスを掲載しています。</p></div>')
     body += '<h2 class="band" id="today">今日発売</h2>'
     body += (day_section(iso, today_books, True) if today_books else '<p class="empty">今日発売の新刊は登録がありません。</p>')
     body += '<h2 class="band" id="week">今週</h2>' + ("".join(day_section(d, bs) for d, bs in this_week) or '<p class="empty">今週の残りは登録がありません。</p>')
