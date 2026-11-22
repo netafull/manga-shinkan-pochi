@@ -1,5 +1,16 @@
 {
   "exclude": [],
   "exclude_series": [],
-  "include": []
+  "include": [
+    {
+      "id": "9784253021098",
+      "title": "エロイカより愛をこめて Perfect Edition 第1巻",
+      "added": "2026-11-22"
+    },
+    {
+      "id": "9784253021753",
+      "title": "エロイカより愛をこめて Perfect Edition 第2巻",
+      "added": "2026-11-22"
+    }
+  ]
 }

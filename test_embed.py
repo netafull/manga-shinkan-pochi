@@ -190,6 +190,35 @@ class PagesTest(unittest.TestCase):
         self.assertIn("自動除外：NGレーベル", h)
         self.assertIn("除外される本", h)
 
+    def test_review_issue_buttons(self):
+        h = self.read("review/index.html")
+        self.assertIn('https://github.com/netafull/manga-shinkan-pochi/issues/new', h)
+        self.assertIn("[embed-overrides]", h)
+        for i in ("ie", "is", "ib"):
+            self.assertIn(f'<button id="{i}"', h)
+        self.assertIn('data-ex="auto"', h)  # 自動除外の本は「戻す」対象になる
+        self.assertIn('data-ex=""', h)
+        self.assertIn("URLが長すぎ", h)  # 長すぎるときの分割案内
+
+    def test_noimage_in_snippet_when_no_amazon_image(self):
+        b = book(id="9784000000009", title="画像なし 1", series_title="画像なし", series_key="画像なし", amazon=item(image=None))
+        for bk in (b, book(id="9784000000008", amazon=None)):
+            s = embed_pages.snippet_html("2026-11-25", [(bk, True)])
+            self.assertIn('src="https://shinkan.netaful.jp/static/noimage.png"', s)
+            self.assertIn('alt="書影なし"', s)
+            self.assertNotIn("\n", s)
+            self.assertNotIn("class=", s)
+            self.assertNotIn("<script", s)
+
+    def test_amazon_image_unchanged(self):
+        s = embed_pages.snippet_html("2026-11-25", [(self.books[0], True)])
+        self.assertIn("m.media-amazon.com/images/I/x.jpg", s)
+        self.assertNotIn("noimage", s)
+
+    def test_noimage_file_exists(self):
+        import common
+        self.assertTrue((common.ROOT / "static" / "noimage.png").read_bytes().startswith(b"\x89PNG"))
+
     def test_index_links(self):
         h = self.read("index.html")
         self.assertIn("/embed/2026-11-25/", h)
