@@ -3,68 +3,12 @@
  "publishers": {
   "KADOKAWA": [
    {
-    "id": "9784040900469",
-    "title": "THE TIME,　シマエナガちゃんずかん",
-    "volume": null,
-    "label": "",
-    "url": "https://www.amazon.co.jp/dp/4040900464?tag=natafull-22&linkCode=ogi&th=1&psc=1",
-    "image": "https://m.media-amazon.com/images/I/31N50z9UoVL._SL500_.jpg"
-   },
-   {
-    "id": "9784049169805",
-    "title": "raemz画集  Amour",
-    "volume": null,
-    "label": "",
-    "url": "https://www.amazon.co.jp/dp/4049169800?tag=natafull-22&linkCode=ogi&th=1&psc=1",
-    "image": null
-   },
-   {
-    "id": "9784046609274",
-    "title": "アイアンマン 60th Anniversary Book",
-    "volume": null,
-    "label": "",
-    "url": "https://www.amazon.co.jp/dp/4046609273?tag=natafull-22&linkCode=ogi&th=1&psc=1",
-    "image": null
-   },
-   {
-    "id": "9784040900636",
-    "title": "イタリアンブレインロット トララレロ トラララと仲間たち大集合図かん",
-    "volume": null,
-    "label": "",
-    "url": "https://www.amazon.co.jp/dp/4040900634?tag=natafull-22&linkCode=ogi&th=1&psc=1",
-    "image": "https://m.media-amazon.com/images/I/51Po8sSr0LL._SL500_.jpg"
-   },
-   {
-    "id": "9784040900667",
-    "title": "イタリアンブレインロット　生態図鑑",
-    "volume": null,
-    "label": "",
-    "url": "https://www.amazon.co.jp/dp/4040900669?tag=natafull-22&linkCode=ogi&th=1&psc=1",
-    "image": "https://m.media-amazon.com/images/I/51HIjJ8CT8L._SL500_.jpg"
-   },
-   {
-    "id": "9784040900476",
-    "title": "ダービースタリオン 2巻",
-    "volume": 2,
-    "label": "",
-    "url": "https://www.amazon.co.jp/dp/4040900472?tag=natafull-22&linkCode=ogi&th=1&psc=1",
-    "image": "https://m.media-amazon.com/images/I/51fMtS-hERL._SL500_.jpg"
-   },
-   {
     "id": "9784045003585",
     "title": "ランナウェイモール 1巻",
     "volume": 1,
     "label": "青騎士コミックス",
     "url": "https://www.amazon.co.jp/dp/4045003584?tag=natafull-22&linkCode=ogi&th=1&psc=1",
     "image": "https://m.media-amazon.com/images/I/5189FHjdfWL._SL500_.jpg"
-   },
-   {
-    "id": "9784045000522",
-    "title": "青騎士　第35号",
-    "volume": null,
-    "label": "青騎士コミックス",
-    "url": "https://www.amazon.co.jp/dp/4045000526?tag=natafull-22&linkCode=ogi&th=1&psc=1",
-    "image": null
    }
   ],
   "小学館": [
@@ -98,14 +42,6 @@
     "volume": 2,
     "label": "",
     "url": "https://www.amazon.co.jp/dp/4094533192?tag=natafull-22&linkCode=ogi&th=1&psc=1",
-    "image": null
-   },
-   {
-    "id": "9784094533200",
-    "title": "小説　てつりょー！ｍｅｅｔ　ｗｉｔｈ　鉄道むすめ",
-    "volume": null,
-    "label": "",
-    "url": "https://www.amazon.co.jp/dp/4094533206?tag=natafull-22&linkCode=ogi&th=1&psc=1",
     "image": null
    },
    {

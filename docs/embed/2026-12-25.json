@@ -1,16 +1,6 @@
 {
  "date": "2026-12-25",
  "publishers": {
-  "KADOKAWA": [
-   {
-    "id": "9784041180211",
-    "title": "継母の連れ子が元カノだった Art Works たかやKi画集",
-    "volume": null,
-    "label": "",
-    "url": null,
-    "image": null
-   }
-  ],
   "小学館": [
    {
     "id": "9784091544018",
@@ -225,30 +215,6 @@
     "label": "集英社リミックス",
     "url": "https://www.amazon.co.jp/dp/4081153213?tag=natafull-22&linkCode=osi&th=1&psc=1",
     "image": null
-   },
-   {
-    "id": "9784086316798",
-    "title": "異世界ラクラク無人島ライフ (ダッシュエックス文庫) 5巻",
-    "volume": 5,
-    "label": "ダッシュエックス文庫",
-    "url": "https://www.amazon.co.jp/dp/408631679X?tag=natafull-22&linkCode=osi&th=1&psc=1",
-    "image": "https://m.media-amazon.com/images/I/51CnPjU-lnL._SL500_.jpg"
-   },
-   {
-    "id": "9784086316804",
-    "title": "転生したら糞ゲーの悪役令嬢の義兄でした。 ~没落に巻き込まれて死ぬのはゴメンなのでシナリオを壊していきます!~ (ダッシュエックス文庫)",
-    "volume": null,
-    "label": "ダッシュエックス文庫",
-    "url": "https://www.amazon.co.jp/dp/4086316803?tag=natafull-22&linkCode=osi&th=1&psc=1",
-    "image": "https://m.media-amazon.com/images/I/51768WxWONL._SL500_.jpg"
-   },
-   {
-    "id": "9784086316781",
-    "title": "高校時代に傲慢だった女王様との同棲生活は意外と居心地が悪くない (ダッシュエックス文庫) 6巻",
-    "volume": 6,
-    "label": "ダッシュエックス文庫",
-    "url": "https://www.amazon.co.jp/dp/4086316781?tag=natafull-22&linkCode=osi&th=1&psc=1",
-    "image": "https://m.media-amazon.com/images/I/41P9chDetXL._SL500_.jpg"
    }
   ]
  }
