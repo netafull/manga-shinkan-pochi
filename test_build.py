@@ -393,6 +393,21 @@ class PochiVerifyTest(unittest.TestCase):
         self.assertEqual([w["pochi"] for w in build.group_works([b], cands).values()], ["1"])
 
 
+class CardCoverTest(unittest.TestCase):
+    B = {"id": "9784000000001", "title": "テスト 1", "volume": 1, "series_title": "テスト", "publisher": "小学館",
+         "release_date": "2026-11-25", "author": "作者", "work_slug": "x", "source_url": "https://example.com/", "editions": []}
+
+    def test_no_image_uses_placeholder(self):
+        h = build.card(dict(self.B))
+        self.assertIn('src="/static/noimage.png" alt="書影なし"', h)
+        self.assertNotIn("Amazonで見る", h)  # Amazon のリンクは付けない
+
+    def test_amazon_image_unchanged(self):
+        h = build.card(dict(self.B, amazon={"image": "https://m.media-amazon.com/x.jpg", "url": "https://www.amazon.co.jp/dp/1"}))
+        self.assertIn("m.media-amazon.com/x.jpg", h)
+        self.assertNotIn("noimage", h)
+
+
 class FeedTest(unittest.TestCase):
     def test_feed_file_and_window(self):
         t = datetime.date(2026, 11, 20)

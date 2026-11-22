@@ -8,6 +8,7 @@ from html import escape
 import embed_safety
 
 SITE_URL = "https://shinkan.netaful.jp"
+NOIMAGE_URL = SITE_URL + "/static/noimage.png"  # 書影なしの仮画像（自作。出版社の表紙は使わない）
 AFFIL = "Amazonのアソシエイトとして、当サイトは適格販売により収入を得ています。"
 PAGE_BACK, PAGE_FWD = 7, 60      # 埋め込みページの対象（今日の7日前〜60日先）
 REVIEW_BACK, REVIEW_FWD = 7, 21  # 目視確認ページの対象
@@ -67,6 +68,9 @@ def _card(b, cover):
     if cover and img:
         alt = escape(book_title(b) + "の表紙", quote=True)
         img_html = (f'<img src="{escape(img, quote=True)}" width="56" height="80" alt="{alt}" loading="lazy" '
+                    f'style="{S_IMG}">')
+    else:
+        img_html = (f'<img src="{NOIMAGE_URL}" width="56" height="80" alt="書影なし" loading="lazy" '
                     f'style="{S_IMG}">')
     label = embed_safety.label_of(b, a)
     meta = escape(b["publisher"]) + (f' / {escape(label)}' if label else "")
@@ -130,11 +134,38 @@ def json_payload(iso, shown):
     return {"date": iso, "publishers": pubs}
 
 
-REVIEW_JS = """<script>(function(){var T=__TODAY__;
+ISSUE_URL = "https://github.com/netafull/manga-shinkan-pochi/issues/new"
+ISSUE_PREFIX = "[embed-overrides]"
+ISSUE_URL_MAX = 6000  # これを超えるURLはGitHubが受け付けないことがあるので、分割を促す
+
+REVIEW_JS = """<script>(function(){var T=__TODAY__,REPO=__REPO__,PRE=__PRE__,MAX=__MAX__;
+var msg=document.getElementById("msg");
 function pick(){return Array.prototype.slice.call(document.querySelectorAll(".row")).filter(function(r){return r.querySelector(".ck").checked})}
-function copy(text){var m=document.getElementById("msg");function ok(){m.textContent=" コピーしました";}
-function fb(){var t=document.createElement("textarea");t.value=text;document.body.appendChild(t);t.select();try{document.execCommand("copy");ok()}catch(e){m.textContent=" コピー失敗"}document.body.removeChild(t)}
+function copy(text){function ok(){msg.textContent=" コピーしました";}
+function fb(){var t=document.createElement("textarea");t.value=text;document.body.appendChild(t);t.select();try{document.execCommand("copy");ok()}catch(e){msg.textContent=" コピー失敗"}document.body.removeChild(t)}
 if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(ok,fb)}else fb();}
+function ops(kind){var o={exclude:[],exclude_series:[],include:[],remove_exclude:[],remove_exclude_series:[]},seen={};
+pick().forEach(function(r){var d=r.dataset,ex=d.ex;
+if(kind=="ex"){if(!ex)o.exclude.push({id:d.id,title:d.title})}
+else if(kind=="series"){if(d.sk&&ex!="series"&&!seen[d.sk]){seen[d.sk]=1;o.exclude_series.push({series_key:d.sk,title:d.st})}}
+else if(kind=="back"){if(ex=="auto")o.include.push({id:d.id,title:d.title});else if(ex=="manual")o.remove_exclude.push({id:d.id});
+else if(ex=="series"&&d.sk&&!seen[d.sk]){seen[d.sk]=1;o.remove_exclude_series.push({series_key:d.sk})}}});return o}
+function count(o){return o.exclude.length+o.exclude_series.length+o.include.length+o.remove_exclude.length+o.remove_exclude_series.length}
+function issue(kind){var o=ops(kind),n=count(o);
+if(!n){msg.textContent=" 対象の本が選ばれていません（チェックを入れてください）";return}
+var name={ex:"除外",series:"作品ごとに除外",back:"戻す"}[kind];
+var lines=[];o.exclude.forEach(function(x){lines.push("- 除外: "+x.title+" ("+x.id+")")});
+o.exclude_series.forEach(function(x){lines.push("- 作品ごとに除外: "+x.title+" ("+x.series_key+")")});
+o.include.forEach(function(x){lines.push("- 自動除外を戻す: "+x.title+" ("+x.id+")")});
+o.remove_exclude.forEach(function(x){lines.push("- 手動除外を取り消す: "+x.id)});
+o.remove_exclude_series.forEach(function(x){lines.push("- 作品ごとの手動除外を取り消す: "+x.series_key)});
+var body=lines.join("\\n")+"\\n\\n```json\\n"+JSON.stringify(o)+"\\n```\\n";
+var url=REPO+"?title="+encodeURIComponent(PRE+" "+name+" "+n+"件")+"&body="+encodeURIComponent(body);
+if(url.length>MAX){msg.textContent=" 件数が多くてURLが長すぎます（"+url.length+"字）。数件ずつに分けてください";return}
+msg.textContent=" GitHubのIssue画面を開きます。「Create」を押すと自動で反映されます";window.open(url,"_blank","noopener")}
+document.getElementById("ie").onclick=function(){issue("ex")};
+document.getElementById("is").onclick=function(){issue("series")};
+document.getElementById("ib").onclick=function(){issue("back")};
 document.getElementById("cb").onclick=function(){copy(pick().map(function(r){return JSON.stringify({id:r.dataset.id,title:r.dataset.title,added:T})}).join(",\\n"))};
 document.getElementById("cs").onclick=function(){var seen={};copy(pick().filter(function(r){var k=r.dataset.sk;if(!k||seen[k])return false;seen[k]=1;return true}).map(function(r){return JSON.stringify({series_key:r.dataset.sk,title:r.dataset.st})}).join(",\\n"))};
 })();</script>
@@ -151,20 +182,26 @@ def review_html(rows, today, overrides):
            "button{margin-right:6px}.row p{margin:0}.row .m{font-size:12px;color:#555}")
     out = _head("埋め込み目視確認", css)
     out += ('<div class="bar"><b>埋め込み目視確認</b>（非公開）　'
-            '<button id="cb">選んだものを除外リスト用にコピー</button>'
-            '<button id="cs">選んだものを作品ごとに除外（series_key版）</button>'
-            '<span id="msg"></span><br><small>コピーした行を embed_overrides.json の exclude / exclude_series に足してもらう。'
-            '表紙のぼかしはクリックで解除。</small></div>\n<div id="list">\n')
+            '<button id="ie">選んだ本を除外する</button>'
+            '<button id="is">選んだ本を作品ごと除外する</button>'
+            '<button id="ib">選んだ除外済みの本を戻す</button>'
+            '<span id="msg"></span><br><small>ボタンを押すと GitHub の新規Issue画面が開きます。そのまま「Create」を押すと、'
+            '埋め込みから外す／戻す設定が自動で反映されます（サイト本体の掲載は変わりません）。表紙のぼかしはクリックで解除。<br>'
+            '予備：<button id="cb">選んだ本を除外リスト用にコピー</button>'
+            '<button id="cs">選んだ本を作品ごと除外用にコピー</button></small></div>\n<div id="list">\n')
     cur = None
     for b, show, cover, reason in rows:
         if b["release_date"] != cur:
             cur = b["release_date"]
             out += f"<h2>{_fmt(cur)}</h2>\n"
         a = b.get("amazon") or {}
+        ex = ""
         if reason.startswith("手動除外"):
             st, cls = reason, "ng"
+            ex = "series" if "作品ごと" in reason else "manual"
         elif not show:
             st, cls = f"自動除外：{reason}", "ng"
+            ex = "auto"
         elif not cover:
             st, cls = "表紙なしで表示", "nc"
         else:
@@ -176,12 +213,13 @@ def review_html(rows, today, overrides):
             img = f'<div class="imgw{blur}">{img}</div>'
         label = embed_safety.label_of(b, a)
         data = (f'data-id="{escape(b["id"], quote=True)}" data-title="{escape(book_title(b), quote=True)}" '
-                f'data-sk="{escape(b.get("series_key") or "", quote=True)}" data-st="{escape(b["series_title"], quote=True)}"')
+                f'data-ex="{ex}" data-sk="{escape(b.get("series_key") or "", quote=True)}" data-st="{escape(b["series_title"], quote=True)}"')
         out += (f'<div class="row" {data}><input type="checkbox" class="ck" aria-label="選ぶ">{img}'
                 f'<div><p>{escape(book_title(b))}</p><p class="m">{escape(b["publisher"])} / {escape(label)}　id: {escape(b["id"])}</p>'
                 f'<span class="st {cls}">{escape(st)}</span></div></div>\n')
     out += "</div>\n"
-    out += REVIEW_JS.replace("__TODAY__", json.dumps(today.isoformat()))
+    out += (REVIEW_JS.replace("__TODAY__", json.dumps(today.isoformat())).replace("__REPO__", json.dumps(ISSUE_URL))
+            .replace("__PRE__", json.dumps(ISSUE_PREFIX)).replace("__MAX__", str(ISSUE_URL_MAX)))
     return out + "</body>\n</html>\n"
 
 

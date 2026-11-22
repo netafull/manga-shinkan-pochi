@@ -262,7 +262,7 @@ def card(b, show_date=False):
     a = b.get("amazon") or {}
     img = a.get("image")
     cover = (f'<img class="cover" src="{escape(img)}" alt="{escape(b["title"])}の表紙" loading="lazy" width="64">'
-             if img else '<div class="cover cover-none" aria-hidden="true">No<br>Image</div>')
+             if img else '<img class="cover" src="/static/noimage.png" alt="書影なし" loading="lazy" width="64" height="91">')
     vol = f'<span class="vol">{b["volume"]}巻</span>' if b.get("volume") else ""
     eds = "".join(f'<span class="ed">{escape(e)}</span>' for e in b.get("editions") or [])
     price = f'<span class="price">￥{a["price"]:,.0f}</span>' if a.get("price") else ""
@@ -505,6 +505,7 @@ def build(today=None, data=None, docs=None, write_lastmod=True):
     shutil.copy(ROOT / "static" / "style.css", DOCS / "static" / "style.css")
     shutil.copy(ROOT / "static" / "search.js", DOCS / "static" / "search.js")
     shutil.copytree(ROOT / "static" / "assets", DOCS / "static" / "assets")
+    shutil.copy(ROOT / "static" / "noimage.png", DOCS / "static" / "noimage.png")  # 書影なしの仮画像（自作）
     (DOCS / "CNAME").write_text(CNAME + "\n", encoding="utf-8")
     (DOCS / ".nojekyll").write_text("", encoding="utf-8")
 
