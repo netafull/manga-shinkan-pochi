@@ -396,6 +396,10 @@ def volume_hint(raw: str, publisher: str) -> str:
     if publisher == "少年画報社":
         t = re.sub(r"\s*全\s*(\d{1,4})\s*巻\s*$", r" \1巻", t)
     t = re.sub(r"\s*[(（\[](\d{1,4})[)）\]]$", r" \1", t)
+    # 「X(5) キラキラスリーブケース付き特装版」「X(14)限定版」型: 括弧の巻数を取り、特典名は捨てて版表記だけ残す
+    m = re.search(r"\s*[(（](\d{1,4})[)）]\s*([^()（）]*?(特装版|限定版|特別版|同梱版|通常版))$", t)
+    if m:
+        return re.sub(r"^\S*付き?\s+(?=\S)", "", t[:m.start()]).strip() + f" {int(m.group(1))} {m.group(3)}"
     t = re.sub(r"\s*[Vv]ol\.?\s*(\d{1,4})$", lambda m: " " + str(int(m.group(1))), t)
     t = re.sub(r"\s*\[VOLUME\]\s*(\d{1,4})$", lambda m: " " + str(int(m.group(1))), t)
     t = re.sub(r"\s*VOLUME\s*(\d{1,4})(?:\s+[A-Za-z]+)?$", lambda m: " " + str(int(m.group(1))), t)
@@ -434,7 +438,7 @@ def _mid_volume(t: str, publisher: str) -> str:
     rest = t[end:]
     if _ED_TAIL.fullmatch(rest.strip()):
         return t                       # 「12 シャカシャカアクキー付き特装版」型。parse_title が版表記として処理する
-    ed = re.search(r"特装版|限定版|特別版|同梱版|通常版", rest)
+    ed = re.search(r"特装版|限定版|特別版|同梱版|通常版|(?:フル)?カラー版", rest)
     return t[:start] + f" {int(n)}" + (f" {ed.group(0)}" if ed else "")
 
 
@@ -452,6 +456,7 @@ def parse_book(raw: str, publisher: str):
 # ---------- タイトル解析 ----------
 EDITION_WORDS = [("特装版", "特装版"), ("限定版", "限定版"), ("特別版", "限定版"), ("同梱版", "特装版"),
                  ("小冊子付き", "特装版"), ("特典付き", "特装版"), ("通常版", "通常版")]
+_COLOR_ED = re.compile(r"(?<=\S)\s+((?:公式)?(?:フル)?カラー版)(?:『[^』]*』)?(?=\s*$)")
 _EDWORDS = "特装版|限定版|特別版|同梱版|通常版|小冊子付き|特典付き|フィギュア付き|DVD付き|Blu-ray付き"
 
 
@@ -476,6 +481,11 @@ def parse_title(raw: str):
             base = base[:m.start()]
     for w, _f in EDITION_WORDS:
         base = base.replace(w, " ")
+    # カラー版（「公式フルカラー版『副題』」を含む）は同じ作品の版表記。題名の先頭にある場合は作品名の一部とみて外さない
+    cm = _COLOR_ED.search(base)
+    if cm:
+        flags.append("フルカラー版" if "フル" in cm.group(1) else "カラー版")
+        base = base[:cm.start()]
     # 版表記を除いたあとの末尾の巻数（「3 特装版」型）
     if vol is None:
         m = re.search(r"(?:第\s*)?(\d{1,4})\s*巻\s*$", base) or re.search(r"\s(\d{1,4})\s*$", base)

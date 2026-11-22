@@ -10,6 +10,7 @@ sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(ROOT / "scripts"))
 import parse_pub as pp  # noqa: E402
 import migrate_volume_fix_20261122 as mig  # noqa: E402
+import migrate_series_split_20261122 as mig2  # noqa: E402
 
 
 def book(t, pub):
@@ -126,6 +127,43 @@ class VolumeFixTest(unittest.TestCase):
             before = (d / "books_shueisha.json").read_text(encoding="utf-8")
             mig.run(d, log=lambda *_: None)                              # 再実行しても変わらない
             self.assertEqual((d / "books_shueisha.json").read_text(encoding="utf-8"), before)
+
+    def test_split_series_fix(self):
+        # 「(N) ＋特典付き特装版／限定版」: 括弧の巻数を取り、通常版と同じ作品にする
+        self.assertEqual(book("しゅごキャラ! ジュエルジョーカー(5) キラキラスリーブケース&イラストカード付き特装版 (プレミアムKC)", "講談社"),
+                         ("しゅごキャラ!ジュエルジョーカー", 5, ["特装版"]))
+        self.assertEqual(book("しゅごキャラ! ジュエルジョーカー(5) (KCデラックス)", "講談社")[:2], ("しゅごキャラ!ジュエルジョーカー", 5))
+        self.assertEqual(book("肩のりイケブクロさんエコバッグ付き 出禁のモグラ(14)限定版 (講談社キャラクターズA)", "講談社"),
+                         ("出禁のモグラ", 14, ["限定版"]))
+        self.assertEqual(book("とことんクズな渡良瀬なのに(5)特装版 (講談社キャラクターズA)", "講談社"),
+                         ("とことんクズな渡良瀬なのに", 5, ["特装版"]))
+        # フルカラー版・カラー版は同じ作品の版表記
+        self.assertEqual(book("生徒会にも穴はある! 公式フルカラー版『生穴せれくしょん!』(2) (KCデラックス)", "講談社"),
+                         ("生徒会にも穴はある!", 2, ["フルカラー版"]))
+        self.assertEqual(book("X 3 カラー版", "小学館"), ("X", 3, ["カラー版"]))
+        self.assertEqual(book("X カラー版 3", "小学館"), ("X", 3, ["カラー版"]))
+        # 題名の先頭の「カラー版」や、版表記のない括弧巻数は変えない
+        self.assertEqual(book("カラー版 ゴルゴ 3", "小学館")[:2], ("カラー版ゴルゴ", 3))
+        self.assertEqual(book("月曜日のたわわ(16)青版 (プレミアムKC)", "講談社")[1], None)
+
+    def test_split_migration(self):
+        rec = lambda i, t, k, v: {"id": i, "isbn13": i, "isbn10": None, "title": t, "volume": v, "series_key": k, "series_title": k,
+                                  "author": "A", "publisher": "講談社", "label": "", "release_date": "2026-11-20", "source_url": None, "editions": []}
+        bad = rec("1", "生徒会にも穴はある! 公式フルカラー版『生穴せれくしょん!』(2) (KCデラックス)", "生徒会にも穴はある!公式フルカラー版『生穴せれくしょん!』", 2)
+        good = rec("2", "生徒会にも穴はある!(14) (KCデラックス)", "生徒会にも穴はある!", 14)
+        with tempfile.TemporaryDirectory() as d:
+            d = Path(d)
+            (d / "data").mkdir(); (d / "config").mkdir()
+            (d / "data" / "books_kodansha.json").write_text(json.dumps([bad, good], ensure_ascii=False), encoding="utf-8")
+            (d / "data" / "yomi.json").write_text(json.dumps({bad["series_key"]: {"yomi": "A"}, good["series_key"]: {"yomi": "B"}}, ensure_ascii=False), encoding="utf-8")
+            (d / "config" / "yomi_manual.json").write_text(json.dumps({bad["series_key"]: "C"}, ensure_ascii=False), encoding="utf-8")
+            mig2.run(d / "data", d / "config", log=lambda *_: None)
+            k = json.loads((d / "data" / "books_kodansha.json").read_text(encoding="utf-8"))
+            self.assertEqual([(b["series_key"], b["volume"], b["editions"]) for b in k], [("生徒会にも穴はある!", 2, ["フルカラー版"]), ("生徒会にも穴はある!", 14, [])])
+            self.assertEqual(k[1], good)                                   # 変わらない本は不変
+            y = json.loads((d / "data" / "yomi.json").read_text(encoding="utf-8"))
+            self.assertEqual(y, {"生徒会にも穴はある!": {"yomi": "B"}})      # 新キーの既存の読みを優先
+            self.assertEqual(json.loads((d / "config" / "yomi_manual.json").read_text(encoding="utf-8")), {"生徒会にも穴はある!": "C"})
 
 
 if __name__ == "__main__":
