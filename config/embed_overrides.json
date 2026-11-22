@@ -1,5 +1,11 @@
 {
-  "exclude": [],
+  "exclude": [
+    {
+      "id": "9784046606570",
+      "title": "だって望まれない番ですから 5",
+      "added": "2026-11-22"
+    }
+  ],
   "exclude_series": [],
   "include": [
     {

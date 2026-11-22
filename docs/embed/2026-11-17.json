@@ -3,14 +3,6 @@
  "publishers": {
   "KADOKAWA": [
    {
-    "id": "9784046606570",
-    "title": "だって望まれない番ですから 5巻",
-    "volume": 5,
-    "label": "FLOS COMIC",
-    "url": "https://www.amazon.co.jp/dp/4046606576?tag=natafull-22&linkCode=ogi&th=1&psc=1",
-    "image": "https://m.media-amazon.com/images/I/51BMloyhZwL._SL500_.jpg"
-   },
-   {
     "id": "9784046606259",
     "title": "エリートくんは愛がほしい！",
     "volume": null,
