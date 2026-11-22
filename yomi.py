@@ -30,6 +30,9 @@ _last = {"t": 0.0}
 _NOTE = re.compile(r"\d+(?=(?:デンシゲンテイ|ゲンテイ|トクソウ|トクセン|トクテン|オマケ|ツキ|アイゾウ|ショカイ|ドクジ|カンゼン|ガイドブック|ファンブック))")
 
 
+_TAIL_MARK = re.compile(r"[~〜\-‐・=＝:：]+$")
+
+
 def to_katakana(s):
     return "".join(chr(ord(c) + 0x60) if "ぁ" <= c <= "ゖ" else c for c in s)
 
@@ -42,14 +45,96 @@ def normalize_yomi(raw):
     s = re.sub(r"[(（\[【][^)）\]】]*[)）\]】]", "", s)      # 括弧書き（(013) など）
     s = "".join(s.split())
     s = to_katakana(s)
+    s = s.split("/")[0]                                       # 「題名/副題」の副題
     m = _NOTE.search(s)
     if m:
         s = s[:m.start()]
     s = re.sub(r"(?:ショウサッシ)?ツキ(?:トクソウバン|ゲンテイバン)$|(?:トクソウバン|ゲンテイバン)$", "", s)  # 末尾の版の注記
+    s = _TAIL_MARK.sub("", s)                                 # 末尾の「~」「-」「・」など
     s = re.sub(r"\d+$", "", s)                                # 末尾の巻数
+    s = _TAIL_MARK.sub("", s)
     if not s or not ("ァ" <= s[0] <= "ヶ"):
         return None
     return s
+
+
+# ---- 巻数の読み・副題の混入を削る（保存前／再正規化で使う） ----
+_ONES = {0: ["ゼロ", "レイ"], 1: ["イチ"], 2: ["ニ"], 3: ["サン"], 4: ["ヨン", "シ", "ヨ"], 5: ["ゴ"],
+         6: ["ロク"], 7: ["ナナ", "シチ"], 8: ["ハチ"], 9: ["キュウ", "ク"]}
+_HUND = {1: ["ヒャク"], 2: ["ニヒャク"], 3: ["サンビャク"], 4: ["ヨンヒャク"], 5: ["ゴヒャク"], 6: ["ロッピャク", "ロクヒャク"],
+         7: ["ナナヒャク"], 8: ["ハッピャク", "ハチヒャク"], 9: ["キュウヒャク"]}
+
+
+_AMBIGUOUS = {"シ", "ク", "ゴ", "ヨ"}
+
+
+def volume_readings(n):
+    """巻数 n（1〜999）のカナ読みの候補（ヨン/シ、ナナ/シチ 等）。"""
+    if not isinstance(n, int) or isinstance(n, bool) or not 1 <= n <= 999:
+        return []
+    h, t, o = n // 100, n // 10 % 10, n % 10
+    heads = _HUND[h] if h else [""]
+    if t == 0:
+        mids = [""]
+    elif t == 1:
+        mids = ["ジュウ"]
+    else:
+        mids = [d + "ジュウ" for d in _ONES[t]]
+    tails = _ONES[o] if o else [""]
+    out = {a + b + c for a in heads for b in mids for c in tails}
+    return sorted(out, key=lambda x: -len(x))
+
+
+def _title_kana_tail(title):
+    t = to_katakana(unicodedata.normalize("NFKC", title or ""))
+    t = re.sub(r"[^\w]+$", "", t)                       # 末尾の「!」「。」「~」など
+    m = re.search(r"[ァ-ヶー]+$", t)
+    return m.group(0) if m else ""
+
+
+def _title_ends_in_kana(title):
+    t = unicodedata.normalize("NFKC", title or "")
+    t = re.sub(r"[^\w]+$", "", t)
+    return bool(re.search(r"[ぁ-ゖァ-ヶー]$", t))
+
+
+def _title_digit_runs(title):
+    return set(re.findall(r"\d+", unicodedata.normalize("NFKC", title or "")))
+
+
+def clean_tail(y, title=None, volume=None):
+    """読み y の末尾に混ざった巻数の読み・副題を削る。title は作品名（series_title）、volume はその本の巻数。
+    題名自体がその音で終わる場合（「〜さん」で終わる作品の3巻など）は、巻数の読みが重なって付いているときだけ削る。"""
+    if not y:
+        return y
+    s = y
+    title_digits = _title_digit_runs(title)
+    # 数字（巻数）以降は副題・特典。題名に無い数字の手前で切る（「ダイ22カン」は「ダイ」ごと）
+    for m in re.finditer(r"\d+", s):
+        if m.group(0) in title_digits or m.start() == 0:
+            continue
+        s = s[:m.start()]
+        s = re.sub(r"(?:VOLUME|VOL\.?|ダイ)$", "", s)
+        break
+    s = _TAIL_MARK.sub("", s)
+    # 巻数のカナ読み
+    cands = volume_readings(volume)
+    tt = _title_kana_tail(title)
+    for k in cands:
+        for pat in ("ダイ" + k + "カン", k + "カン", k):
+            if not s.endswith(pat) or len(s) <= len(pat):
+                continue
+            if pat == k and tt.endswith(k) and not s.endswith(k + k):
+                continue            # 題名が同じ音で終わる（〜さん 等）。重なっていなければ題名の一部
+            if pat == k and k in _AMBIGUOUS and not _title_ends_in_kana(title):
+                continue            # 1音（シ・ク・ゴ・ヨ）で題名が漢字終わり（「〜話」→ハナシ 等）は題名側の音かもしれない。削らない
+            s = s[:-len(pat)]
+            break
+        else:
+            continue
+        break
+    s = _TAIL_MARK.sub("", s)
+    return s or y
 
 
 def extract_collationkey(item):
@@ -160,6 +245,7 @@ def run(books, state_path, today=None, net=True, manual=None, fetch=None, log=pr
         stats["stopped"] = "ネットワークなしの実行"
         return stats
     works = _works(books)
+    by_isbn = {b["isbn13"]: b for b in books if b.get("isbn13")}
     todo = {}
     for key, items in works.items():
         if key in manual:
@@ -181,7 +267,8 @@ def run(books, state_path, today=None, net=True, manual=None, fetch=None, log=pr
                 res = fetch(chunk)
                 for isbn in chunk:
                     key = asks[isbn]
-                    y = normalize_yomi(res.get(isbn))
+                    b = by_isbn.get(isbn) or {}
+                    y = clean_tail(normalize_yomi(res.get(isbn)), b.get("series_title"), b.get("volume"))
                     if y and not state.get(key, {}).get("yomi"):
                         state[key] = {"yomi": y, "source": "openbd", "isbn": isbn, "checked": stamp}
                         stats["got"] += 1
