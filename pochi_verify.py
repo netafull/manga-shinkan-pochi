@@ -38,8 +38,20 @@ def work_key(title, publisher):
     return norm_title(title) + "|" + publisher
 
 
+def _fold_latin(s):
+    """ÖYSTER → OYSTER。ラテン文字のアクセントだけ外す（かな・漢字の濁点は触らない）。"""
+    out = []
+    for ch in s:
+        if ord(ch) > 127:
+            d = unicodedata.normalize("NFD", ch)
+            if d[0].isascii() and d[0].isalpha():
+                ch = d[0]
+        out.append(ch)
+    return "".join(out)
+
+
 def norm_name(s):
-    return _DROP.sub("", unicodedata.normalize("NFKC", s)).lower()
+    return _DROP.sub("", _fold_latin(unicodedata.normalize("NFKC", s))).lower()
 
 
 def split_names(s):
@@ -108,3 +120,18 @@ def pick_candidate(work_author, work_publisher, cands):
         return None, UNKNOWN, "候補なし", judged
     final = MISMATCH if any(j[0] == MISMATCH for j in judged) else UNKNOWN
     return None, final, next(j[1] for j in judged if j[0] == final), judged
+
+
+# --- 表記ゆれで拾う二段目（著者が一致したものだけ採用する） ---
+_BRACKETED = re.compile(r"[（(【\[][^）)】\]]*[）)】\]]")
+_EDITION = re.compile(r"(新装版|完全版|愛蔵版|カラー版|デジタル版|新版|文庫版)")
+_FUZZY_DROP = re.compile(r"[^\w+]|_")
+
+
+def fuzzy_key(title):
+    """記号・空白・括弧書き・版の付記を落とした照合キー。
+    「+」は残す（「もやしもん+」は続編で「もやしもん」とは別作品）。副題の切り落としはしない。"""
+    t = unicodedata.normalize("NFKC", title).lower()
+    t = _EDITION.sub("", _BRACKETED.sub("", t))
+    return _FUZZY_DROP.sub("", t)
+
