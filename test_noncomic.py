@@ -48,7 +48,8 @@ class TitleRules(unittest.TestCase):
         self.assertFalse(bad(bk("人外図鑑", volume=3)))
 
     def test_boundary_cases_stay(self):
-        for t in ["ハルタ 2026-NOVEMBER volume 143", "劇場版アニメコミック 名探偵コナン 上", "本宮ひろ志漫画大全集030", "こち亀 超50周年 お宝!チョイス"]:
+        # ハルタの月号は2026-11-22のオーナー決定で外す側に移した（HarutaTest）
+        for t in ["劇場版アニメコミック 名探偵コナン 上", "本宮ひろ志漫画大全集030", "こち亀 超50周年 お宝!チョイス"]:
             self.assertFalse(bad(bk(t)), t)
 
 
@@ -114,3 +115,9 @@ class LoadAll(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class HarutaTest(unittest.TestCase):
+    def test_haruta_monthly_is_magazine(self):
+        self.assertTrue(bad(bk("ハルタ 2026-NOVEMBER volume 139")))
+        self.assertFalse(bad(bk("ハルタの日常 3")))
