@@ -92,8 +92,8 @@
    },
    {
     "id": "9784098544974",
-    "title": "劇場版アニメコミック名探偵コナン　ハイウェイの堕天使　上",
-    "volume": null,
+    "title": "劇場版アニメコミック名探偵コナン ハイウェイの堕天使 1巻",
+    "volume": 1,
     "label": "少年サンデーコミックス",
     "url": "https://www.amazon.co.jp/dp/4098544970?tag=natafull-22&linkCode=ogi&th=1&psc=1",
     "image": "https://m.media-amazon.com/images/I/5150dZYiFbL._SL500_.jpg"
@@ -227,47 +227,37 @@
     "image": "https://m.media-amazon.com/images/I/51QPQ-svJpL._SL500_.jpg"
    }
   ],
-  "竹書房": [
-   {
-    "id": "take:10194910",
-    "title": "斜陽に恋う 2巻",
-    "volume": 2,
-    "label": "bamB！",
-    "url": null,
-    "image": null
-   }
-  ],
   "集英社": [
    {
     "id": "9784088944210",
-    "title": "ヤンキー君と科学ごはん 10 (ヤングジャンプコミックス)",
-    "volume": null,
+    "title": "ヤンキー君と科学ごはん 10巻",
+    "volume": 10,
     "label": "ヤングジャンプコミックス",
-    "url": "https://www.amazon.co.jp/dp/B0H5ZV2J3B?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "url": "https://www.amazon.co.jp/dp/B0H5ZV2J3B?tag=natafull-22&linkCode=ogi&th=1&psc=1",
     "image": "https://m.media-amazon.com/images/I/51hsMyegxGL._SL500_.jpg"
    },
    {
     "id": "9784088944302",
-    "title": "ヴァルハラ・オティンティン館 9 (ヤングジャンプコミックス)",
-    "volume": null,
+    "title": "ヴァルハラ・オティンティン館 9巻",
+    "volume": 9,
     "label": "ヤングジャンプコミックス",
-    "url": "https://www.amazon.co.jp/dp/B0GT2M7573?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "url": "https://www.amazon.co.jp/dp/B0GT2M7573?tag=natafull-22&linkCode=ogi&th=1&psc=1",
     "image": "https://m.media-amazon.com/images/I/51zSEM8c42L._SL500_.jpg"
    },
    {
     "id": "9784088944555",
-    "title": "許嫁が出来たと思ったら、その許嫁が学校で有名な『悪役令嬢』だったんだけど、どうすればいい? 3 (ヤングジャンプコミックス)",
-    "volume": null,
+    "title": "許嫁が出来たと思ったら、その許嫁が学校で有名な『悪役令嬢』だったんだけど、どうすればいい? 3巻",
+    "volume": 3,
     "label": "ヤングジャンプコミックス",
-    "url": "https://www.amazon.co.jp/dp/B0GP6C5XR6?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "url": "https://www.amazon.co.jp/dp/B0GP6C5XR6?tag=natafull-22&linkCode=ogi&th=1&psc=1",
     "image": "https://m.media-amazon.com/images/I/51z8kcO2rIL._SL500_.jpg"
    },
    {
     "id": "9784088943664",
-    "title": "高校時代に傲慢だった女王様との同棲生活は意外と居心地が悪くない 5 (ヤングジャンプコミックス)",
-    "volume": null,
+    "title": "高校時代に傲慢だった女王様との同棲生活は意外と居心地が悪くない 5巻",
+    "volume": 5,
     "label": "ヤングジャンプコミックス",
-    "url": "https://www.amazon.co.jp/dp/B0GP65ND91?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "url": "https://www.amazon.co.jp/dp/B0GP65ND91?tag=natafull-22&linkCode=ogi&th=1&psc=1",
     "image": "https://m.media-amazon.com/images/I/51i5JuHpnCL._SL500_.jpg"
    }
   ]

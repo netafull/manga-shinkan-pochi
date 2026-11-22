@@ -4,8 +4,8 @@
   "KADOKAWA": [
    {
     "id": "9784041180747",
-    "title": "お酒のせいにはしませんから　２　百合×飲酒アンソロジー",
-    "volume": null,
+    "title": "お酒のせいにはしませんから 2巻",
+    "volume": 2,
     "label": "",
     "url": "https://www.amazon.co.jp/dp/4041180740?tag=natafull-22&linkCode=ogi&th=1&psc=1",
     "image": null
@@ -28,8 +28,8 @@
    },
    {
     "id": "9784049525151",
-    "title": "レベル0の無能探索者と蔑まれても実は世界最強です 4 ～探索ランキング1位は謎の人～",
-    "volume": null,
+    "title": "レベル0の無能探索者と蔑まれても実は世界最強です 4巻",
+    "volume": 4,
     "label": "電撃コミックスNEXT",
     "url": "https://www.amazon.co.jp/dp/4049525151?tag=natafull-22&linkCode=ogi&th=1&psc=1",
     "image": "https://m.media-amazon.com/images/I/51No3Y-iEML._SL500_.jpg"
@@ -52,8 +52,8 @@
    },
    {
     "id": "9784049722956",
-    "title": "凡人転生の努力無双　１ ～赤ちゃんの頃から努力してたらいつのまにか日本の未来を背負ってました～",
-    "volume": null,
+    "title": "凡人転生の努力無双 1巻",
+    "volume": 1,
     "label": "角川コミックス・エース",
     "url": "https://www.amazon.co.jp/dp/404972295X?tag=natafull-22&linkCode=ogi&th=1&psc=1",
     "image": "https://m.media-amazon.com/images/I/51gak3-oUyL._SL500_.jpg"
@@ -76,8 +76,8 @@
    },
    {
     "id": "9784041178898",
-    "title": "転生した私は幼い女伯爵（３） 後見人の公爵に餌付けしながら、領地発展のために万能魔法で色々作るつもりです",
-    "volume": null,
+    "title": "転生した私は幼い女伯爵 3巻",
+    "volume": 3,
     "label": "角川コミックス・エース",
     "url": "https://www.amazon.co.jp/dp/4041178894?tag=natafull-22&linkCode=ogi&th=1&psc=1",
     "image": "https://m.media-amazon.com/images/I/51qsBk65MIL._SL500_.jpg"
@@ -157,22 +157,6 @@
     "image": null
    },
    {
-    "id": "9784575382648",
-    "title": "腐男子召喚~異世界で神獣にハメられました 14巻",
-    "volume": 14,
-    "label": "マージナルコミックス",
-    "url": "https://www.amazon.co.jp/dp/4575382647?tag=natafull-22&linkCode=ogi&th=1&psc=1",
-    "image": null
-   },
-   {
-    "id": "9784575382655",
-    "title": "腐男子召喚~異世界で神獣にハメられました 14巻",
-    "volume": 14,
-    "label": "マージナルコミックス",
-    "url": "https://www.amazon.co.jp/dp/4575382655?tag=natafull-22&linkCode=ogi&th=1&psc=1",
-    "image": null
-   },
-   {
     "id": "9784575863017",
     "title": "赤髪エルフのお惣菜屋さん 2巻",
     "volume": 2,
@@ -228,14 +212,6 @@
     "volume": 9,
     "label": "",
     "url": "https://www.amazon.co.jp/dp/4098735865?tag=natafull-22&linkCode=ogi&th=1&psc=1",
-    "image": null
-   },
-   {
-    "id": "9784098735945",
-    "title": "この極道調教中につき 12巻",
-    "volume": 12,
-    "label": "",
-    "url": "https://www.amazon.co.jp/dp/4098735946?tag=natafull-22&linkCode=ogi&th=1&psc=1",
     "image": null
    },
    {

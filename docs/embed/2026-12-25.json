@@ -3,38 +3,6 @@
  "publishers": {
   "KADOKAWA": [
    {
-    "id": "9784046607935",
-    "title": "きみにだけハートビート",
-    "volume": null,
-    "label": "MFC ジーンピクシブシリーズ",
-    "url": null,
-    "image": null
-   },
-   {
-    "id": "9784046606020",
-    "title": "けやき商店街 桜ノ湯 3巻",
-    "volume": 3,
-    "label": "MFC ジーンピクシブシリーズ",
-    "url": null,
-    "image": null
-   },
-   {
-    "id": "9784046606051",
-    "title": "クソカス男と激メロ男",
-    "volume": null,
-    "label": "MFC ジーンピクシブシリーズ",
-    "url": null,
-    "image": null
-   },
-   {
-    "id": "9784046606037",
-    "title": "波を辿った先に 3巻",
-    "volume": 3,
-    "label": "MFC ジーンピクシブシリーズ",
-    "url": null,
-    "image": null
-   },
-   {
     "id": "9784041180211",
     "title": "継母の連れ子が元カノだった Art Works たかやKi画集",
     "volume": null,
@@ -118,8 +86,8 @@
    },
    {
     "id": "9784099432522",
-    "title": "逆転バリバリバース　２　金のバリバコイン２枚つき特装版",
-    "volume": null,
+    "title": "逆転バリバリバース 2巻",
+    "volume": 2,
     "label": "",
     "url": null,
     "image": null
@@ -160,8 +128,8 @@
    },
    {
     "id": "sgh:20261225-e918e245",
-    "title": "七海ちゃんより好きって言って。 上巻",
-    "volume": null,
+    "title": "七海ちゃんより好きって言って。 1巻",
+    "volume": 1,
     "label": "",
     "url": null,
     "image": null
@@ -249,16 +217,6 @@
     "image": null
    }
   ],
-  "竹書房": [
-   {
-    "id": "take:10204019",
-    "title": "本気になるには遅すぎる",
-    "volume": null,
-    "label": "バンブーコミックスmoment",
-    "url": null,
-    "image": null
-   }
-  ],
   "集英社": [
    {
     "id": "9784081153213",
@@ -270,8 +228,8 @@
    },
    {
     "id": "9784086316798",
-    "title": "異世界ラクラク無人島ライフ 5 ~クラス転移でクラフト能力を選んだ俺だけが、美少女たちとスローライフを送れるっぽい~ (ダッシュエックス文庫)",
-    "volume": null,
+    "title": "異世界ラクラク無人島ライフ (ダッシュエックス文庫) 5巻",
+    "volume": 5,
     "label": "ダッシュエックス文庫",
     "url": "https://www.amazon.co.jp/dp/408631679X?tag=natafull-22&linkCode=osi&th=1&psc=1",
     "image": "https://m.media-amazon.com/images/I/51CnPjU-lnL._SL500_.jpg"
@@ -286,8 +244,8 @@
    },
    {
     "id": "9784086316781",
-    "title": "高校時代に傲慢だった女王様との同棲生活は意外と居心地が悪くない 6 (ダッシュエックス文庫)",
-    "volume": null,
+    "title": "高校時代に傲慢だった女王様との同棲生活は意外と居心地が悪くない (ダッシュエックス文庫) 6巻",
+    "volume": 6,
     "label": "ダッシュエックス文庫",
     "url": "https://www.amazon.co.jp/dp/4086316781?tag=natafull-22&linkCode=osi&th=1&psc=1",
     "image": "https://m.media-amazon.com/images/I/41P9chDetXL._SL500_.jpg"

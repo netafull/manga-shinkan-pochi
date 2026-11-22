@@ -44,8 +44,8 @@
    },
    {
     "id": "9784040900476",
-    "title": "ダービースタリオン2　公式全書",
-    "volume": null,
+    "title": "ダービースタリオン 2巻",
+    "volume": 2,
     "label": "",
     "url": "https://www.amazon.co.jp/dp/4040900472?tag=natafull-22&linkCode=ogi&th=1&psc=1",
     "image": "https://m.media-amazon.com/images/I/51fMtS-hERL._SL500_.jpg"
@@ -64,16 +64,6 @@
     "volume": null,
     "label": "青騎士コミックス",
     "url": "https://www.amazon.co.jp/dp/4045000526?tag=natafull-22&linkCode=ogi&th=1&psc=1",
-    "image": null
-   }
-  ],
-  "双葉社": [
-   {
-    "id": "9784575382662",
-    "title": "好きです先輩! 逃がしません!",
-    "volume": null,
-    "label": "チルシェコミックス",
-    "url": "https://www.amazon.co.jp/dp/4575382663?tag=natafull-22&linkCode=ogi&th=1&psc=1",
     "image": null
    }
   ],
@@ -268,8 +258,8 @@
    },
    {
     "id": "9784253021630",
-    "title": "ゴジラ ギャラクシーオデッセイ 第4巻 特装版",
-    "volume": null,
+    "title": "ゴジラ ギャラクシーオデッセイ 4巻",
+    "volume": 4,
     "label": "ヤングチャンピオン・コミックス",
     "url": "https://www.amazon.co.jp/dp/4253021638?tag=natafull-22&linkCode=ogi&th=1&psc=1",
     "image": null
@@ -463,14 +453,6 @@
     "image": null
    },
    {
-    "id": "9784065461204",
-    "title": "NTREVENGE 10巻",
-    "volume": 10,
-    "label": "ヤンマガKCスペシャル",
-    "url": "https://www.amazon.co.jp/dp/4065461200?tag=natafull-22&linkCode=osi&th=1&psc=1",
-    "image": null
-   },
-   {
     "id": "9784065461389",
     "title": "まかない刑事の聴取メシ 2巻",
     "volume": 2,
@@ -580,22 +562,6 @@
     "volume": 14,
     "label": "ヤンマガKCスペシャル",
     "url": "https://www.amazon.co.jp/dp/406546045X?tag=natafull-22&linkCode=osi&th=1&psc=1",
-    "image": null
-   },
-   {
-    "id": "9784065461334",
-    "title": "聖巡エクスタシー ××しないと出られない部屋で魔族をブッ倒します 4巻",
-    "volume": 4,
-    "label": "ヤンマガKCスペシャル",
-    "url": "https://www.amazon.co.jp/dp/4065461332?tag=natafull-22&linkCode=osi&th=1&psc=1",
-    "image": null
-   },
-   {
-    "id": "9784065461198",
-    "title": "股間無双~嫌われ勇者は魔族に愛される~ 9巻",
-    "volume": 9,
-    "label": "ヤンマガKCスペシャル",
-    "url": "https://www.amazon.co.jp/dp/4065461197?tag=natafull-22&linkCode=osi&th=1&psc=1",
     "image": null
    },
    {

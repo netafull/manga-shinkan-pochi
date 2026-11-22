@@ -115,14 +115,6 @@
     "image": "https://m.media-amazon.com/images/I/51V1NLFqt+L._SL500_.jpg"
    },
    {
-    "id": "9784046607096",
-    "title": "光の庭~調香師と失われた香り 1巻",
-    "volume": 1,
-    "label": "MFC ジーンピクシブシリーズ",
-    "url": "https://www.amazon.co.jp/dp/4046607092?tag=natafull-22&linkCode=ogi&th=1&psc=1",
-    "image": "https://m.media-amazon.com/images/I/518+RavI1mL._SL500_.jpg"
-   },
-   {
     "id": "9784046608031",
     "title": "恐怖コレクター 2巻",
     "volume": 2,
@@ -148,8 +140,8 @@
    },
    {
     "id": "9784049525663",
-    "title": "極悪貴族、謙虚堅実に無双する1 ～原作知識と固有魔法＜虚空＞を駆使して、破滅エンドを回避します～",
-    "volume": null,
+    "title": "極悪貴族、謙虚堅実に無双する 1巻",
+    "volume": 1,
     "label": "電撃コミックスNEXT",
     "url": "https://www.amazon.co.jp/dp/4049525666?tag=natafull-22&linkCode=ogi&th=1&psc=1",
     "image": "https://m.media-amazon.com/images/I/51qUdxTUXbL._SL500_.jpg"
@@ -179,14 +171,6 @@
     "image": "https://m.media-amazon.com/images/I/51cX-eErQ+L._SL500_.jpg"
    },
    {
-    "id": "9784046607997",
-    "title": "距離感バグな双子に迫られて戸惑ってます",
-    "volume": null,
-    "label": "MFC ジーンピクシブシリーズ",
-    "url": "https://www.amazon.co.jp/dp/4046607998?tag=natafull-22&linkCode=ogi&th=1&psc=1",
-    "image": "https://m.media-amazon.com/images/I/511nG925MvL._SL500_.jpg"
-   },
-   {
     "id": "9784049525137",
     "title": "魔法少女に復讐を 1巻",
     "volume": 1,
@@ -206,8 +190,8 @@
    },
    {
     "id": "9784091544049",
-    "title": "イナズマイレブンＧＯ　完全版　下巻",
-    "volume": null,
+    "title": "イナズマイレブンGO 完全版 2巻",
+    "volume": 2,
     "label": "コロコロコミックススペシャル",
     "url": "https://www.amazon.co.jp/dp/4091544045?tag=natafull-22&linkCode=ogi&th=1&psc=1",
     "image": "https://m.media-amazon.com/images/I/51dczemaXyL._SL500_.jpg"
@@ -282,14 +266,6 @@
     "id": "9784592167327",
     "title": "Sランクモンスターの《ベヒーモス》だけど、猫と間違われてエルフ娘の騎士として暮らしてます 15巻",
     "volume": 15,
-    "label": "ヤングアニマルコミックス",
-    "url": null,
-    "image": null
-   },
-   {
-    "id": "9784592167334",
-    "title": "《最強ステータス》を引き継いで人間に転生した聖獣ベヒーモス、勇者の婚約者(お姫様)をうっかり寝取ってしまう 4巻",
-    "volume": 4,
     "label": "ヤングアニマルコミックス",
     "url": null,
     "image": null
@@ -394,14 +370,6 @@
    }
   ],
   "竹書房": [
-   {
-    "id": "9784801991347",
-    "title": "吾心を食む紅 中",
-    "volume": null,
-    "label": "麗人セレクション",
-    "url": "https://www.amazon.co.jp/dp/4801991343?tag=natafull-22&linkCode=ogi&th=1&psc=1",
-    "image": "https://m.media-amazon.com/images/I/51tzeZFPTZL._SL500_.jpg"
-   },
    {
     "id": "9784801991330",
     "title": "雑兵めし物語 5巻",

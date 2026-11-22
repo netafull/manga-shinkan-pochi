@@ -45,14 +45,6 @@
     "image": null
    },
    {
-    "id": "9784575425550",
-    "title": "怠惰な悪役王子に転生した俺、悪のおっぱい王国を築く ~ゲーム世界で好き勝手に生きていたのに、なぜか美少女達が俺を離さない件 1巻",
-    "volume": 1,
-    "label": "モンスターコミックス",
-    "url": "https://www.amazon.co.jp/dp/4575425559?tag=natafull-22&linkCode=ogi&th=1&psc=1",
-    "image": "https://m.media-amazon.com/images/I/51QPeGoHNxL._SL500_.jpg"
-   },
-   {
     "id": "9784575425604",
     "title": "異世界でもふもふなでなでするためにがんばってます。 18巻",
     "volume": 18,
@@ -232,16 +224,16 @@
    },
    {
     "id": "9784098641611",
-    "title": "捏造・痴人の愛　上",
-    "volume": null,
+    "title": "捏造・痴人の愛 1巻",
+    "volume": 1,
     "label": "ビッグスピリッツコミックススペシャル",
     "url": "https://www.amazon.co.jp/dp/4098641615?tag=natafull-22&linkCode=ogi&th=1&psc=1",
     "image": "https://m.media-amazon.com/images/I/51N4Cqh5smL._SL500_.jpg"
    },
    {
     "id": "9784098638369",
-    "title": "諸星大二郎短編集成　１　生物都市",
-    "volume": null,
+    "title": "諸星大二郎短編集成 1巻",
+    "volume": 1,
     "label": "ビッグコミックススペシャル",
     "url": "https://www.amazon.co.jp/dp/4098638363?tag=natafull-22&linkCode=ogi&th=1&psc=1",
     "image": null
@@ -319,16 +311,6 @@
     "label": "",
     "url": null,
     "image": null
-   }
-  ],
-  "竹書房": [
-   {
-    "id": "9784801991354",
-    "title": "明けても暮れても -続 いつか恋になるまで 4巻",
-    "volume": 4,
-    "label": "バンブーコミックスmoment",
-    "url": "https://www.amazon.co.jp/dp/4801991351?tag=natafull-22&linkCode=ogi&th=1&psc=1",
-    "image": "https://m.media-amazon.com/images/I/51XVaTHr6nL._SL500_.jpg"
    }
   ]
  }

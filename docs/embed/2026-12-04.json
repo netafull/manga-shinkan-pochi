@@ -100,8 +100,8 @@
    },
    {
     "id": "9784046606235",
-    "title": "死に戻りの魔法学校生活を、元恋人とプロローグから ８ （※ただし好感度はゼロ）",
-    "volume": null,
+    "title": "死に戻りの魔法学校生活を、元恋人とプロローグから 8巻",
+    "volume": 8,
     "label": "FLOS COMIC",
     "url": "https://www.amazon.co.jp/dp/4046606231?tag=natafull-22&linkCode=ogi&th=1&psc=1",
     "image": "https://m.media-amazon.com/images/I/41U+VA5WcYL._SL500_.jpg"
@@ -140,8 +140,8 @@
    },
    {
     "id": "9784046853363",
-    "title": "鴉天狗様と最愛の契り～落ちこぼれの私が、最強のあやかしに執着されるまで～ 三",
-    "volume": null,
+    "title": "鴉天狗様と最愛の契り~落ちこぼれの私が、最強のあやかしに執着されるまで 3巻",
+    "volume": 3,
     "label": "FLOS COMIC",
     "url": "https://www.amazon.co.jp/dp/4046853360?tag=natafull-22&linkCode=ogi&th=1&psc=1",
     "image": "https://m.media-amazon.com/images/I/51pyHrAaTML._SL500_.jpg"
@@ -178,7 +178,7 @@
     "volume": 6,
     "label": "花とゆめコミックススペシャル",
     "url": "https://www.amazon.co.jp/dp/4592231716?tag=natafull-22&linkCode=ogi&th=1&psc=1",
-    "image": null
+    "image": "https://m.media-amazon.com/images/I/51Rws8j129L._SL500_.jpg"
    },
    {
     "id": "9784592231837",
@@ -194,6 +194,16 @@
     "volume": 3,
     "label": "花とゆめコミックス",
     "url": "https://www.amazon.co.jp/dp/4592231813?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   }
+  ],
+  "秋田書店": [
+   {
+    "id": "9784253021098",
+    "title": "エロイカより愛をこめて Perfect Edition 1巻",
+    "volume": 1,
+    "label": "書籍扱いコミックス",
+    "url": "https://www.amazon.co.jp/dp/4253021093?tag=natafull-22&linkCode=ogi&th=1&psc=1",
     "image": null
    }
   ],
