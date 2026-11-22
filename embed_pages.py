@@ -114,7 +114,8 @@ def page_html(iso, shown, pub_name=None, today=None):
 def index_html(by_day, pubs):
     """by_day={iso: [(book, cover)]}, pubs=[(slug, name)]。日付・出版社を選んでコピー元へ行く一覧。"""
     body = ("<h1>マンガ新刊ポチ 発売日一覧のコピー元</h1>\n"
-            "<p>日付（出版社）を選ぶと、記事に貼れるHTMLのコピー元ページに進みます。成人向け・BL・TL系などは自動で外しています。</p>\n<ul>\n")
+            "<p>日付（出版社）を選ぶと、記事に貼れるHTMLのコピー元ページに進みます。成人向け・BL・TL系などは自動で外しています。</p>\n"
+            "<p><a href=\"/embed/review/\">目視確認ページ（外す本・戻す本を選ぶ）</a></p>\n<ul>\n")
     for iso in sorted(by_day):
         names = {b["publisher"] for b, _c in by_day[iso]}
         links = "".join(f' <a href="/embed/{iso}/{s}/">{escape(n)}</a>' for s, n in pubs if n in names)

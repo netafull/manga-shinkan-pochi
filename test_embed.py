@@ -231,3 +231,8 @@ class PagesTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class IndexReviewLinkTest(unittest.TestCase):
+    def test_index_links_to_review(self):
+        self.assertIn('href="/embed/review/"', embed_pages.index_html({}, []))
