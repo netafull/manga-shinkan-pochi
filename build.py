@@ -15,6 +15,7 @@ from html import escape
 
 import common
 import embed_pages
+import noncomic
 import pochi_verify
 import yomi as yomi_mod
 from common import today  # noqa: F401  (build.today() として使われる)
@@ -93,6 +94,12 @@ def load_all(data=None):
         it = store["items"].get(b.get("isbn10") or "")
         b["amazon"] = it
     books = [b for b in books if b["release_date"]]
+    books, dropped = noncomic.split(books)  # コミック以外（画集・ガイド・DVD・小説など）は読み込み時に除く。data は書き換えない
+    if dropped:
+        by_pub = {}
+        for b, _why in dropped:
+            by_pub[b["publisher"]] = by_pub.get(b["publisher"], 0) + 1
+        print(f"コミック以外を除外: {len(dropped)}件（" + "、".join(f"{p}{n}" for p, n in sorted(by_pub.items())) + "）")
     books.sort(key=lambda b: (b["release_date"], b["publisher"], b["series_title"], b["volume"] or 0))
     return books, pochi
 

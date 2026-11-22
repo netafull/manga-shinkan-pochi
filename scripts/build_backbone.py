@@ -53,6 +53,7 @@ def _process(b):
         "release_date": b["release_date"], "source_url": b["source_url"], "editions": flags,
         **({"haku_id": b["haku_id"]} if b.get("haku_id") else {}),
         **({"kadokawa_id": b["kadokawa_id"]} if b.get("kadokawa_id") else {}),
+        **({"author_roles": b["roles"]} if b.get("roles") else {}),  # 著者欄の役割（noncomic.py が非作品の判定に使う）
         **({"take_id": b["take_id"]} if b.get("take_id") else {}),
         **({"sgh_id": b["sgh_id"]} if b.get("sgh_id") else {}),
     }

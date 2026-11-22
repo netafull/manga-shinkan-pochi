@@ -154,13 +154,17 @@ def parse_kadokawa(page_html: str, paper_only=True):
             if isbn is None and paper_only:
                 continue
             names = []
+            roles = []
             for li in re.findall(r"<li>(.*?)</li>", (re.search(r'<ul class="book-auther">(.*?)</ul>', blk, re.S) or [None, ""])[1], re.S):
                 li = html.unescape(re.sub(r"<[^>]+>", "", li)).replace("\xa0", " ").strip()
                 names.append(li.split(" ", 1)[1].strip() if " " in li else li)  # 先頭は役割(漫画/原作など)
+                if " " in li:
+                    roles.append(li.split(" ", 1)[0].strip())
             lm = re.search(r"レーベル：([^<]+)", blk)
             out.append({
                 "isbn13": isbn, "title_raw": html.unescape(re.sub(r"<[^>]+>", "", tt.group(1))).strip(),
                 "author": " / ".join(n for n in names if n), "publisher": "KADOKAWA",
+                **({"roles": roles} if roles else {}),
                 "label": html.unescape(lm.group(1)).strip() if lm else "",
                 "release_date": f"{y:04d}-{mo:02d}-{day:02d}",
                 "source_url": f"{KADOKAWA_BASE}/product/{pm.group(1)}/", "kadokawa_id": pm.group(1),
