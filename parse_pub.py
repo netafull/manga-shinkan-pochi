@@ -345,20 +345,104 @@ def parse_sgh_detail(page_html: str):
     return isbn, (d.group(1) if d else None)
 
 
+# ---------- 巻数表記の整形（volume_hint） ----------
+_LABEL_WORDS = r"KC|コミックス|コミック|COMICS|Comics|文庫|デラックス|リミックス|キャラクターズ|講談社|集英社"
+LABEL_RE = re.compile(r"\s*[(（]([^()（）]*(?:" + _LABEL_WORDS + r")[^()（）]*)[)）]\s*$")
+_NOT_WORK_WORDS = re.compile(r"画集|図鑑|図かん|ずかん|ガイド|ファンブック|設定資料集|アートワークス|ポスターコレクション")
+_ED_TAIL = re.compile(r"\S*?(?:特装版|限定版|特別版|同梱版|通常版)")
+_KAN_NUM = {"一": 1, "二": 2, "三": 3, "四": 4, "五": 5, "六": 6, "七": 7, "八": 8, "九": 9, "十": 10,
+            "壱": 1, "弐": 2, "参": 3}
+_ROM_NUM = {"II": 2, "III": 3, "IV": 4, "VI": 6, "VII": 7, "VIII": 8, "IX": 9}   # I・V・X 単独は題名の一部のことが多いので取らない
+_JOUGE = {"上": 1, "中": 2, "下": 2}   # 上・下の2冊が基本（上=1、下=2）。「中」もある3部作は個別に判断する
+_UNIT_AFTER = re.compile(r"^(?:章|話|部|期|人|年|月|日|周年|回|時|歳|冊|本|個|つ|次元|nd|rd|th|st)")
+
+
+def _norm(raw: str) -> str:
+    t = unicodedata.normalize("NFKC", raw).replace("\u3000", " ")
+    t = re.sub(r"(?<=[Vv])\u043e(?=l)", "o", t)   # 「Vоl.1」のキリル文字の о
+    return re.sub(r"\s+", " ", t).strip()
+
+
+def split_label(raw: str):
+    """題名末尾のレーベル括弧（「(ヤングジャンプコミックス)」「(講談社文庫 ふ 96-3)」）を外す。(題名, レーベル) を返す。"""
+    t = _norm(raw)
+    m = LABEL_RE.search(t)
+    if m:
+        return t[:m.start()].strip(), m.group(1).strip()
+    return t, ""
+
+
+def is_novel_label(label: str, title: str = "") -> bool:
+    """文庫系のレーベル（ダッシュエックス文庫など）か。コミック版の文庫（講談社文庫の「文庫版」）は含めない。"""
+    return bool(label) and "文庫" in label and "コミック" not in label and "文庫版" not in title
+
+
+def _tail_has_volume(t: str) -> bool:
+    return bool(re.search(r"(?:\s\d{1,4}|\d{1,4}\s*巻)\s*$", t))
+
+
 def volume_hint(raw: str, publisher: str) -> str:
-    """parse_title に渡す前の巻数表記の整形。KADOKAWA の「…vol.02」「…（12）」を「… 2」「… 12」に、
-    少年画報社の「…全１巻」を「…１巻」にする。他社は何もしない。"""
+    """parse_title に渡す前の巻数表記の整形（全出版社共通）。
+    末尾のレーベル括弧・全集の番号を外し、「…（12）」「…vol.02」「…[2]」「VOLUME 2 TWO」「上・下」「二・VII」
+    「N ～副題～」「（N） 副題」などを「… N」の形にそろえる。
+    KADOKAWA だけ「物語2」（空白なしで付く数字）も巻数とみなす。少年画報社の「全１巻」は「１巻」にする。
+    すでに末尾から巻数が取れる題名は、中途の数字を見ずにそのまま返す。"""
+    t, _label = split_label(raw)
+    t = re.sub(r"(?<=\s)\S*全集\d{2,4}$", "", t).strip()   # 「本宮ひろ志漫画大全集030」の番号は巻数ではない
     if publisher == "少年画報社":
-        t = unicodedata.normalize("NFKC", raw).replace("\u3000", " ").strip()
-        return re.sub(r"\s*全\s*(\d{1,4})\s*巻\s*$", r" \1巻", t)
-    if publisher != "KADOKAWA":
-        return raw
-    t = unicodedata.normalize("NFKC", raw).replace("\u3000", " ").strip()
-    t = re.sub(r"\s*[(（](\d{1,4})[)）]$", r" \1", t)
+        t = re.sub(r"\s*全\s*(\d{1,4})\s*巻\s*$", r" \1巻", t)
+    t = re.sub(r"\s*[(（\[](\d{1,4})[)）\]]$", r" \1", t)
     t = re.sub(r"\s*[Vv]ol\.?\s*(\d{1,4})$", lambda m: " " + str(int(m.group(1))), t)
     t = re.sub(r"\s*\[VOLUME\]\s*(\d{1,4})$", lambda m: " " + str(int(m.group(1))), t)
-    t = re.sub(r"(?<=[^\d\s])(\d{1,3})$", r" \1", t)   # 「物語2」→「物語 2」(空白なしで巻数が付く表記)
-    return t
+    t = re.sub(r"\s*VOLUME\s*(\d{1,4})(?:\s+[A-Za-z]+)?$", lambda m: " " + str(int(m.group(1))), t)
+    if publisher == "KADOKAWA":
+        t = re.sub(r"(?<=[^\d\s])(\d{1,3})$", r" \1", t)   # 「物語2」→「物語 2」
+    if _tail_has_volume(t):
+        return t
+    m = re.search(r"\s([上中下])巻?$", t)
+    if m:
+        return t[:m.start()] + f" {_JOUGE[m.group(1)]}"
+    m = re.search(r"\s([一二三四五六七八九十壱弐参]|[IVX]{2,4})$", t)
+    if m and (m.group(1) in _KAN_NUM or m.group(1) in _ROM_NUM):
+        return t[:m.start()] + f" {_KAN_NUM.get(m.group(1)) or _ROM_NUM[m.group(1)]}"
+    return _mid_volume(t, publisher)
+
+
+def _mid_volume(t: str, publisher: str) -> str:
+    """題名の途中に巻数があり副題が続く型。巻数より後ろを捨てて「… N」にする（版表記だけは残す）。"""
+    cands = []
+    for m in re.finditer(r"\s*[(（\[](\d{1,3})[)）\]]\s+(?=\S)", t):                  # 「（3） 副題」「[2] ~副題~」
+        cands.append((m.start(), m.end(), m.group(1)))
+    for m in re.finditer(r"(?<=\S)\s(\d{1,3})\s+(?=[～~‐\-ー―－])", t):               # 「5 ～副題～」
+        cands.append((m.start(), m.end(), m.group(1)))
+    for m in re.finditer(r"(?<=[!?。」』])(\d{1,3})\s+(?=\S)", t):                        # 「！1 副題」
+        cands.append((m.start(), m.end(), m.group(1)))
+    for m in re.finditer(r"(?<=\S)\s(\d{1,3})\s+(?=\S)", t):                            # 「14 魔物の力を…」
+        if not re.search(r"(?:第|[Pp]art|No\.?|#)$", t[:m.start()]) and not _UNIT_AFTER.match(t[m.end():]):
+            cands.append((m.start(), m.end(), m.group(1)))
+    if publisher == "KADOKAWA" and not _NOT_WORK_WORDS.search(t):
+        for m in re.finditer(r"(?<=[^\d\s!?。」』])(\d{1,3})\s+(?=\S)", t):                 # 「ブレイズ1 副題」（KADOKAWAの空白なし巻数）
+            if not _UNIT_AFTER.match(t[m.end():]):
+                cands.append((m.start(), m.end(), m.group(1)))
+    if not cands:
+        return t
+    start, end, n = min(cands)
+    rest = t[end:]
+    if _ED_TAIL.fullmatch(rest.strip()):
+        return t                       # 「12 シャカシャカアクキー付き特装版」型。parse_title が版表記として処理する
+    ed = re.search(r"特装版|限定版|特別版|同梱版|通常版", rest)
+    return t[:start] + f" {int(n)}" + (f" {ed.group(0)}" if ed else "")
+
+
+def parse_book(raw: str, publisher: str):
+    """(series_key, volume, display_title, edition_flags, label) を返す。レーベル括弧は題名から外し label に入れる。
+    文庫系（ライトノベル）のレーベルは、同名の漫画とまとまらないよう series_key / 表示名の末尾にレーベルを付ける。"""
+    title, label = split_label(raw)
+    key, vol, display, flags = parse_title(volume_hint(raw, publisher))
+    if is_novel_label(label, title):
+        display = f"{display} ({label})"
+        key = re.sub(r"\s+", "", display)
+    return key, vol, display, flags, label
 
 
 # ---------- タイトル解析 ----------
@@ -371,7 +455,7 @@ def parse_title(raw: str):
     """(series_key, volume, display_title, edition_flags) を返す。"""
     t = unicodedata.normalize("NFKC", raw).replace("　", " ").strip()
     flags = []
-    t = re.sub(r"\S*付(?=特装版|限定版|特別版)", " ", t) if re.search(r"\S付(?:特装版|限定版|特別版)", t) else t
+    t = re.sub(r"\S*(?:付き?|つき)(?=特装版|限定版|特別版)", " ", t) if re.search(r"\S(?:付き?|つき)(?:特装版|限定版|特別版)", t) else t
     for w, f in EDITION_WORDS:
         if w in t and f not in flags:
             flags.append(f)
@@ -390,7 +474,7 @@ def parse_title(raw: str):
         base = base.replace(w, " ")
     # 版表記を除いたあとの末尾の巻数（「3 特装版」型）
     if vol is None:
-        m = re.search(r"\s(\d{1,4})\s*$", base)
+        m = re.search(r"(?:第\s*)?(\d{1,4})\s*巻\s*$", base) or re.search(r"\s(\d{1,4})\s*$", base)
         if m:
             vol = int(m.group(1))
             base = base[:m.start()]

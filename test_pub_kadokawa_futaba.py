@@ -95,8 +95,12 @@ class KadokawaParserTest(unittest.TestCase):
         with self.assertRaises(ValueError):
             pp.parse_kadokawa("<html></html>")
 
-    def test_volume_hint_only_touches_kadokawa(self):
-        self.assertEqual(pp.volume_hint("X vol.02", "小学館"), "X vol.02")
+    def test_volume_hint_vol_applies_to_all_publishers(self):
+        # 2026-11-22: volume_hint は KADOKAWA 限定をやめた。「vol.N」は全出版社で「N」にそろえる
+        self.assertEqual(pp.volume_hint("X vol.02", "小学館"), "X 2")
+        # 空白なしで付く数字（「物語2」）だけは KADOKAWA 限定（「ペルソナ5」型の題名を巻数と誤認しないため）
+        self.assertEqual(pp.volume_hint("悪女の珈琲物語2", "小学館"), "悪女の珈琲物語2")
+        self.assertEqual(pp.volume_hint("悪女の珈琲物語2", "KADOKAWA"), "悪女の珈琲物語 2")
 
     def test_months(self):
         self.assertEqual(pp.kadokawa_months(datetime.date(2026, 12, 3)), [(0, 2026, 12), (2, 2027, 1)])

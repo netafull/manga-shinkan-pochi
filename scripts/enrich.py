@@ -54,18 +54,8 @@ def kodansha_book(s, publisher="講談社"):
     ISBN（ean）が無い電子書籍だけの版はここで落ちる。"""
     if not s["ean"] or not isbnlib.valid_isbn13(s["ean"]) or not s["published"]:
         return None
-    key, vol, display, flags = pp.parse_title(s["title"] or "")
-    label = ""
-    m = re.search(r"[(（]([^()（）]*(?:KC|コミックス|文庫|デラックス)[^()（）]*)[)）]\s*$", s["title"] or "")
-    if m:
-        label = m.group(1)
-        display = display.replace(m.group(0), "").strip()
-    # 「タイトル(3) (レーベル)」型: 括弧の巻数を取る
-    mv = re.search(r"^(.*?)[(（](\d{1,4})[)）]", s["title"] or "")
-    if mv:
-        vol = int(mv.group(2))
-        display = re.sub(r"\s+", " ", mv.group(1)).strip()
-        key = re.sub(r"\s+", "", display)
+    # レーベル括弧・巻数表記の整形は parse_pub.parse_book に集約（集英社「題名 10 (ヤングジャンプコミックス)」型・全集の番号・上下・漢数字など）
+    key, vol, display, flags, label = pp.parse_book(s["title"] or "", publisher)
     return {
         "id": s["ean"], "isbn13": s["ean"],
         "isbn10": s["asin"] if len(s["asin"]) == 10 else isbnlib.isbn13_to_isbn10(s["ean"]),
