@@ -163,8 +163,9 @@ class SghParserTest(unittest.TestCase):
         self.assertEqual(pp.parse_sgh_detail(sdetail("9784785983254", "2026-11-09")), (None, "2026-11-09"))
         self.assertEqual(pp.parse_sgh_detail("<html></html>"), (None, None))
 
-    def test_volume_hint_only_touches_sgh(self):
-        self.assertEqual(pp.volume_hint("X 全１巻", "小学館"), "X 全１巻")
+    def test_volume_hint_zenkan_only_touches_sgh(self):
+        self.assertEqual(pp.volume_hint("X 全１巻", "小学館"), "X 全1巻")   # 「全N巻」の整形は少年画報社だけ（NFKC化のみ）
+        self.assertEqual(pp.volume_hint("X 全１巻", "少年画報社"), "X 1巻")
         self.assertEqual(pp.volume_hint("X vol.02", "KADOKAWA"), "X 2")
 
     def test_months(self):
