@@ -166,5 +166,93 @@ class KanaRowTest(unittest.TestCase):
             self.assertEqual([works[n]["yomi"] for n in "STUV"], ["ナニヌ", "サシス", None, None])
 
 
+class CleanTailTest(unittest.TestCase):
+    def test_slash_and_marks(self):
+        self.assertEqual(yomi.normalize_yomi("ネガイアイ/ハジメテドウシノハジライユウギ"), "ネガイアイ")
+        self.assertEqual(yomi.normalize_yomi("ヒカリノニワ~チョウコウシ~"), "ヒカリノニワ~チョウコウシ")
+        self.assertEqual(yomi.normalize_yomi("リュウカリノナト-ドラゴン-"), "リュウカリノナト-ドラゴン")
+        self.assertEqual(yomi.normalize_yomi("セット1-"), "セット")
+
+    def test_volume_readings(self):
+        self.assertIn("ヨン", yomi.volume_readings(4))
+        self.assertIn("シ", yomi.volume_readings(4))
+        self.assertIn("ニジュウサン", yomi.volume_readings(23))
+        self.assertIn("ヒャクヨンジュウ", yomi.volume_readings(140))
+        self.assertEqual(yomi.volume_readings(0), [])
+        self.assertEqual(yomi.volume_readings(None), [])
+
+    def test_strip_volume_kana(self):
+        self.assertEqual(yomi.clean_tail("バカニコクハクサン", "バカに告白", 3), "バカニコクハク")
+        self.assertEqual(yomi.clean_tail("ヒトリミデスイチ", "ひとりみです", 1), "ヒトリミデス")
+        self.assertEqual(yomi.clean_tail("アクヤクレイジョウテンセイオジサンジュウイチ", "悪役令嬢転生おじさん", 11), "アクヤクレイジョウテンセイオジサン")
+        self.assertEqual(yomi.clean_tail("オロカナテンシハアクマトオドルニジュウヨン", "愚かな天使は悪魔と踊る", 24), "オロカナテンシハアクマトオドル")
+        self.assertEqual(yomi.clean_tail("ハルタヴォリュームヒャクヨンジュウ", "ハルタ", 140), "ハルタヴォリューム")
+        self.assertEqual(yomi.clean_tail("スーパーラヴァーズダイ22カン", "SUPER LOVERS", 22), "スーパーラヴァーズ")
+
+    def test_title_ending_in_same_sound_is_kept(self):
+        self.assertEqual(yomi.clean_tail("タカミノタカミサン", "高みの鷹見さん", 3), "タカミノタカミサン")
+        self.assertEqual(yomi.clean_tail("タカミノタカミサンサン", "高みの鷹見さん", 3), "タカミノタカミサン")
+        self.assertEqual(yomi.clean_tail("コンヅクシ", "こんづくし", 4), "コンヅクシ")
+        self.assertEqual(yomi.clean_tail("ジョリク", "じょりく!", 9), "ジョリク")
+        # 1音の読み（シ）で題名が漢字終わり（〜話→ハナシ）は削らない
+        self.assertEqual(yomi.clean_tail("ダレカノハナシ", "誰かの話", 4), "ダレカノハナシ")
+        # 別の巻の読みで終わっていても削らない
+        self.assertEqual(yomi.clean_tail("ウェイバーズニ", "ウェイバーズ", 5), "ウェイバーズニ")
+
+    def test_digits_not_in_title(self):
+        self.assertEqual(yomi.clean_tail("マセキグルメ14マモノノチカラヲ", "魔石グルメ", 14), "マセキグルメ")
+        self.assertEqual(yomi.clean_tail("ヒャクオクコン", "100億婚", 1), "ヒャクオクコン")
+        self.assertEqual(yomi.clean_tail("ナンバー3ノオトコ", "ナンバー3の男", 2), "ナンバー3ノオトコ")   # 題名自体の数字は残す
+        self.assertEqual(yomi.clean_tail("クスリヤ23ポストカードブック", "薬屋", 23), "クスリヤ")
+        self.assertEqual(yomi.clean_tail("ツウカクタンテイVOLUME2TWO", "痛覚探偵", 2), "ツウカクタンテイ")
+
+    def test_idempotent(self):
+        once = yomi.clean_tail("バカニコクハクサン", "バカに告白", 3)
+        self.assertEqual(yomi.clean_tail(once, "バカに告白", 3), once)
+
+    def test_run_applies_clean_tail(self):
+        with tempfile.TemporaryDirectory() as t:
+            p = Path(t) / "yomi.json"
+            books = [{"series_key": "A", "series_title": "バカに告白", "volume": 3, "release_date": "2026-11-10", "isbn13": "111"}]
+            with redirect_stdout(io.StringIO()):
+                yomi.run(books, p, D(2026, 11, 21), manual={}, fetch=lambda isbns: {i: "バカニコクハクサン" for i in isbns})
+            self.assertEqual(json.loads(p.read_text())["A"]["yomi"], "バカニコクハク")
+
+
+class RenormalizeScriptTest(unittest.TestCase):
+    def test_renormalize(self):
+        import importlib
+        sc = importlib.import_module("scripts.renormalize_yomi_20261122")
+        books = [
+            {"series_key": "A", "series_title": "バカに告白", "volume": 3, "isbn13": "111"},
+            {"series_key": "B", "series_title": "ネガイアイ", "volume": None, "isbn13": "222"},
+        ]
+        state = {
+            "A": {"yomi": "バカニコクハクサン", "source": "openbd", "isbn": "111", "checked": "x"},
+            "B": {"yomi": "ネガイアイ/ハジメテ", "source": "openbd", "isbn": "222", "checked": "x"},
+            "C": {"yomi": "ムカシノキー", "source": "openbd", "isbn": "333", "checked": "x"},
+            "A2": {"yomi": None, "checked": "x"},
+        }
+        new, changes, dead = sc.renormalize(state, books)
+        self.assertEqual(new["A"]["yomi"], "バカニコクハク")
+        self.assertEqual(new["A"]["isbn"], "111")
+        self.assertEqual(new["B"]["yomi"], "ネガイアイ")
+        self.assertEqual(sorted(dead), ["A2", "C"])
+        self.assertEqual(len(changes), 2)
+        again, ch2, _ = sc.renormalize(new, books)
+        self.assertEqual((again, ch2), (new, []))
+        self.assertEqual(state["A"]["yomi"], "バカニコクハクサン")  # 元は書き換えない
+
+
+class ManualTest(unittest.TestCase):
+    def test_manual_file_wins_and_keys_exist(self):
+        man = yomi.load_manual()
+        self.assertEqual(man.get("MAMBA"), "マンバ")
+        self.assertTrue(all(v and v[0] >= "ァ" for v in man.values()))
+        works = {"M": {"series_key": "MAMBA", "title": "MAMBA", "yomi": None}}
+        build.apply_yomi(works, Path(tempfile.mkdtemp()))
+        self.assertEqual(works["M"]["yomi"], "マンバ")
+
+
 if __name__ == "__main__":
     unittest.main()
