@@ -62,6 +62,7 @@ SERIES_SITES = (
     ("離島宿ポチ", "島の空室を、すぐ探す", "https://ritou.netaful.jp/"),
     ("道の駅ポチ", "道の駅の駐車場・設備", "https://michinoeki.netaful.jp/"),
     ("新発売ポチ", "食の新商品を発売日で集約", "https://shinhatsubai.netaful.jp/"),
+    ("ニュースポチ", "ブログの新着をまとめて", "https://news.netaful.jp/"),
 )
 
 _pages = {}  # 書き出したページ: パス -> html（sitemap の lastmod 判定に使う）
