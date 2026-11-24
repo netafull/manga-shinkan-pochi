@@ -7,7 +7,7 @@
     "title": "まんがで!にゃんこ大戦争 20巻",
     "volume": 20,
     "label": "",
-    "url": null,
+    "url": "https://www.amazon.co.jp/dp/4091544010?tag=natafull-22&linkCode=ogi&th=1&psc=1",
     "image": null
    },
    {
@@ -15,7 +15,7 @@
     "title": "アメイジング デジタル サーカス 3巻",
     "volume": 3,
     "label": "",
-    "url": null,
+    "url": "https://www.amazon.co.jp/dp/4091544215?tag=natafull-22&linkCode=ogi&th=1&psc=1",
     "image": null
    },
    {
@@ -23,7 +23,7 @@
     "title": "オレだけはマトモくん 中学生編 4巻",
     "volume": 4,
     "label": "",
-    "url": null,
+    "url": "https://www.amazon.co.jp/dp/4091544185?tag=natafull-22&linkCode=ogi&th=1&psc=1",
     "image": null
    },
    {
@@ -31,7 +31,15 @@
     "title": "カレコレ 10巻",
     "volume": 10,
     "label": "",
-    "url": null,
+    "url": "https://www.amazon.co.jp/dp/4091543219?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784091543981",
+    "title": "カードファイト!!ヴァンガード フルファイターズ 2巻",
+    "volume": 2,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4091543987?tag=natafull-22&linkCode=ogi&th=1&psc=1",
     "image": null
    },
    {
@@ -39,7 +47,7 @@
     "title": "ケツバトラー2 1巻",
     "volume": 1,
     "label": "",
-    "url": null,
+    "url": "https://www.amazon.co.jp/dp/4091543960?tag=natafull-22&linkCode=ogi&th=1&psc=1",
     "image": null
    },
    {
@@ -47,15 +55,15 @@
     "title": "ソニックと勇気のつるぎ 3巻",
     "volume": 3,
     "label": "",
-    "url": null,
+    "url": "https://www.amazon.co.jp/dp/4091544029?tag=natafull-22&linkCode=ogi&th=1&psc=1",
     "image": null
    },
    {
     "id": "9784091436566",
     "title": "ポケットモンスタースペシャル 65巻",
     "volume": 65,
-    "label": "",
-    "url": null,
+    "label": "てんとう虫コミックススペシャル",
+    "url": "https://www.amazon.co.jp/dp/4091436560?tag=natafull-22&linkCode=ogi&th=1&psc=1",
     "image": null
    },
    {
@@ -63,7 +71,7 @@
     "title": "城とドラゴン 1巻",
     "volume": 1,
     "label": "",
-    "url": null,
+    "url": "https://www.amazon.co.jp/dp/4091543952?tag=natafull-22&linkCode=ogi&th=1&psc=1",
     "image": null
    },
    {
@@ -71,15 +79,15 @@
     "title": "逆転バリバリバース 2巻",
     "volume": 2,
     "label": "",
-    "url": null,
+    "url": "https://www.amazon.co.jp/dp/4091544037?tag=natafull-22&linkCode=ogi&th=1&psc=1",
     "image": null
    },
    {
     "id": "9784099432522",
     "title": "逆転バリバリバース 2巻",
     "volume": 2,
-    "label": "",
-    "url": null,
+    "label": "コロコロコミックス",
+    "url": "https://www.amazon.co.jp/dp/4099432521?tag=natafull-22&linkCode=ogi&th=1&psc=1",
     "image": null
    }
   ],
@@ -135,75 +143,75 @@
   ],
   "白泉社": [
    {
-    "id": "haku:80801",
+    "id": "9784592167419",
     "title": "おそらくカノジョは俺の兄貴を狙ってる 4巻",
     "volume": 4,
     "label": "ヤングアニマルコミックス",
-    "url": null,
+    "url": "https://www.amazon.co.jp/dp/4592167414?tag=natafull-22&linkCode=ogi&th=1&psc=1",
     "image": null
    },
    {
-    "id": "haku:80798",
+    "id": "9784592167396",
     "title": "キッチンカー『デリ・ジョイ』―車窓から異世界へ美味いもの密輸販売中!― 9巻",
     "volume": 9,
     "label": "ヤングアニマルコミックス",
-    "url": null,
+    "url": "https://www.amazon.co.jp/dp/4592167392?tag=natafull-22&linkCode=ogi&th=1&psc=1",
     "image": null
    },
    {
-    "id": "haku:80796",
+    "id": "9784592167372",
     "title": "ペンと手錠と事実婚 8巻",
     "volume": 8,
     "label": "ヤングアニマルコミックス",
-    "url": null,
+    "url": "https://www.amazon.co.jp/dp/4592167376?tag=natafull-22&linkCode=ogi&th=1&psc=1",
     "image": null
    },
    {
-    "id": "haku:80794",
+    "id": "9784592161646",
     "title": "俺と聖女がデキてることがバレたらこのパーティーは崩壊する 3巻",
     "volume": 3,
     "label": "ヤングアニマルコミックス",
-    "url": null,
+    "url": "https://www.amazon.co.jp/dp/4592161645?tag=natafull-22&linkCode=ogi&th=1&psc=1",
     "image": null
    },
    {
-    "id": "haku:80795",
+    "id": "9784592167358",
     "title": "妖怪王きゅん学園 2巻",
     "volume": 2,
     "label": "ヤングアニマルコミックス",
-    "url": null,
+    "url": "https://www.amazon.co.jp/dp/459216735X?tag=natafull-22&linkCode=ogi&th=1&psc=1",
     "image": null
    },
    {
-    "id": "haku:80799",
+    "id": "9784592167402",
     "title": "拳奴死闘伝セスタス 13巻",
     "volume": 13,
     "label": "ヤングアニマルコミックス",
-    "url": null,
+    "url": "https://www.amazon.co.jp/dp/4592167406?tag=natafull-22&linkCode=ogi&th=1&psc=1",
     "image": null
    },
    {
-    "id": "haku:80797",
+    "id": "9784592167389",
     "title": "拷問バイトくんの日常 9巻",
     "volume": 9,
     "label": "ヤングアニマルコミックス",
-    "url": null,
+    "url": "https://www.amazon.co.jp/dp/4592167384?tag=natafull-22&linkCode=ogi&th=1&psc=1",
     "image": null
    },
    {
-    "id": "haku:80800",
+    "id": "9784592167280",
     "title": "描くなるうえは 9巻",
     "volume": 9,
     "label": "ヤングアニマルコミックス",
-    "url": null,
+    "url": "https://www.amazon.co.jp/dp/4592167287?tag=natafull-22&linkCode=ogi&th=1&psc=1",
     "image": null
    },
    {
-    "id": "haku:80793",
+    "id": "9784592167303",
     "title": "魔法機械人間906 2巻",
     "volume": 2,
     "label": "ヤングアニマルコミックス",
-    "url": null,
+    "url": "https://www.amazon.co.jp/dp/4592167309?tag=natafull-22&linkCode=ogi&th=1&psc=1",
     "image": null
    }
   ],

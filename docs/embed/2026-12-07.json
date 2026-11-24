@@ -212,7 +212,7 @@
     "volume": 1,
     "label": "KCデラックス",
     "url": "https://www.amazon.co.jp/dp/4065459850?tag=natafull-22&linkCode=osi&th=1&psc=1",
-    "image": null
+    "image": "https://m.media-amazon.com/images/I/61wlIih6guL._SL500_.jpg"
    },
    {
     "id": "9784065456903",
@@ -244,7 +244,7 @@
     "volume": 4,
     "label": "KCデラックス",
     "url": "https://www.amazon.co.jp/dp/4065441757?tag=natafull-22&linkCode=osi&th=1&psc=1",
-    "image": null
+    "image": "https://m.media-amazon.com/images/I/615-tU4M6rL._SL500_.jpg"
    }
   ]
  }

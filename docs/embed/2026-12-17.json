@@ -16,7 +16,7 @@
     "volume": 1,
     "label": "FLOS COMIC",
     "url": "https://www.amazon.co.jp/dp/4046608293?tag=natafull-22&linkCode=ogi&th=1&psc=1",
-    "image": "https://m.media-amazon.com/images/I/31Vc7RpepLL._SL500_.jpg"
+    "image": "https://m.media-amazon.com/images/I/5193cVw6viL._SL500_.jpg"
    },
    {
     "id": "9784046608314",
@@ -88,7 +88,7 @@
     "volume": 4,
     "label": "FLOS COMIC",
     "url": "https://www.amazon.co.jp/dp/4046607327?tag=natafull-22&linkCode=ogi&th=1&psc=1",
-    "image": null
+    "image": "https://m.media-amazon.com/images/I/41lpP9d43rL._SL500_.jpg"
    },
    {
     "id": "9784046608406",
@@ -160,7 +160,7 @@
     "volume": 2,
     "label": "FLOS COMIC",
     "url": "https://www.amazon.co.jp/dp/4046606282?tag=natafull-22&linkCode=ogi&th=1&psc=1",
-    "image": null
+    "image": "https://m.media-amazon.com/images/I/51Lo6hG1R0L._SL500_.jpg"
    },
    {
     "id": "9784041179987",
@@ -184,7 +184,7 @@
     "volume": 2,
     "label": "FLOS COMIC",
     "url": "https://www.amazon.co.jp/dp/4046608390?tag=natafull-22&linkCode=ogi&th=1&psc=1",
-    "image": "https://m.media-amazon.com/images/I/31Vc7RpepLL._SL500_.jpg"
+    "image": "https://m.media-amazon.com/images/I/51HLSNmpluL._SL500_.jpg"
    },
    {
     "id": "9784046606747",
@@ -316,6 +316,14 @@
     "volume": 1,
     "label": "",
     "url": "https://www.amazon.co.jp/dp/4098550490?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784098550364",
+    "title": "みずぽろ 9巻",
+    "volume": 9,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4098550369?tag=natafull-22&linkCode=ogi&th=1&psc=1",
     "image": null
    },
    {
@@ -502,7 +510,7 @@
     "volume": 10,
     "label": "ヤングジャンプコミックス",
     "url": "https://www.amazon.co.jp/dp/408894433X?tag=natafull-22&linkCode=osi&th=1&psc=1",
-    "image": null
+    "image": "https://m.media-amazon.com/images/I/51YjX0kFSdL._SL500_.jpg"
    },
    {
     "id": "9784088944586",
@@ -614,7 +622,7 @@
     "volume": 2,
     "label": "ヤングジャンプコミックス",
     "url": "https://www.amazon.co.jp/dp/4088944488?tag=natafull-22&linkCode=osi&th=1&psc=1",
-    "image": null
+    "image": "https://m.media-amazon.com/images/I/51qUoBbl4wL._SL500_.jpg"
    },
    {
     "id": "9784088944623",
@@ -638,7 +646,7 @@
     "volume": 2,
     "label": "ヤングジャンプコミックス",
     "url": "https://www.amazon.co.jp/dp/4088944887?tag=natafull-22&linkCode=osi&th=1&psc=1",
-    "image": null
+    "image": "https://m.media-amazon.com/images/I/51A+crxLGOL._SL500_.jpg"
    },
    {
     "id": "9784088944142",
@@ -654,7 +662,7 @@
     "volume": 17,
     "label": "ヤングジャンプコミックス",
     "url": "https://www.amazon.co.jp/dp/4088944348?tag=natafull-22&linkCode=osi&th=1&psc=1",
-    "image": null
+    "image": "https://m.media-amazon.com/images/I/5180iAaxcpL._SL500_.jpg"
    },
    {
     "id": "9784088944562",
@@ -670,7 +678,7 @@
     "volume": 4,
     "label": "ヤングジャンプコミックス",
     "url": "https://www.amazon.co.jp/dp/4088941942?tag=natafull-22&linkCode=osi&th=1&psc=1",
-    "image": null
+    "image": "https://m.media-amazon.com/images/I/51ZX2plvebL._SL500_.jpg"
    },
    {
     "id": "9784088943923",
@@ -702,7 +710,7 @@
     "volume": 2,
     "label": "ヤングジャンプコミックス",
     "url": "https://www.amazon.co.jp/dp/4088944356?tag=natafull-22&linkCode=osi&th=1&psc=1",
-    "image": null
+    "image": "https://m.media-amazon.com/images/I/51Io2sd11zL._SL500_.jpg"
    },
    {
     "id": "9784088944463",

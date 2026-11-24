@@ -3,6 +3,14 @@
  "publishers": {
   "講談社": [
    {
+    "id": "9784065453223",
+    "title": "傷口と包帯 6巻",
+    "volume": 6,
+    "label": "KCデラックス",
+    "url": "https://www.amazon.co.jp/dp/4065453224?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
     "id": "9784065462782",
     "title": "蒼天の巨城国 1巻",
     "volume": 1,
