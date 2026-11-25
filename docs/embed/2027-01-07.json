@@ -117,12 +117,68 @@
   ],
   "講談社": [
    {
+    "id": "9784065464168",
+    "title": "うちの清楚系委員長がかつて中二病アイドルだったことを俺だけが知っている。 4巻",
+    "volume": 4,
+    "label": "シリウスKC",
+    "url": "https://www.amazon.co.jp/dp/4065464161?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
     "id": "9784065463949",
     "title": "ぎるてぃらいぶらり 1巻",
     "volume": 1,
     "label": "KCデラックス",
     "url": "https://www.amazon.co.jp/dp/4065463947?tag=natafull-22&linkCode=osi&th=1&psc=1",
     "image": "https://m.media-amazon.com/images/I/61GUY7Nz+4L._SL500_.jpg"
+   },
+   {
+    "id": "9784065464182",
+    "title": "よくわからないけれど異世界に転生していたようです 34巻",
+    "volume": 34,
+    "label": "シリウスKC",
+    "url": "https://www.amazon.co.jp/dp/4065464188?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065462744",
+    "title": "アニマガミ 1巻",
+    "volume": 1,
+    "label": "シリウスKC",
+    "url": "https://www.amazon.co.jp/dp/4065462746?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065468722",
+    "title": "セットマッチ! 1巻",
+    "volume": 1,
+    "label": "シリウスKC",
+    "url": "https://www.amazon.co.jp/dp/4065468728?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065451250",
+    "title": "ノイジールームメイト ~家ナシになったのでイケメンと怪異つき物件で同居始めました 7巻",
+    "volume": 7,
+    "label": "KCデラックス",
+    "url": "https://www.amazon.co.jp/dp/4065451256?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065464199",
+    "title": "偽りのケンタ 3巻",
+    "volume": 3,
+    "label": "シリウスKC",
+    "url": "https://www.amazon.co.jp/dp/4065464196?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065464311",
+    "title": "堕天使ちゃんはがんばれない 2巻",
+    "volume": 2,
+    "label": "シリウスKC",
+    "url": "https://www.amazon.co.jp/dp/4065464315?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
    },
    {
     "id": "9784065462324",
@@ -133,11 +189,35 @@
     "image": null
    },
    {
+    "id": "9784065464380",
+    "title": "濁る瞳で何を願う ハイセルク戦記 6巻",
+    "volume": 6,
+    "label": "マガジンエッジKC",
+    "url": "https://www.amazon.co.jp/dp/4065464382?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065464359",
+    "title": "異世界マンチキン ーHP1のままで最強最速ダンジョン攻略ー 15巻",
+    "volume": 15,
+    "label": "シリウスKC",
+    "url": "https://www.amazon.co.jp/dp/4065464358?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
     "id": "9784065459768",
     "title": "種生産 ~このスキルがチートだとまだ誰も気付いていない 2巻",
     "volume": 2,
     "label": "KCデラックス",
     "url": "https://www.amazon.co.jp/dp/4065459761?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065464342",
+    "title": "転生したらスライムだった件 クレイマンREVENGE 10巻",
+    "volume": 10,
+    "label": "シリウスKC",
+    "url": "https://www.amazon.co.jp/dp/406546434X?tag=natafull-22&linkCode=osi&th=1&psc=1",
     "image": null
    }
   ]

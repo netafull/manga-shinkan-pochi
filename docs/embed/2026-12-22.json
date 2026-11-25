@@ -141,6 +141,14 @@
     "image": null
    },
    {
+    "id": "9784065459911",
+    "title": "ディグイット 5巻",
+    "volume": 5,
+    "label": "アフタヌーンKC",
+    "url": "https://www.amazon.co.jp/dp/4065459915?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
     "id": "9784065461471",
     "title": "デビルズライン2 [逆襲] 8巻",
     "volume": 8,
@@ -162,7 +170,7 @@
     "volume": 13,
     "label": "モーニング KC",
     "url": "https://www.amazon.co.jp/dp/4065460476?tag=natafull-22&linkCode=osi&th=1&psc=1",
-    "image": null
+    "image": "https://m.media-amazon.com/images/I/618-Sn2++4L._SL500_.jpg"
    },
    {
     "id": "9784065459430",

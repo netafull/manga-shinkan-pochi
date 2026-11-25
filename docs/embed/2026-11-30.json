@@ -130,7 +130,7 @@
     "volume": 1,
     "label": "ビッグコミックス",
     "url": "https://www.amazon.co.jp/dp/4098641895?tag=natafull-22&linkCode=ogi&th=1&psc=1",
-    "image": null
+    "image": "https://m.media-amazon.com/images/I/51hev-CIbYL._SL500_.jpg"
    },
    {
     "id": "9784098641796",
@@ -194,7 +194,7 @@
     "volume": 98,
     "label": "ヤングサンデーコミックス",
     "url": "https://www.amazon.co.jp/dp/4091530605?tag=natafull-22&linkCode=ogi&th=1&psc=1",
-    "image": null
+    "image": "https://m.media-amazon.com/images/I/51UP8cKnjJL._SL500_.jpg"
    },
    {
     "id": "9784098641734",

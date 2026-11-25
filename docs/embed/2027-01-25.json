@@ -1,0 +1,135 @@
+{
+ "date": "2027-01-25",
+ "publishers": {
+  "集英社": [
+   {
+    "id": "9784088433455",
+    "title": "200m先の熱 18巻",
+    "volume": 18,
+    "label": "マーガレットコミックス",
+    "url": "https://www.amazon.co.jp/dp/4088433459?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784088433509",
+    "title": "うちの弟どもがすみません 16巻",
+    "volume": 16,
+    "label": "マーガレットコミックス",
+    "url": "https://www.amazon.co.jp/dp/4088433505?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784088433387",
+    "title": "お姉ちゃんの翠くん 13巻",
+    "volume": 13,
+    "label": "マーガレットコミックス",
+    "url": "https://www.amazon.co.jp/dp/4088433386?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784088433356",
+    "title": "きみとバラ色の日々 5巻",
+    "volume": 5,
+    "label": "マーガレットコミックス",
+    "url": "https://www.amazon.co.jp/dp/4088433351?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784088678559",
+    "title": "けだものがたり―帝都の狐と醜い花嫁― 1巻",
+    "volume": 1,
+    "label": "りぼんマスコットコミックス",
+    "url": "https://www.amazon.co.jp/dp/4088678559?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784088433394",
+    "title": "こじらせカレカノごっこ 1巻",
+    "volume": 1,
+    "label": "マーガレットコミックス",
+    "url": "https://www.amazon.co.jp/dp/4088433394?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784088433400",
+    "title": "ストロベリィ・ケイク 3巻",
+    "volume": 3,
+    "label": "マーガレットコミックス",
+    "url": "https://www.amazon.co.jp/dp/4088433408?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784088433448",
+    "title": "冷たくて 柔らか 8巻",
+    "volume": 8,
+    "label": "マーガレットコミックス",
+    "url": "https://www.amazon.co.jp/dp/4088433440?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784088433363",
+    "title": "四畳半のいばら姫 11巻",
+    "volume": 11,
+    "label": "マーガレットコミックス",
+    "url": "https://www.amazon.co.jp/dp/408843336X?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784088433417",
+    "title": "太陽よりも眩しい星 16巻",
+    "volume": 16,
+    "label": "マーガレットコミックス",
+    "url": "https://www.amazon.co.jp/dp/4088433416?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784088433462",
+    "title": "抱いて抱いておうじ 1巻",
+    "volume": 1,
+    "label": "マーガレットコミックス",
+    "url": "https://www.amazon.co.jp/dp/4088433467?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784088433431",
+    "title": "星とみちくさ 4巻",
+    "volume": 4,
+    "label": "マーガレットコミックス",
+    "url": "https://www.amazon.co.jp/dp/4088433432?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784088678573",
+    "title": "曖昧ブルー・ビースト 4巻",
+    "volume": 4,
+    "label": "りぼんマスコットコミックス",
+    "url": "https://www.amazon.co.jp/dp/4088678575?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784088678566",
+    "title": "育てのおやは死神です。 1巻",
+    "volume": 1,
+    "label": "りぼんマスコットコミックス",
+    "url": "https://www.amazon.co.jp/dp/4088678567?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784088433479",
+    "title": "隣の元カレくん 9巻",
+    "volume": 9,
+    "label": "マーガレットコミックス",
+    "url": "https://www.amazon.co.jp/dp/4088433475?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784088433370",
+    "title": "青と春 2巻",
+    "volume": 2,
+    "label": "マーガレットコミックス",
+    "url": "https://www.amazon.co.jp/dp/4088433378?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   }
+  ]
+ }
+}

@@ -3,6 +3,14 @@
  "publishers": {
   "KADOKAWA": [
    {
+    "id": "9784046607959",
+    "title": "Toxic-a-Holic トキシカホリック Alternate Episode 2巻",
+    "volume": 2,
+    "label": "MFコミックス ジーンシリーズ",
+    "url": "https://www.amazon.co.jp/dp/4046607955?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
     "id": "9784049525915",
     "title": "あしたのあした 2巻",
     "volume": 2,
@@ -208,7 +216,7 @@
     "volume": 1,
     "label": "電撃コミックスNEXT",
     "url": "https://www.amazon.co.jp/dp/404952631X?tag=natafull-22&linkCode=ogi&th=1&psc=1",
-    "image": "https://m.media-amazon.com/images/I/31aQndD0wpL._SL500_.jpg"
+    "image": "https://m.media-amazon.com/images/I/51SSSvYdjtL._SL500_.jpg"
    },
    {
     "id": "9784049526301",
@@ -606,7 +614,7 @@
     "volume": 1,
     "label": "ヤングチャンピオン・コミックス",
     "url": "https://www.amazon.co.jp/dp/4253021697?tag=natafull-22&linkCode=ogi&th=1&psc=1",
-    "image": "https://m.media-amazon.com/images/I/5164fWuqs-L._SL500_.jpg"
+    "image": "https://m.media-amazon.com/images/I/51Em9MN5UgL._SL500_.jpg"
    },
    {
     "id": "9784253021654",

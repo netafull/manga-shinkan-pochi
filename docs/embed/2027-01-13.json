@@ -3,6 +3,14 @@
  "publishers": {
   "講談社": [
    {
+    "id": "9784065463680",
+    "title": "JJM 女子柔道部物語 社会人編 6巻",
+    "volume": 6,
+    "label": "モーニング KC",
+    "url": "https://www.amazon.co.jp/dp/4065463688?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
     "id": "9784065461495",
     "title": "とことんクズな渡良瀬なのに 5巻",
     "volume": 5,
@@ -11,11 +19,51 @@
     "image": null
    },
    {
+    "id": "9784065464908",
+    "title": "ウリッコ 5巻",
+    "volume": 5,
+    "label": "モーニング KC",
+    "url": "https://www.amazon.co.jp/dp/4065464900?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065463819",
+    "title": "カフネ(下) (BE LOVE KC)",
+    "volume": null,
+    "label": "BE LOVE KC",
+    "url": "https://www.amazon.co.jp/dp/4065463815?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065463901",
+    "title": "ガキって言うな、俺を見ろ 1巻",
+    "volume": 1,
+    "label": "KC デザート",
+    "url": "https://www.amazon.co.jp/dp/4065463904?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065464601",
+    "title": "クッキングパパ あんかけトンテキ (講談社プラチナコミックス)",
+    "volume": null,
+    "label": "講談社プラチナコミックス",
+    "url": "https://www.amazon.co.jp/dp/4065464609?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
     "id": "9784065463796",
     "title": "バグダン ※その男たち取り扱い注意につき 2巻",
     "volume": 2,
     "label": "KC デザート",
     "url": "https://www.amazon.co.jp/dp/4065463793?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065467183",
+    "title": "異世界辺境メシ 8巻",
+    "volume": 8,
+    "label": "モーニング KC",
+    "url": "https://www.amazon.co.jp/dp/4065467187?tag=natafull-22&linkCode=osi&th=1&psc=1",
     "image": null
    },
    {
