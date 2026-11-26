@@ -130,6 +130,16 @@
     "url": null,
     "image": null
    }
+  ],
+  "講談社": [
+   {
+    "id": "9784065468661",
+    "title": "文庫版 賭博黙示録カイジ 7巻",
+    "volume": 7,
+    "label": "講談社文庫",
+    "url": "https://www.amazon.co.jp/dp/4065468663?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   }
   ]
  }
 }

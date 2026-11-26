@@ -32,7 +32,7 @@
     "volume": 4,
     "label": "電撃コミックスNEXT",
     "url": "https://www.amazon.co.jp/dp/4049525151?tag=natafull-22&linkCode=ogi&th=1&psc=1",
-    "image": "https://m.media-amazon.com/images/I/51No3Y-iEML._SL500_.jpg"
+    "image": "https://m.media-amazon.com/images/I/51zopEiCQRL._SL500_.jpg"
    },
    {
     "id": "9784049722581",
@@ -98,7 +98,7 @@
     "volume": 11,
     "label": "アクションコミックス",
     "url": "https://www.amazon.co.jp/dp/4575863076?tag=natafull-22&linkCode=ogi&th=1&psc=1",
-    "image": null
+    "image": "https://m.media-amazon.com/images/I/41CWYOVa1UL._SL500_.jpg"
    },
    {
     "id": "9784575441390",
@@ -106,7 +106,7 @@
     "volume": 4,
     "label": "アクションコミックス",
     "url": "https://www.amazon.co.jp/dp/4575441392?tag=natafull-22&linkCode=ogi&th=1&psc=1",
-    "image": null
+    "image": "https://m.media-amazon.com/images/I/51GIKO35L0L._SL500_.jpg"
    },
    {
     "id": "9784575863031",
@@ -122,7 +122,7 @@
     "volume": 2,
     "label": "アクションコミックス",
     "url": "https://www.amazon.co.jp/dp/457586305X?tag=natafull-22&linkCode=ogi&th=1&psc=1",
-    "image": null
+    "image": "https://m.media-amazon.com/images/I/517wDlPkD9L._SL500_.jpg"
    },
    {
     "id": "9784575425659",
@@ -130,7 +130,7 @@
     "volume": 4,
     "label": "モンスターコミックスｆ",
     "url": "https://www.amazon.co.jp/dp/4575425656?tag=natafull-22&linkCode=ogi&th=1&psc=1",
-    "image": null
+    "image": "https://m.media-amazon.com/images/I/51-w3NG4SoL._SL500_.jpg"
    },
    {
     "id": "9784575863086",
@@ -138,7 +138,7 @@
     "volume": 3,
     "label": "アクションコミックス",
     "url": "https://www.amazon.co.jp/dp/4575863084?tag=natafull-22&linkCode=ogi&th=1&psc=1",
-    "image": "https://m.media-amazon.com/images/I/51cI81mg37L._SL500_.jpg"
+    "image": "https://m.media-amazon.com/images/I/51ZkdQOIuuL._SL500_.jpg"
    },
    {
     "id": "9784575946352",
@@ -146,7 +146,7 @@
     "volume": 10,
     "label": "まんがタウン",
     "url": "https://www.amazon.co.jp/dp/4575946354?tag=natafull-22&linkCode=ogi&th=1&psc=1",
-    "image": null
+    "image": "https://m.media-amazon.com/images/I/51hHk09TisL._SL500_.jpg"
    },
    {
     "id": "9784575441383",
@@ -154,7 +154,7 @@
     "volume": 4,
     "label": "アクションコミックス",
     "url": "https://www.amazon.co.jp/dp/4575441384?tag=natafull-22&linkCode=ogi&th=1&psc=1",
-    "image": null
+    "image": "https://m.media-amazon.com/images/I/51bxNVKMdtL._SL500_.jpg"
    },
    {
     "id": "9784575863017",
@@ -162,7 +162,7 @@
     "volume": 2,
     "label": "アクションコミックス",
     "url": "https://www.amazon.co.jp/dp/4575863017?tag=natafull-22&linkCode=ogi&th=1&psc=1",
-    "image": null
+    "image": "https://m.media-amazon.com/images/I/517ejYAeVzL._SL500_.jpg"
    },
    {
     "id": "9784575425642",
@@ -170,7 +170,7 @@
     "volume": 4,
     "label": "モンスターコミックスｆ",
     "url": "https://www.amazon.co.jp/dp/4575425648?tag=natafull-22&linkCode=ogi&th=1&psc=1",
-    "image": null
+    "image": "https://m.media-amazon.com/images/I/515p3jDnXoL._SL500_.jpg"
    },
    {
     "id": "9784575425628",
@@ -178,7 +178,7 @@
     "volume": 1,
     "label": "モンスターコミックスｆ",
     "url": "https://www.amazon.co.jp/dp/4575425621?tag=natafull-22&linkCode=ogi&th=1&psc=1",
-    "image": null
+    "image": "https://m.media-amazon.com/images/I/51jyNhm4fIL._SL500_.jpg"
    },
    {
     "id": "9784575863024",
@@ -186,7 +186,7 @@
     "volume": 2,
     "label": "アクションコミックス",
     "url": "https://www.amazon.co.jp/dp/4575863025?tag=natafull-22&linkCode=ogi&th=1&psc=1",
-    "image": null
+    "image": "https://m.media-amazon.com/images/I/51ACa4jZ+-L._SL500_.jpg"
    },
    {
     "id": "9784575863048",
@@ -194,7 +194,7 @@
     "volume": 2,
     "label": "アクションコミックス",
     "url": "https://www.amazon.co.jp/dp/4575863041?tag=natafull-22&linkCode=ogi&th=1&psc=1",
-    "image": null
+    "image": "https://m.media-amazon.com/images/I/51Yti35+X1L._SL500_.jpg"
    }
   ],
   "小学館": [
@@ -210,7 +210,7 @@
     "id": "9784098641864",
     "title": "999号室 2巻",
     "volume": 2,
-    "label": "",
+    "label": "ビッグコミックス",
     "url": "https://www.amazon.co.jp/dp/4098641860?tag=natafull-22&linkCode=ogi&th=1&psc=1",
     "image": null
    },
@@ -226,7 +226,7 @@
     "id": "9784091671240",
     "title": "光の箱 5巻",
     "volume": 5,
-    "label": "",
+    "label": "flowers コミックス",
     "url": "https://www.amazon.co.jp/dp/4091671241?tag=natafull-22&linkCode=ogi&th=1&psc=1",
     "image": null
    },
@@ -242,7 +242,7 @@
     "id": "9784098736621",
     "title": "後宮の影公主 ~呪術師は謎を読む 3巻",
     "volume": 3,
-    "label": "",
+    "label": "フラワーコミックス",
     "url": "https://www.amazon.co.jp/dp/4098736624?tag=natafull-22&linkCode=ogi&th=1&psc=1",
     "image": null
    },
@@ -266,7 +266,7 @@
     "id": "9784098737154",
     "title": "顔に色を塗る　当麻ゆいこよみきり集",
     "volume": null,
-    "label": "",
+    "label": "フラワーコミックス α",
     "url": "https://www.amazon.co.jp/dp/4098737159?tag=natafull-22&linkCode=ogi&th=1&psc=1",
     "image": null
    },
@@ -274,7 +274,7 @@
     "id": "9784098736614",
     "title": "魔女と黒猫 家庭教師をしたら高慢な姫様に懐かれました 1巻",
     "volume": 1,
-    "label": "",
+    "label": "フラワーコミックス",
     "url": "https://www.amazon.co.jp/dp/4098736616?tag=natafull-22&linkCode=ogi&th=1&psc=1",
     "image": null
    }
