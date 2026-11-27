@@ -165,6 +165,14 @@
     "image": "https://m.media-amazon.com/images/I/61jwE6RxxAL._SL500_.jpg"
    },
    {
+    "id": "9784065465493",
+    "title": "ジエイナドライヴ 2巻",
+    "volume": 2,
+    "label": "ヤンマガKCスペシャル",
+    "url": "https://www.amazon.co.jp/dp/4065465494?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
     "id": "9784065467190",
     "title": "七分の一のサバイバー 1巻",
     "volume": 1,
@@ -173,12 +181,44 @@
     "image": "https://m.media-amazon.com/images/I/51kNUPs4lCL._SL500_.jpg"
    },
    {
+    "id": "9784065465554",
+    "title": "双星のアポクリファ 5巻",
+    "volume": 5,
+    "label": "ヤンマガKCスペシャル",
+    "url": "https://www.amazon.co.jp/dp/4065465559?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
     "id": "9784065464243",
     "title": "君の髪が気になるんだ 1巻",
     "volume": 1,
     "label": "ヤンマガKCスペシャル",
     "url": "https://www.amazon.co.jp/dp/4065464242?tag=natafull-22&linkCode=osi&th=1&psc=1",
     "image": "https://m.media-amazon.com/images/I/515dijiyypL._SL500_.jpg"
+   },
+   {
+    "id": "9784065465509",
+    "title": "後輩ちゃんはやりすぎる 3巻",
+    "volume": 3,
+    "label": "ヤンマガKCスペシャル",
+    "url": "https://www.amazon.co.jp/dp/4065465508?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065465486",
+    "title": "息子の彼女 2巻",
+    "volume": 2,
+    "label": "ヤンマガKCスペシャル",
+    "url": "https://www.amazon.co.jp/dp/4065465486?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065456835",
+    "title": "負け犬とライオン 3巻",
+    "volume": 3,
+    "label": "ヤンマガKCスペシャル",
+    "url": "https://www.amazon.co.jp/dp/4065456835?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
    }
   ]
  }

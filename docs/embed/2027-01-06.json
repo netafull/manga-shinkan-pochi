@@ -3,11 +3,99 @@
  "publishers": {
   "講談社": [
    {
+    "id": "9784065464847",
+    "title": "だれでも抱けるキミが好き 12巻",
+    "volume": 12,
+    "label": "ヤンマガKCスペシャル",
+    "url": "https://www.amazon.co.jp/dp/4065464846?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065464878",
+    "title": "アマチュアビジランテ 10巻",
+    "volume": 10,
+    "label": "ヤンマガKCスペシャル",
+    "url": "https://www.amazon.co.jp/dp/4065464870?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065465196",
+    "title": "アンダーニンジャ 19巻",
+    "volume": 19,
+    "label": "ヤンマガKCスペシャル",
+    "url": "https://www.amazon.co.jp/dp/4065465192?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065464960",
+    "title": "カクリキ 3巻",
+    "volume": 3,
+    "label": "ヤンマガKCスペシャル",
+    "url": "https://www.amazon.co.jp/dp/406546496X?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065465202",
+    "title": "サタノファニ 39巻",
+    "volume": 39,
+    "label": "ヤンマガKCスペシャル",
+    "url": "https://www.amazon.co.jp/dp/4065465206?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065464854",
+    "title": "伍と碁 9巻",
+    "volume": 9,
+    "label": "ヤンマガKCスペシャル",
+    "url": "https://www.amazon.co.jp/dp/4065464854?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
     "id": "9784065453223",
     "title": "傷口と包帯 6巻",
     "volume": 6,
     "label": "KCデラックス",
     "url": "https://www.amazon.co.jp/dp/4065453224?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065464755",
+    "title": "彼岸島 48日後... 57巻",
+    "volume": 57,
+    "label": "ヤンマガKCスペシャル",
+    "url": "https://www.amazon.co.jp/dp/4065464757?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065470381",
+    "title": "新装版 虎鶫 とらつぐみ -TSUGUMI PROJECT 1巻",
+    "volume": 1,
+    "label": "KCデラックス",
+    "url": "https://www.amazon.co.jp/dp/4065470382?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065470312",
+    "title": "新装版 虎鶫 とらつぐみ -TSUGUMI PROJECT 2巻",
+    "volume": 2,
+    "label": "KCデラックス",
+    "url": "https://www.amazon.co.jp/dp/4065470315?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065470329",
+    "title": "新装版 虎鶫 とらつぐみ -TSUGUMI PROJECT 3巻",
+    "volume": 3,
+    "label": "KCデラックス",
+    "url": "https://www.amazon.co.jp/dp/4065470323?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065464915",
+    "title": "猩猩姫 4巻",
+    "volume": 4,
+    "label": "ヤンマガKCスペシャル",
+    "url": "https://www.amazon.co.jp/dp/4065464919?tag=natafull-22&linkCode=osi&th=1&psc=1",
     "image": null
    },
    {
@@ -19,11 +107,35 @@
     "image": null
    },
    {
+    "id": "9784065465189",
+    "title": "税金で買った本 22巻",
+    "volume": 22,
+    "label": "ヤンマガKCスペシャル",
+    "url": "https://www.amazon.co.jp/dp/4065465184?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
     "id": "9784065462782",
     "title": "蒼天の巨城国 1巻",
     "volume": 1,
     "label": "KCデラックス",
     "url": "https://www.amazon.co.jp/dp/4065462789?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065464922",
+    "title": "蟻と蜂 2巻",
+    "volume": 2,
+    "label": "ヤンマガKCスペシャル",
+    "url": "https://www.amazon.co.jp/dp/4065464927?tag=natafull-22&linkCode=osi&th=1&psc=1",
+    "image": null
+   },
+   {
+    "id": "9784065464861",
+    "title": "追放された転生重騎士はゲーム知識で無双する 20巻",
+    "volume": 20,
+    "label": "ヤンマガKCスペシャル",
+    "url": "https://www.amazon.co.jp/dp/4065464862?tag=natafull-22&linkCode=osi&th=1&psc=1",
     "image": null
    }
   ]

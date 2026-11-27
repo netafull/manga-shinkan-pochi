@@ -93,14 +93,6 @@
     "image": null
    },
    {
-    "id": "9784088853192",
-    "title": "カグラバチ 13巻",
-    "volume": 13,
-    "label": "ジャンプコミックス",
-    "url": "https://www.amazon.co.jp/dp/4088853199?tag=natafull-22&linkCode=osi&th=1&psc=1",
-    "image": null
-   },
-   {
     "id": "9784088853819",
     "title": "カノンマスター 2巻",
     "volume": 2,
@@ -170,7 +162,7 @@
     "volume": 2,
     "label": "ジャンプコミックス",
     "url": "https://www.amazon.co.jp/dp/4088853431?tag=natafull-22&linkCode=osi&th=1&psc=1",
-    "image": null
+    "image": "https://m.media-amazon.com/images/I/31EZL6AKbmL._SL500_.jpg"
    },
    {
     "id": "9784088854090",

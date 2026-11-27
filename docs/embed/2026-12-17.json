@@ -176,7 +176,7 @@
     "volume": 13,
     "label": "Pomme Comics",
     "url": "https://www.amazon.co.jp/dp/4049723603?tag=natafull-22&linkCode=ogi&th=1&psc=1",
-    "image": "https://m.media-amazon.com/images/I/41MXWp4VftL._SL500_.jpg"
+    "image": "https://m.media-amazon.com/images/I/51Gzk3riE8L._SL500_.jpg"
    },
    {
     "id": "9784046608390",
@@ -224,7 +224,7 @@
     "volume": 9,
     "label": "FLOS COMIC",
     "url": "https://www.amazon.co.jp/dp/4046608595?tag=natafull-22&linkCode=ogi&th=1&psc=1",
-    "image": "https://m.media-amazon.com/images/I/31Vc7RpepLL._SL500_.jpg"
+    "image": "https://m.media-amazon.com/images/I/51wgPccrDIL._SL500_.jpg"
    },
    {
     "id": "9784046608505",
@@ -311,6 +311,14 @@
     "image": "https://m.media-amazon.com/images/I/417V264Um7L._SL500_.jpg"
    },
    {
+    "id": "9784098544271",
+    "title": "あくたの死に際 5巻",
+    "volume": 5,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/409854427X?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
+   },
+   {
     "id": "9784098550494",
     "title": "まじめふまじめマジ恋路 1巻",
     "volume": 1,
@@ -325,6 +333,14 @@
     "label": "",
     "url": "https://www.amazon.co.jp/dp/4098550369?tag=natafull-22&linkCode=ogi&th=1&psc=1",
     "image": "https://m.media-amazon.com/images/I/51rQzsvpidL._SL500_.jpg"
+   },
+   {
+    "id": "9784098550319",
+    "title": "カグライ ~神楽と雷人 8巻",
+    "volume": 8,
+    "label": "",
+    "url": "https://www.amazon.co.jp/dp/4098550318?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": null
    },
    {
     "id": "9784098550357",
@@ -396,7 +412,7 @@
     "volume": 12,
     "label": "",
     "url": "https://www.amazon.co.jp/dp/4098550288?tag=natafull-22&linkCode=ogi&th=1&psc=1",
-    "image": null
+    "image": "https://m.media-amazon.com/images/I/51pIL5Q8NjL._SL500_.jpg"
    },
    {
     "id": "9784098550265",
@@ -428,7 +444,7 @@
     "volume": 5,
     "label": "",
     "url": "https://www.amazon.co.jp/dp/4098550326?tag=natafull-22&linkCode=ogi&th=1&psc=1",
-    "image": null
+    "image": "https://m.media-amazon.com/images/I/51OphuiofKL._SL500_.jpg"
    },
    {
     "id": "9784098550296",

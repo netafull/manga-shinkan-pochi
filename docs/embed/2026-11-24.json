@@ -53,7 +53,7 @@
   ],
   "少年画報社": [
    {
-    "id": "sgh:20261124-f870e82d",
+    "id": "9784785983284",
     "title": "いきもにあっく! 3巻",
     "volume": 3,
     "label": "",
@@ -61,23 +61,23 @@
     "image": null
    },
    {
-    "id": "sgh:20261124-267c41dc",
+    "id": "9784785983314",
     "title": "オニハソト ー鬼門街外伝 2巻",
     "volume": 2,
-    "label": "",
-    "url": null,
-    "image": null
+    "label": "YKコミックス",
+    "url": "https://www.amazon.co.jp/dp/4785983310?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51CiczJcyeL._SL500_.jpg"
    },
    {
-    "id": "sgh:20261124-af560469",
+    "id": "9784785983307",
     "title": "ギャングキング 2巻",
     "volume": 2,
-    "label": "",
-    "url": null,
-    "image": null
+    "label": "YKコミックス",
+    "url": "https://www.amazon.co.jp/dp/4785983302?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/61+KmlutB2L._SL500_.jpg"
    },
    {
-    "id": "sgh:20261124-f82c2e7c",
+    "id": "9784785983277",
     "title": "バカ姉弟キング 3巻",
     "volume": 3,
     "label": "",
@@ -85,36 +85,36 @@
     "image": null
    },
    {
-    "id": "sgh:20261124-5fe4cc7e",
+    "id": "9784785983291",
     "title": "マジカル☆エージェント 1巻",
     "volume": 1,
-    "label": "",
-    "url": null,
-    "image": null
+    "label": "YKコミックス",
+    "url": "https://www.amazon.co.jp/dp/4785983299?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/41gZY6ugCqL._SL500_.jpg"
    },
    {
-    "id": "sgh:20261124-09e71681",
+    "id": "9784785983352",
     "title": "伝言猫がカフェにいます 2巻",
     "volume": 2,
-    "label": "",
-    "url": null,
-    "image": null
+    "label": "ねこぱんちコミックス",
+    "url": "https://www.amazon.co.jp/dp/4785983353?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/412YrGVzehL._SL500_.jpg"
    },
    {
-    "id": "sgh:20261124-09536d94",
+    "id": "9784785983345",
     "title": "家に黒猫がいます 2巻",
     "volume": 2,
-    "label": "",
-    "url": null,
-    "image": null
+    "label": "ねこぱんちコミックス",
+    "url": "https://www.amazon.co.jp/dp/4785983345?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/41khog6pzPL._SL500_.jpg"
    },
    {
-    "id": "sgh:20261124-94f4c409",
+    "id": "9784785983321",
     "title": "終電前のちょいごはん 薬院文月のみかづきレシピ 1巻",
     "volume": 1,
-    "label": "",
-    "url": null,
-    "image": null
+    "label": "思い出食堂コミックス",
+    "url": "https://www.amazon.co.jp/dp/4785983329?tag=natafull-22&linkCode=ogi&th=1&psc=1",
+    "image": "https://m.media-amazon.com/images/I/51Tg2S9hDjL._SL500_.jpg"
    }
   ]
  }
